@@ -1,0 +1,36 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  line-height: 1em;
+}
+
+@font-face {
+  font-family: avenir;
+  src:
+  url('../css/avenir_next_ul.ttf') format('truetype'),
+  url('../css/avenir_next_ul.woff') format('woff')
+  ;
+  font-style: normal;
+}
+
+body {
+  background: black;
+  color: white;
+}
+
+h1 {
+  font-family: avenir, Calligraffitti;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 15pt;
+  font-size: 96pt;
+  font-weight: 100;
+  letter-spacing: 15pt;
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 36pt;
+  }
+}
