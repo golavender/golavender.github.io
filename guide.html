@@ -31,7 +31,8 @@
    
     <div class="guide img-rounded">
      <h1 class="title">The Lavender Guide</h1>
-      <p> Hey! We&rsquo;re here to teach you how to learn Lavender. Trust me, if I can learn it, you&rsquo;ll be good to go.<p>
+      <p> Hey! We&rsquo;re here to teach you how to learn Lavender. Trust me, if I can learn it,
+       you&rsquo;ll be good to go.<p>
      <h2> Navigation</h2>
       
       <ul class="nav nav-pills">
@@ -72,7 +73,8 @@
          
      <h2>Installation</h2>
      <h3><section id="composer">via composer</section></h3>
-      <p>First, get yourself some composer. next you need to make yourself a <code>composer.json</code>, here&rsquo;s an example.</p>
+      <p>First, get yourself some composer. next you need to make yourself a
+       <code>composer.json</code>, here&rsquo;s an example.</p>
        <pre>
         <code class="lavender">
          {
@@ -82,12 +84,18 @@
          }
      </code>
        </pre>
-      <p> Then run <code>php composer.phar install</code> or <code>composer install</code> depending on how you installed composer. Once composer has finished it will generate an autoloader in <code>vendor/autoload.php</code> which you can <code>require()</code> from your application&rsquo;s bootstrap process.
+      <p> Then run <code>php composer.phar install</code> or <code>composer install</code>
+       depending on how you installed composer. Once composer has finished it will generate an 
+       autoloader in <code>vendor/autoload.php</code> which you can <code>require()</code> from 
+       your application&rsquo;s bootstrap process.
       </p>
     <h3><section id="github">via Github</section></h3>
-     <p> Add the lavender submodule with <code>git submodule add git@github.com:golavender/lavender.git (folder to clone to)</code> and include it with <code>require "(where you put lavender)/src/Lavender/lavender.php"</code> </p>
+     <p> Add the lavender submodule with 
+      <code>git submodule add git@github.com:golavender/lavender.git (folder to clone to)</code> 
+      and include it with <code>require "(where you put lavender)/src/Lavender/lavender.php"</code> </p>
     <h2><section id="usage">Usage</section></h2>
-     <p> Once you have installed and included lavender, the only required configuration is to tell lavender where the views directory is. 
+     <p> Once you have installed and included lavender, the only required configuration is to tell 
+      lavender where the views directory is. 
       <pre>
        <code class="lavender">
         Lavender::config(array(
@@ -178,7 +186,8 @@
            | this is also some text 
        </code>
       </pre>
-       <p> Lavender knows not to put a closing tag on certain nodes. (we got the list from <a href="http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements">here</a>)</p>
+       <p> Lavender knows not to put a closing tag on certain nodes. (we got the list from 
+        <a href="http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements">here</a>)</p>
       <pre>
        <code>
         input(type="text",value="fooooobar")
@@ -191,8 +200,13 @@
        </code>
       </pre>
     <h3><section id="doctype">doctype</section></h3> 
-     <p> Do you always forget the syntax for doctype? Lavender exists to solve your first world problems. Just throw a <code>!!!</code> at the top of your layout and you get yourself a nice html doctype. Doctypes supported are <code>html</code>, <code>transitional</code>, <code>strict</code>, <code>frameset</code>, <code>1.1</code>, <code>basic</code> and <code>mobile</code>. Here are some pretty examples.</p>
-     <p><code>!!!</code> will default to html, however you can also specify <code>!!! html</code>. The word <code>doctype</code> works as well!</p>
+     <p> Do you always forget the syntax for doctype? Lavender exists to solve your first world 
+      problems. Just throw a <code>!!!</code> at the top of your layout and you get yourself a nice 
+      html doctype. Doctypes supported are <code>html</code>, <code>transitional</code>, 
+      <code>strict</code>, <code>frameset</code>, <code>1.1</code>, <code>basic</code> and 
+      <code>mobile</code>. Here are some pretty examples.</p>
+     <p><code>!!!</code> will default to html, however you can also specify <code>!!! html</code>. 
+      The word <code>doctype</code> works as well!</p>
     <h3><section id="comments">comments</section></h3>
      <p>Comments are a thing! A helpful thing.
       <pre>
@@ -202,7 +216,9 @@
        </code>
       </pre>
      <h3><section id="concomments">conditional comments</section></h3>
-      <p> The <code>IE</code> shorthand can be used to generate conditional comments for Internet Explorer. check out <a href="http://www.quirksmode.org/css/condcom.html">this</a> if you are not familiar with conditional comments.</p>
+      <p> The <code>IE</code> shorthand can be used to generate conditional comments for 
+        Internet Explorer. check out <a href="http://www.quirksmode.org/css/condcom.html">this</a> 
+        if you are not familiar with conditional comments.</p>
        <pre>
         <code>
          IE
@@ -223,14 +239,16 @@
         </code>
        </pre>
      <h3><section id="variables">variables</section></h3>
-      <p>Lavender views can be passed variables from the parent php application or they can be defined right in the template.</p>
+      <p>Lavender views can be passed variables from the parent php application or they can be 
+        defined right in the template.</p>
       <p>This just assigns a variable without outputting anything to the page.</p>
        <pre>
         <code>
         - some_variable = "this is stored in a variable"
         </code>
        </pre>
-      <p>Note the <code>-</code> symbol, which evaluates an expression without outputting. the content of the variable can then later be output using the <code>=</code> symbol</p>
+      <p>Note the <code>-</code> symbol, which evaluates an expression without outputting. the 
+        content of the variable can then later be output using the <code>=</code> symbol</p>
        <pre>
         <code>
          - some_variable = "this is stored in a variable"
@@ -261,7 +279,10 @@
         </code>
        </pre>
      <h3><section id="conditionals">conditionals</section></h3>
-      <p>Markup can be conditionally rendered using the if keyword. Lavender supports all the conditional operations you know and love:<code> !, &amp;&amp;, ||, &lt;, &gt;, &lt;=, &gt;=, ==, != </code> and does a truthy check against the result.</p>
+      <p>Markup can be conditionally rendered using the if keyword. Lavender supports all the 
+        conditional operations you know and love:
+        <code> !, &amp;&amp;, ||, &lt;, &gt;, &lt;=, &gt;=, ==, != </code> 
+        and does a truthy check against the result.</p>
        <pre>
         <code>
          - some_variable = "this is stored in a variable"
@@ -289,7 +310,9 @@
          &lt;div&gt;wooooooooo&lt;/div&gt;
         </code>
        </pre>
-      <p> <code>TRUE</code> and <code>FALSE</code> (and <code>true</code> and <code>false</code>) are keywords in Lavender, they can be assinged to variables or used in conditionals directly (but if you actually do that then <a href="https://www.destroyallsoftware.com/talks/wat">wat</a>)
+      <p> <code>TRUE</code> and <code>FALSE</code> (and <code>true</code> and <code>false</code>) 
+        are keywords in Lavender, they can be assinged to variables or used in conditionals directly 
+        (but if you actually do that then <a href="https://www.destroyallsoftware.com/talks/wat">wat</a>)
        <pre>
         <code>
          - my_variable = TRUE
@@ -314,7 +337,8 @@
              li(data-key=key)= value 
         </code>
        </pre>
-      <p>You may have noticed how we snuck in using variables for your html attributes there. You can do that too!</p>
+      <p>You may have noticed how we snuck in using variables for your html attributes there. 
+        You can do that too!</p>
      <h3><section id="else">else</section></h3>
       <p>The else keyword can be used after loops or conditionals.</p>
        <pre>
@@ -372,7 +396,9 @@
          </code>
         </pre>
       <h3><section id="extends">extends</section></h3>
-       <p>Lavender supports block style layout extension. This means that in the parent template you define blocks using the <code>block</code> keyword. Then in the child template you <b>only have blocks</b> which override the blocks in the parent template.</p>
+       <p>Lavender supports block style layout extension. This means that in the parent template 
+        you define blocks using the <code>block</code> keyword. Then in the child template you 
+        <b>only have blocks</b> which override the blocks in the parent template.</p>
        <p>so if this was layout.lavender</p>
         <pre>
          <code>
@@ -420,9 +446,12 @@
          &lt;/div&gt;
          </code>
         </pre>
-       <p>A special case has been added to allow defining variables at the top of your child templates, these variables can be referenced from the layout to do cool things like specifying a list of javascript files necessary for a template to work or setting the page title.</p>
+       <p>A special case has been added to allow defining variables at the top of your child 
+        templates, these variables can be referenced from the layout to do cool things like 
+        specifying a list of javascript files necessary for a template to work or setting the page title.</p>
     <h2><section id="whitespace">whitespace</section></h2>
-       <p>New lines are added automatically after every html element, if you do not want the newline you can add a <code>-</code> to the node definition like so.</p>
+       <p>New lines are added automatically after every html element, if you do not want the newline 
+        you can add a <code>-</code> to the node definition like so.</p>
         <pre>
          <code>
           p
@@ -432,7 +461,12 @@
         </pre>
        <p>Automagic whitespace management is hard and subject to change.</p>
      <h2><section id="filters">filters</section></h2>
-       <p>Programatic expressions in Lavender are a little limited, none of your favorite php functions are available for modifying the template data. This is by design, we do not think there should be a ton of logic in templates when that logic could be in controllers or models. However, since you have to be able to do some templating logic, we added filters. It is super easy to add your own filters to Lavender and there are (or will be) plenty in place out of the box. here is how they work.</p>
+       <p>Programatic expressions in Lavender are a little limited, none of your favorite php 
+        functions are available for modifying the template data. This is by design, we do not think 
+        there should be a ton of logic in templates when that logic could be in controllers or models. 
+        However, since you have to be able to do some templating logic, we added filters. It is super 
+        easy to add your own filters to Lavender and there are (or will be) plenty in place out of 
+        the box. here is how they work.</p>
         <pre>
          <code>
           - myvariable = "some really cool text"
@@ -451,7 +485,8 @@
           &lt;/div&gt;
          </code>
         </pre>
-       <p> Profound right? Not that we invented this, we copied the idea from <a href="http://twig.sensiolabs.org/">twig</a>. The filters Lavender comes with are:</p>
+       <p> Profound right? Not that we invented this, we copied the idea from 
+        <a href="http://twig.sensiolabs.org/">twig</a>. The filters Lavender comes with are:</p>
    
        <p>
         <ul class="list-unstyled">
@@ -461,23 +496,30 @@
            
          <li><b>title:</b><code> ="this is a title"|title</code> becomes <code>This Is A Title </code></li>
            
-         <li><b>split:</b><code> "these are some words"|split(' ')</code> becomes the array<code> ['these', 'are', 'some', 'words'] </code></li>
+         <li><b>split:</b><code> "these are some words"|split(' ')</code> becomes the array
+          <code> ['these', 'are', 'some', 'words'] </code></li>
 
-         <li><b>sort:</b><code> "these are some words"|split(' ')|sort</code> becomes the array<code> ['are', 'some', 'these', 'words'] </code></li>
+         <li><b>sort:</b><code> "these are some words"|split(' ')|sort</code> becomes the array
+          <code> ['are', 'some', 'these', 'words'] </code></li>
 
-         <li><b>capitalize:</b><code> = "these are some words"|capitalize</code> becomes <code>These are some words </code></li>
+         <li><b>capitalize:</b><code> = "these are some words"|capitalize</code> becomes 
+          <code>These are some words </code></li>
 
-         <li><b>date:</b><code> = "1396372567"|date</code> becomes <code>4/1/2014 = "1396372567"|date('Y') </code>becomes <code>2014 </code></li>
+         <li><b>date:</b><code> = "1396372567"|date</code> becomes 
+          <code>4/1/2014 = "1396372567"|date('Y') </code>becomes <code>2014 </code></li>
 
          <li><b>default:</b><code> = []|default('foobar')</code> becomes <code>foobar</code> </li>
 
          <li><b>first:</b><code> = ['asdf','qwer']|first</code> becomes <code>asdf</code> </li>
 
-         <li><b>join:</b><code> = ['asdf','qwer']|join</code> becomes <code>asdf qwer = ['asdf','qwer']|join('-')</code> becomes <code>asdf-qwer</code> </li>
+         <li><b>join:</b><code> = ['asdf','qwer']|join</code> becomes 
+          <code>asdf qwer = ['asdf','qwer']|join('-')</code> becomes <code>asdf-qwer</code> </li>
 
-         <li><b>last:</b><code> = ['asdf','qwer']|last</code> becomes <code>qwer = ['asdf','qwer', 'zxcv']|last(2)|join('-')</code> becomes <code>qwer-zxcv</code> </li>
+         <li><b>last:</b><code> = ['asdf','qwer']|last</code> becomes 
+          <code>qwer = ['asdf','qwer', 'zxcv']|last(2)|join('-')</code> becomes <code>qwer-zxcv</code> </li>
 
-         <li><b>keys:</b><code> {'asdf': 'foo','qwer': 'bar'}|keys</code> becomes the array<code> ['asdf', 'qwer']</code> </li>
+         <li><b>keys:</b><code> {'asdf': 'foo','qwer': 'bar'}|keys</code> becomes the array
+          <code> ['asdf', 'qwer']</code> </li>
 
          <li><b>length:</b><code> = ['asdf','qwer']|length</code> becomes <code>2</code> </li>
 
@@ -487,21 +529,28 @@
 
          <li><b>round:</b><code> = 12345.123|round(2)</code> becomes <code>12345.12</code></li>
 
-         <li><b>merge:</b><code> ['foo', 'bar']|merge(['baz'])</code> becomes the array <code>['foo', 'bar', 'baz']</code> </li>
+         <li><b>merge:</b><code> ['foo', 'bar']|merge(['baz'])</code> becomes the array 
+          <code>['foo', 'bar', 'baz']</code> </li>
 
          <li><b>replace:</b><code> = "foo bar"|replace(' ', '-')</code> becomes <code>foo-bar</code> </li>
 
-         <li><b>reverse:</b><code> ['asdf', 'qwer']|reverse</code> becomes the array <code>['qwer', 'asdf']</code> </li>
+         <li><b>reverse:</b><code> ['asdf', 'qwer']|reverse</code> becomes the array 
+          <code>['qwer', 'asdf']</code> </li>
 
-         <li><b>slice:</b><code> ['foo', 'bar', 'baz']|slice(1, 1)</code> becomes the array <code>['bar']</code> </li>
+         <li><b>slice:</b><code> ['foo', 'bar', 'baz']|slice(1, 1)</code> becomes the array 
+          <code>['bar']</code> </li>
 
-         <li><b>number_format:</b><code> = 10000000000.12345|number_format()</code> becomes <code>10,000,000,000 = 10000000000.12345|number_format(2, ',', '.')</code> becomes <code>10.000.000.000,12</code> </li>
+         <li><b>number_format:</b><code> = 10000000000.12345|number_format()</code> becomes 
+          <code>10,000,000,000 = 10000000000.12345|number_format(2, ',', '.')</code> becomes 
+          <code>10.000.000.000,12</code> </li>
 
          <li><b>ceil:</b><code> = 10000000000.12345|ceil</code> becomes <code>10000000001</code> </li>
 
          <li><b>floor:</b><code> = 10000000000.12345|floor</code> becomes <code>10000000000</code> </li>
 
-         <li><b>relative:</b> if you had a <code>timestamp</code> variable <code>timestamp|relative</code> would return things like 'just now' or 'in 3 days' or <code>6 minutes ago</code> </li>
+         <li><b>relative:</b> if you had a <code>timestamp</code> variable 
+          <code>timestamp|relative</code> would return things like 'just now' or 'in 3 days' or 
+          <code>6 minutes ago</code> </li>
 
          <li><b>contains:</b><code> = ['asdf', 'qwer']|contains('asdf')</code> returns TRUE </li>
 
