@@ -5,7 +5,6 @@
     <meta name="keywords" content="Lavender, Lavender programming language, lavenderlang, lavender-lang">
     <meta name="description" content="A templating engine for PHP, designed to make your life easier.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
     <link rel="stylesheet" href="css/bootstrap.css">
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,700' rel='stylesheet' type='text/css'>
@@ -13,13 +12,10 @@
   </head>
   
   <body>
-  
-
-  
-   <div class="container">
-   
+   <div class="container"> 
     <div class="btn-group pull-right">
-     <button type="button" data-toggle="dropdown" class="btn btn-home dropdown-toggle">Menu <span class="caret"></span></button>
+     <button type="button" data-toggle="dropdown" class="btn btn-home dropdown-toggle">Menu 
+      <span class="caret"></span></button>
       <ul class="dropdown-menu">
         <li><a href="/lavender.html">Home</a></li>
         <li><a href="https://github.com/golavender/lavender">GitHub</a></li>
@@ -34,9 +30,7 @@
       <p> Hey! We&rsquo;re here to teach you how to learn Lavender. Trust me, if I can learn it,
        you&rsquo;ll be good to go.<p>
      <h2> Navigation</h2>
-      
       <ul class="nav nav-pills">
-      
        <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
          Installation <span class="caret"></span>
@@ -47,7 +41,6 @@
          </ul>
        </li>
        <li><a href="#usage">Usage</a></li>
-       
        <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
          Language Reference <span class="caret"></span>
@@ -66,11 +59,9 @@
          <li><a href="#extends">extends</a></li>
          </ul>
        </li>
-       
        <li><a href="#whitespace">Whitespace</a>
        <li><a href="#filters">Filters</a>
-      </ul>
-         
+      </ul>    
      <h2>Installation</h2>
      <h3><section id="composer">via composer</section></h3>
       <p>First, get yourself some composer. next you need to make yourself a
@@ -490,97 +481,62 @@
    
        <p>
         <ul class="list-unstyled">
-         <li><b>upper:</b><code> ="string"|upper</code> becomes <code>STRING</code> </li>
-           
+         <li><b>upper:</b><code> ="string"|upper</code> becomes <code>STRING</code> </li>  
          <li><b>trim:</b><code> =" string "|trim</code> becomes <code>string</code> </li>
-           
-         <li><b>title:</b><code> ="this is a title"|title</code> becomes <code>This Is A Title </code></li>
-           
+         <li><b>title:</b><code> ="this is a title"|title</code> becomes <code>This Is A Title </code></li> 
          <li><b>split:</b><code> "these are some words"|split(' ')</code> becomes the array
           <code> ['these', 'are', 'some', 'words'] </code></li>
-
          <li><b>sort:</b><code> "these are some words"|split(' ')|sort</code> becomes the array
           <code> ['are', 'some', 'these', 'words'] </code></li>
-
          <li><b>capitalize:</b><code> = "these are some words"|capitalize</code> becomes 
           <code>These are some words </code></li>
-
          <li><b>date:</b><code> = "1396372567"|date</code> becomes 
           <code>4/1/2014 = "1396372567"|date('Y') </code>becomes <code>2014 </code></li>
-
          <li><b>default:</b><code> = []|default('foobar')</code> becomes <code>foobar</code> </li>
-
          <li><b>first:</b><code> = ['asdf','qwer']|first</code> becomes <code>asdf</code> </li>
-
          <li><b>join:</b><code> = ['asdf','qwer']|join</code> becomes 
           <code>asdf qwer = ['asdf','qwer']|join('-')</code> becomes <code>asdf-qwer</code> </li>
-
          <li><b>last:</b><code> = ['asdf','qwer']|last</code> becomes 
           <code>qwer = ['asdf','qwer', 'zxcv']|last(2)|join('-')</code> becomes <code>qwer-zxcv</code> </li>
-
          <li><b>keys:</b><code> {'asdf': 'foo','qwer': 'bar'}|keys</code> becomes the array
           <code> ['asdf', 'qwer']</code> </li>
-
          <li><b>length:</b><code> = ['asdf','qwer']|length</code> becomes <code>2</code> </li>
-
          <li><b>lower:</b><code> = "FOO BAR"|lower</code> becomes <code>foo bar</code> </li>
-
          <li><b>nl2br:</b><code> = "new\nline"|nl2br</code> becomes <code>new&lt;br&gt;line </code></li>
-
          <li><b>round:</b><code> = 12345.123|round(2)</code> becomes <code>12345.12</code></li>
-
          <li><b>merge:</b><code> ['foo', 'bar']|merge(['baz'])</code> becomes the array 
           <code>['foo', 'bar', 'baz']</code> </li>
-
          <li><b>replace:</b><code> = "foo bar"|replace(' ', '-')</code> becomes <code>foo-bar</code> </li>
-
          <li><b>reverse:</b><code> ['asdf', 'qwer']|reverse</code> becomes the array 
           <code>['qwer', 'asdf']</code> </li>
-
          <li><b>slice:</b><code> ['foo', 'bar', 'baz']|slice(1, 1)</code> becomes the array 
           <code>['bar']</code> </li>
-
          <li><b>number_format:</b><code> = 10000000000.12345|number_format()</code> becomes 
           <code>10,000,000,000 = 10000000000.12345|number_format(2, ',', '.')</code> becomes 
           <code>10.000.000.000,12</code> </li>
-
          <li><b>ceil:</b><code> = 10000000000.12345|ceil</code> becomes <code>10000000001</code> </li>
-
          <li><b>floor:</b><code> = 10000000000.12345|floor</code> becomes <code>10000000000</code> </li>
-
          <li><b>relative:</b> if you had a <code>timestamp</code> variable 
           <code>timestamp|relative</code> would return things like 'just now' or 'in 3 days' or 
           <code>6 minutes ago</code> </li>
-
          <li><b>contains:</b><code> = ['asdf', 'qwer']|contains('asdf')</code> returns TRUE </li>
-
          <li><b>is:</b></li>
            <ul>
             <li><code> = ['asdf', 'qwer']|is('list')</code> returns TRUE
-
             <li><code> = {asdf: 'qwer'}|is('object')</code> returns TRUE
-
             <li><code> = 8|is('number')</code> returns TRUE
-
             <li><code> = myVariable|is('My_Class_Name')</code> also works
            </ul>
-
           <li><b>json:</b><code> = ['asdf', 'qwer']|json</code> returns <code>"['asdf','qwer']"</code></li>
          </ul>
-        
-
-
     </div>
    </div>
    
    <!-- jQuery Version 1.11.0 -->
    <script src="js/jquery-1.11.0.js"></script>
-
    <!-- Bootstrap Core JavaScript -->
    <script src="js/bootstrap.min.js"></script>
-
    <!-- Plugin JavaScript -->
-   <script src="js/jquery.easing.min.js"></script>
-   
+   <script src="js/jquery.easing.min.js"></script>   
   </body>
 </html>
