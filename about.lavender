@@ -1,0 +1,36 @@
+doctype html
+
+head
+  title About Us - Lavender Templating Engine for PHP
+  meta(name='keywords', content='Lavender, Lavender programming language, lavenderlang, lavender-lang')
+  meta(name='description', content='A templating engine for PHP, designed to make your life easier.')
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
+  link(rel='stylesheet', href='css/main.css')
+  link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lato:300,700')
+  link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lily+Script+One')
+
+body
+	.container
+		.btn-group.pull-right
+			button.btn.btn-home.dropdown-toggle(type="button" data-toggle="dropdown") Menu
+				span.caret
+          ul.dropdown-menu
+            li: a(href="/lavender.html", title="Home") Home
+            li: a(href="https://github.com/golavender/lavender", title="GitHub") GitHub
+            li: a(href="https://github.com/daftlabs", title="GitHub") Creators
+            li: a(href="https://github.com/golavender/lavender", title="GitHub") Guide
+            li.disabled: a(href="/about.html") About
+
+    .guide.img-rounded
+      h1.title The Lavender Guide
+        p
+          | So. Hi. Here's a page where awesome info about us will go. Where is it right now? Probably
+          | on vacation. Maui most likely. I heard it's nice this time of year.
+
+// jQuery Version 1.11.0
+script(src='vendor/twitter/bootstrap/dist/js/jquery-1.11.0.js')
+// Bootstrap Core JavaScript
+script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
+// Plugin Javascript 
+script(src="vendor/twitter/bootstrap/dist/js/jquery.easing.min.js")
