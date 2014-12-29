@@ -1,4 +1,4 @@
-doctype html
+!!!
 
 head
   title Lavender Templating Engine for PHP
@@ -24,33 +24,35 @@ body
       .col-md-6.center-block
         p
           | Lavender is loosely based off of
-            a(href='http://jade-lang.com/') Jade
+          a(href='http://jade-lang.com/') Jade
           | , created by the
           | founders of the Daft Labs team to bring peace and order to their office.
         p
           | Easy to dive in and use, so you’ll have more time to spend on other projects than
           | checking syntax.
       .col-md-6.center-block
-        script(type='text/lavender').
-           h1 cool title bro.
+        pre
+          code.
+            h1 cool title bro.
 
-           block header
-             | bweep bweep
-             | beep beep boop
-             | honk
+              block header
+                | bweep bweep
+                | beep beep boop
+                | honk
 
-           div.content
-             block content
+              div.content
+                block content
 
                        
   a(href='https://github.com/golavender/lavender')
-    img(style='position: absolute; top: 0; right: 0; border: 0;', src='http://tinyurl.com/kv8nu28',
+    img(style='position: absolute; top: 0; right: 0; border: 0;', 
+     src='http://tinyurl.com/kv8nu28',
      alt='Fork me on GitHub',
      data-canonical-src='https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png')
 
 // jQuery Version 1.11.0
 script(src='vendor/twitter/bootstrap/dist/js/jquery-1.11.0.js')
 // Bootstrap Core JavaScript
-script(src="vendor/twitter/bootstrap/dist/js/bootstrap.min.js")
+script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
 // Plugin Javascript 
 script(src="vendor/twitter/bootstrap/dist/js/jquery.easing.min.js")

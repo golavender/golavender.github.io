@@ -1,4 +1,4 @@
-doctype html
+!!!
 
 head
   title About Us - Lavender Templating Engine for PHP
@@ -13,14 +13,19 @@ head
 body
 	.container
 		.btn-group.pull-right
-			button.btn.btn-home.dropdown-toggle(type="button" data-toggle="dropdown") Menu
+			button.btn.btn-home.dropdown-toggle(type="button", data-toggle="dropdown") Menu
 				span.caret
           ul.dropdown-menu
-            li: a(href="/lavender.html", title="Home") Home
-            li: a(href="https://github.com/golavender/lavender", title="GitHub") GitHub
-            li: a(href="https://github.com/daftlabs", title="GitHub") Creators
-            li: a(href="https://github.com/golavender/lavender", title="GitHub") Guide
-            li.disabled: a(href="/about.html") About
+            li
+              a(href="/lavender.html", title="Home") Home
+            li
+              a(href="https://github.com/golavender/lavender", title="GitHub") GitHub
+            li
+              a(href="https://github.com/daftlabs", title="GitHub") Creators
+            li
+              a(href="https://github.com/golavender/lavender", title="GitHub") Guide
+            li.disabled
+              a(href="/about.html") About
 
     .guide.img-rounded
       h1.title The Lavender Guide

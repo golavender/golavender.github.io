@@ -1,4 +1,4 @@
-doctype html
+!!!
 
 head
   title Guide Lavender Templating Engine for PHP
@@ -13,7 +13,7 @@ head
 body
 	.container
 		.btn-group.pull-right
-			button.btn.btn-home.dropdown-toggle(type="button" data-toggle="dropdown") Menu
+			button.btn.btn-home.dropdown-toggle(type="button", data-toggle="dropdown") Menu
 				span.caret
           ul.dropdown-menu
             li: a(href="/lavender.html", title="Home") Home
@@ -30,14 +30,17 @@ body
       h2 Navigation
         ul.nav.nav-pills
           li.dropdown
-            a.dropdown-toggle(data-toggle="dropdown-toggle" href="#") Installation
+            a.dropdown-toggle(data-toggle="dropdown-toggle", href="#") Installation
               span.caret
             ul.dropdown-menu(role="menu")
-              li: a(href="#composer") via Composer
-              li: a(href="#github") via GitHub
-              li: a(href="#usage") Usage
+              li
+                a(href="#composer") via Composer
+              li
+                a(href="#github") via GitHub
+              li
+                a(href="#usage") Usage
           li.dropdown
-            a.dropdown-toggle(data-toggle="dropdown-toggle" href="#") Language Reference
+            a.dropdown-toggle(data-toggle="dropdown-toggle",href="#") Language Reference
               span.caret
             ul.dropdown-menu(role="menu")
               li
@@ -70,37 +73,44 @@ body
         h3#composer via composer
           p
             | first, get yourself some composer. next, you need to make yourself a
-              code composer.json
+            code.
+              composer.json
             | , here's an example.
-              pre
-                script(type='text/lavender')
-                    {
-                      "require": {
-                        "lavender/lavender": "*"
-                      }
+            pre
+              code.
+                  {
+                    "require": {
+                      "lavender/lavender": "*"
                     }
+                  }
             | then run
-              code php composer.phar install 
+            code.
+              php composer.phar install 
             | or
-              code composer install
+            code.
+              composer install
             | depending on how you've installed composer. Once composer has finished it will generate an 
             | autoloader in 
-              code vendor/autoload.php
+            code.
+              vendor/autoload.php
             | which you can 
-              code require()
+            code.
+              require()
             | from your application's bootstrap process.
         h3#github via Github      
           p
             | Add the lavender submodule with 
-              code git submodule add git@github.com:golavender/lavender.git (folder to clone to) 
+            code.
+              git submodule add git@github.com:golavender/lavender.git (folder to clone to) 
             | and include it with 
-              code require "(where you put lavender)/src/Lavender/lavender.php   
+            code.
+              require "(where you put lavender)/src/Lavender/lavender.php   
       h2#usage Usage     
         p
           | Once you have installed and included lavender, the only required configuration is to tell
           | lavender where the views directory is.
           pre
-            code
+            code.
               Lavender::config(array(
 
               /*
@@ -122,146 +132,168 @@ body
               //'handle_errors'  => Boolean, 
               ));
             | once it's been renedered, it's as easy as...
-              pre
-                code
-                  $output = Lavender::view('some_template')->compile();
+            pre
+              code.
+                $output = Lavender::view('some_template')->compile();
 
-                  // or if you need to pass data into the template (probably the case)
+                // or if you need to pass data into the template (probably the case)
 
-                  $output = Lavender::view('some_template')->compile(array(
-                    'data'      => 'some data that the template will use',
-                    'more_data' => "moar data",
-                  ));
+                $output = Lavender::view('some_template')->compile(array(
+                  'data'      => 'some data that the template will use',
+                  'more_data' => "moar data",
+                ));
       h2 Language Reference
         h3#html html
-            code section#some_id.foo.bar(attribute1='foo',attribute2='bar')
         p
+          code.
+            section#some_id.foo.bar(attribute1='foo',attribute2='bar')
           | becomes
-            code &lt;section id="some_id" class="foo bar" attribute1="foo" attribute2="bar"&gt;&lt;/section&gt;
+          code.
+            &lt;section id="some_id" class="foo bar" attribute1="foo" attribute2="bar"&gt;&lt;/section&gt;
           | Child nodes are indented below their parent
-            pre
-              code
-               section.foo
-                div(data-something='foo') 
-                div(data-something='bar')
+          pre
+            code.
+             section.foo
+              div(data-something='foo') 
+              div(data-something='bar')
           | becomes
-            pre
-              code
-                &lt;section class="foo"&gt;
-                  &lt;div data-something="foo"&gt; &lt;/div&gt;
-                  &lt;div data-something="bar"&gt; &lt;/div&gt;
-                &lt;/section&gt;
+          pre
+            code.
+              &lt;section class="foo"&gt;
+                &lt;div data-something="foo"&gt; &lt;/div&gt;
+                &lt;div data-something="bar"&gt; &lt;/div&gt;
+              &lt;/section&gt;
           | There is a shortcut if you just want a div, you can skip right to class or id definitions.
-            pre
-              code
-                .foobar text text
-                #foobar text text
+          pre
+            code.
+              .foobar text text
+              #foobar text text
           | becomes
-            pre
-              code
-                &lt;div class="foobar"&gt;text text&lt;/div&gt;
-                &lt;div id="foobar"&gt;text text&lt;/div&gt;   
+          pre
+            code.
+              &lt;div class="foobar"&gt;text text&lt;/div&gt;
+              &lt;div id="foobar"&gt;text text&lt;/div&gt;   
           | Text can be added to nodes in two ways.
-            pre
-              code
-                section.foo
-                  div(data-something='foo') this is some text 
-                  div(data-something='bar')
-                   | this is also some text          
+          pre
+            code.
+              section.foo
+                div(data-something='foo') this is some text 
+                div(data-something='bar')
+                 | this is also some text          
           | Lavender knows not to put a closing tag on certain nodes. (we got the list from
           a(href="http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements") here
-            code input(type="text",value="fooooobar")
+          code.
+            input(type="text",value="fooooobar")
           | becomes
-            code &lt;input type="text" value="fooooobar"&gt;
+          code.
+            &lt;input type="text" value="fooooobar"&gt;
         h3#doctype doctype   
           p
             | Do you always forget the syntax for doctype? Lavender exists to solve your first world 
             | problems. Just throw a 
-              code !!!
+            code.
+              !!!
             |  at the top of your layout and you get yourself a nice 
             |       html doctype. Doctypes supported are 
-              code html
+            code.
+              html
             | , 
-              code transitional
+            code.
+              transitional
             | ,      
-              code strict
+            code.
+              strict
             | , 
-              code frameset
+            code.
+              frameset
             | , 
-              code 1.1
+            code.
+              1.1
             | , 
-              code basic
+            code.
+              basic
             |  and      
-              code mobile
+            code.
+              mobile
             | . Here are some pretty examples.  
             p
-              code !!!
+            code.
+              !!!
             |  will default to html, however you can also specify 
-              code !!! html
+            code.
+              !!! html
             | . The word 
-              code doctype
+            code.
+              doctype
             |  works as well!
         h3#concomments Conditional Comments
           p
             | The 
-              code IT
+            code.
+              IT
             | shorthand can be used to generate conditional comments for Internet Explorer. check out 
             a(href="http://www.quirksmode.org/css/condcom.html") this 
             | if you are not familiar with conditional comments.
             pre
-              code
+              code.
                 IE
                   script(src="some script to make IE work")
                 IE lt 7
                   script(src="some script to make super old IE work")
             | becomes
-              pre
-                code
-                  &lt;!--[if IE]&gt;
-                    &lt;script src=&quot;some script to make IE work&quot;&gt;&lt;/script&gt;
-                  &lt;![endif]--&gt;
-                  &lt;!--[if lt IE 7]&gt;
-                    &lt;script src=&quot;some script to make super old IE work&quot;&gt;&lt;/script&gt;
-                  &lt;![endif]--&gt;
+            pre
+              code.
+                &lt;!--[if IE]&gt;
+                  &lt;script src=&quot;some script to make IE work&quot;&gt;&lt;/script&gt;
+                &lt;![endif]--&gt;
+                &lt;!--[if lt IE 7]&gt;
+                  &lt;script src=&quot;some script to make super old IE work&quot;&gt;&lt;/script&gt;
+                &lt;![endif]--&gt;
         h3#variables Variables
           p
             | Lavender views can be passed variables from the parent php application or they can be 
             | defined right in the template.
           p
             | This just assigns a variable without outputting anything to the page.
-              code - some_variable = "this is stored in a variable"
+            code.
+            - some_variable = "this is stored in a variable"
           p
             | Note the
-              code -
+            code.
+              -
             | symbol, which evaluates an expression without outputting. the content of the variable can then
             | later be output using the 
-              code =
+              code.
+                =
             | symbol.
-              pre
-                code
-                   - some_variable = "this is stored in a variable"
+            pre
+              code.
+                 - some_variable = "this is stored in a variable"
 
-                   span.foo= some_variable
+                 span.foo= some_variable
 
-                   span.bar
-                     = some_variable
+                 span.bar
+                   = some_variable
             | becomes
-              pre
-                code
-                  &lt;span class=&quot;foo&quot;&gt;this is stored in a variable&lt;/div&gt;
-                  &lt;span class=&quot;bar&quot;&gt;this is stored in a variable&lt;/div&gt;
+            pre
+              code.
+                &lt;span class=&quot;foo&quot;&gt;this is stored in a variable&lt;/div&gt;
+                &lt;span class=&quot;bar&quot;&gt;this is stored in a variable&lt;/div&gt;
             | arrays too
-              code - some_array = ['foo', 'bar', 'baz']
+            code.
+              - some_array = ['foo', 'bar', 'baz']
             | and associative arrays
-              code - some_array = {key1: 'foo', key2: 'bar', key3: 'baz'} 
+            code.
+              - some_array = {key1: 'foo', key2: 'bar', key3: 'baz'} 
         h3#conditionals Conditionals
           p
             | Markup can be conditionally rendered using the if keyword. Lavender supports all the 
             | conditional operations you know and love:
-                code !, &amp;&amp;, ||, &lt;, &gt;, &lt;=, &gt;=, ==, != 
+            code.
+              !, &amp;&amp;, ||, &lt;, &gt;, &lt;=, &gt;=, ==, != 
             | and does a truthy check against the result.
-              pre
-                code
+            pre
+              code.
                 - some_variable = "this is stored in a variable"
 
                 if some_variable
@@ -280,52 +312,57 @@ body
                   div sadface
           p
             | becomes
-              pre
-                code
-                  &lt;span class=&quot;foo&quot;&gt;this is stored in a variable&lt;/div&gt;
-                  &lt;div&gt;wooooooooo&lt;/div&gt
-              code TRUE
+            pre
+              code.
+                &lt;span class=&quot;foo&quot;&gt;this is stored in a variable&lt;/div&gt;
+                &lt;div&gt;wooooooooo&lt;/div&gt
+            code.
+              TRUE
             | and
-              code FALSE
+            code.
+              FALSE
             | (and
-              code true
+            code.
+              true
             | and
-              code false
+            code.
+              false
             | )
             | are keywords in Lavender, they can be assinged to variables or used in conditionals directly
             | (but if you actually do that then
-              a(href='https://www.destroyallsoftware.com/talks/wat') wat
+            a(href='https://www.destroyallsoftware.com/talks/wat') wat
             | )
-              pre
-                code
-                  - my_variable = TRUE
+            pre
+              code.
+                - my_variable = TRUE
 
-                  if my_variable
-                    div this will show up
+                if my_variable
+                  div this will show up
 
-                  if false
-                    div this will not
+                if false
+                  div this will not
         h3#loops Loops
           p
             | Lavender supports iterating over arrays and associative arrays with the 
-              code each
+            code.
+             each
             | keyword
-              pre
-                code
-                   ul
-                     each value in some_random_array
-                       li= value 
+            pre
+              code.
+                 ul
+                   each value in some_random_array
+                     li= value 
 
-                   ul
-                     each value, key in some_random_array
-                       li(data-key=key)= value 
+                 ul
+                   each value, key in some_random_array
+                     li(data-key=key)= value 
             | You may have noticed how we snuck in using variables for your html attributes there. 
             | You can do that too!
         h3#else Else
           p
             | The else keyword can be used after loops or conditionals.
-              pre
-                code
+            pre
+              code.
                   if FALSE
                   div will not show up
                 else
@@ -340,10 +377,11 @@ body
         h3#math math
           p
             | Math. You can do it. Supported operators are
-              code %, +, -, *, /, (, )
+            code.
+              %, +, -, *, /, (, )
             | .
-              pre
-                code
+            pre
+              code.
                   = 1 + 1 = 
                   = 1 + 1
 
@@ -366,65 +404,66 @@ body
         h3#include Include
           p
             | Partials are a thing.
-              pre
-                code
-                  span stuff and things
+            pre
+              code.
+                span stuff and things
 
-                  div.content
-                    include /path/relative/to/view/directory/somefile
+                div.content
+                  include /path/relative/to/view/directory/somefile
 
-                  div.content
-                    include /path/relative/to/view/directory/somefile with {stuff: "Asdfasdf"}
+                div.content
+                  include /path/relative/to/view/directory/somefile with {stuff: "Asdfasdf"}
         h3#extends Extends
           p
             | Lavender supports block style layout extension. This means that in the parent template
             | you define blocks using the
-              code block
+            code.
+              block
             | keyword. Then in the child template you
-              b only have blocks
+            b only have blocks
             | which override the blocks in the parent template.
           p
             |  so if this was layout.lavender
-              pre
-                code
-                  h1 this is a pretty cool web page
+            pre
+              code.
+                h1 this is a pretty cool web page
 
-                  block header
-                    | you can put some default content in here
-                    | it will be displayed if no child template
-                    | overrides it
+                block header
+                  | you can put some default content in here
+                  | it will be displayed if no child template
+                  | overrides it
 
-                  div.content
-                    block content
-            | and this is the child template...
-              pre
-                code
-                  extends layout
-
-                  block header
-                    div
-                      span
-                        | foo bar baz
-
-
+                div.content
                   block content
-                    | content
-                    | more content
-                    | moar content
+            | and this is the child template...
+            pre
+              code.
+                extends layout
+
+                block header
+                  div
+                    span
+                      | foo bar baz
+
+
+                block content
+                  | content
+                  | more content
+                  | moar content
             | and you were to render the child template, you would get...
-              pre
-                code
-                   &lt;h1&gt;this is a pretty cool web page&lt;/h1&gt;
+            pre
+              code.
+                 &lt;h1&gt;this is a pretty cool web page&lt;/h1&gt;
 
-                   &lt;div&gt;
-                     &lt;span&gt;foo bar baz&lt;/span&gt;
-                   &lt;/div&gt;
+                 &lt;div&gt;
+                   &lt;span&gt;foo bar baz&lt;/span&gt;
+                 &lt;/div&gt;
 
-                   &lt;div class=&quot;content&quot;&gt;
-                     content
-                     more content
-                     moar content
-                   &lt;/div&gt;
+                 &lt;div class=&quot;content&quot;&gt;
+                   content
+                   more content
+                   moar content
+                 &lt;/div&gt;
             | A special case has been added to allow defining variables at the top of your child 
             | templates, these variables can be referenced from the layout to do cool things like 
             | specifying a list of javascript files necessary for a template to work 
@@ -433,13 +472,13 @@ body
         p
           | New lines are added automatically after every html element, if you do not want the newline
           | you can add a
-            code -
+          code -
           | to the node definition like so.
-            pre
-              code
-                p
-                a(href=&quot;/some/place&quot;)- click here for some cool stuff
-                |.
+          pre
+            code.
+              p
+              a(href=&quot;/some/place&quot;)- click here for some cool stuff
+              |.
         | Automagic whitespace management is hard and subject to change.
       h3#filters Filters
         p
@@ -449,8 +488,8 @@ body
           | However, since you have to be able to do some templating logic, we added filters. It is super 
           | easy to add your own filters to Lavender and there are (or will be) plenty in place out of 
           | the box. here is how they work.
-            pre
-              code
+          pre
+            code.
               - myvariable = "some really cool text"
 
               div
@@ -458,8 +497,8 @@ body
                   | i'm gonna filter some stuff. it's gonna be cool. 
                   = myvariable | upper 
           | becomes
-            pre
-              code
+          pre
+            code.
               &lt;div&gt;
                 &lt;span&gt;im gonna filter some stuff, it&apos;ll be cool. SOME REALLY COOL TEXT&lt;/span&gt;
               &lt;/div&gt;
@@ -470,159 +509,218 @@ body
           ul.list-unstyled
             li
               b upper:
-              code  ="string"|upper
+              code.
+                ="string"|upper
               | becomes
-              code STRING
+              code.
+                STRING
             li
               b trim:
-              code  =" string "|trim
+              code.
+                =" string "|trim
               | becomes
-              code string
+              code.
+                string
             li
               b title:
-              code  ="this is a title"|title
+              code.
+                ="this is a title"|title
               | becomes
-              code This Is A Title 
+              code.
+                This Is A Title 
             li
               b split:
-              code  "these are some words"|split(' ')
+              code.
+                "these are some words"|split(' ')
               | becomes the array
-              code  ['these', 'are', 'some', 'words'] 
+              code.
+                ['these', 'are', 'some', 'words'] 
             li
               b sort:
-              code  "these are some words"|split(' ')|sort
+              code.
+                "these are some words"|split(' ')|sort
               | becomes the array
-              code  ['are', 'some', 'these', 'words'] 
+              code.
+                ['are', 'some', 'these', 'words'] 
             li
               b capitalize:
-              code  = "these are some words"|capitalize
+              code.
+                = "these are some words"|capitalize
               | becomes
-              code These are some words 
+              code.
+                These are some words 
             li
               b date:
-              code  = "1396372567"|date
+              code.
+                = "1396372567"|date
               | becomes
-              code 4/1/2014 = "1396372567"|date('Y') 
+              code.
+                4/1/2014 = "1396372567"|date('Y') 
               | becomes
-              code 2014 
+              code.
+                2014 
             li
               b default:
-              code  = []|default('foobar')
+              code.
+                = []|default('foobar')
               | becomes
               code foobar
             li
               b first:
-              code  = ['asdf','qwer']|first
+              code.
+                = ['asdf','qwer']|first
               | becomes
-              code asdf
+              code.
+                asdf
             li
               b join:
-              code  = ['asdf','qwer']|join
+              code.
+                = ['asdf','qwer']|join
               | becomes
-              code asdf qwer = ['asdf','qwer']|join('-')
+              code.
+                asdf qwer = ['asdf','qwer']|join('-')
               | becomes
-              code asdf-qwer
+              code.
+                asdf-qwer
             li
               b last:
-              code  = ['asdf','qwer']|last
+              code.
+                = ['asdf','qwer']|last
               | becomes
-              code qwer = ['asdf','qwer', 'zxcv']|last(2)|join('-')
+              code.
+                qwer = ['asdf','qwer', 'zxcv']|last(2)|join('-')
               | becomes
-              code qwer-zxcv
+              code.
+                qwer-zxcv
             li
               b keys:
-              code  {'asdf': 'foo','qwer': 'bar'}|keys
+              code.
+                {'asdf': 'foo','qwer': 'bar'}|keys
               | becomes the array
-              code  ['asdf', 'qwer']
+              code.
+                ['asdf', 'qwer']
             li
               b length:
-              code  = ['asdf','qwer']|length
+              code.
+                = ['asdf','qwer']|length
               | becomes
-              code 2
+              code.
+                2
             li
               b lower:
-              code  = "FOO BAR"|lower
+              code.
+                = "FOO BAR"|lower
               | becomes
-              code foo bar
+              code.
+                foo bar
             li
               b nl2br:
-              code  = "new\nline"|nl2br
+              code.
+                = "new\nline"|nl2br
               | becomes
-              code new<br>line 
+              code.
+                new<br>line 
             li
               b round:
-              code  = 12345.123|round(2)
+              code.
+                = 12345.123|round(2)
               | becomes
-              code 12345.12
+              code.
+                12345.12
             li
               b merge:
-              code  ['foo', 'bar']|merge(['baz'])
+              code.
+                ['foo', 'bar']|merge(['baz'])
               | becomes the array
-              code ['foo', 'bar', 'baz']
+              code.
+                ['foo', 'bar', 'baz']
             li
               b replace:
-              code  = "foo bar"|replace(' ', '-')
+              code.
+                = "foo bar"|replace(' ', '-')
               | becomes
-              code foo-bar
+              code.
+                foo-bar
             li
               b reverse:
-              code  ['asdf', 'qwer']|reverse
+              code.
+                ['asdf', 'qwer']|reverse
               | becomes the array
-              code ['qwer', 'asdf']
+              code.
+                ['qwer', 'asdf']
             li
               b slice:
-              code  ['foo', 'bar', 'baz']|slice(1, 1)
+              code.
+                ['foo', 'bar', 'baz']|slice(1, 1)
               | becomes the array
-              code ['bar']
+              code.
+                ['bar']
             li
               b number_format:
-              code  = 10000000000.12345|number_format()
+              code.
+                = 10000000000.12345|number_format()
               | becomes
-              code 10,000,000,000 = 10000000000.12345|number_format(2, ',', '.')
+              code.
+                0,000,000,000 = 10000000000.12345|number_format(2, ',', '.')
               | becomes
-              code 10.000.000.000,12
+              code.
+                10.000.000.000,12
             li
               b ceil:
-              code  = 10000000000.12345|ceil
+              code.
+                = 10000000000.12345|ceil
               | becomes
-              code 10000000001
+              code.
+                10000000001
             li
               b floor:
-              code  = 10000000000.12345|floor
+              code.
+                = 10000000000.12345|floor
               | becomes
-              code 10000000000
+              code.
+                10000000000
             li
               b relative:
               | if you had a
-              code timestamp
+              code.
+                timestamp
               | variable
-              code timestamp|relative
+              code.
+                timestamp|relative
               | would return things like 'just now' or 'in 3 days' or
-              code 6 minutes ago
+              code.
+                6 minutes ago
             li
               b contains:
-              code  = ['asdf', 'qwer']|contains('asdf')
+              code.
+                = ['asdf', 'qwer']|contains('asdf')
               | returns TRUE
             li
               b is:
             ul
               li
-                code  = ['asdf', 'qwer']|is('list')
+                code.
+                  = ['asdf', 'qwer']|is('list')
                 | returns TRUE
               li
-                code  = {asdf: 'qwer'}|is('object')
+                code.
+                  = {asdf: 'qwer'}|is('object')
                 | returns TRUE
               li
-                code  = 8|is('number')
+                code.
+                  = 8|is('number')
                 | returns TRUE
               li
-                code  = myVariable|is('My_Class_Name')
+                code.
+                  = myVariable|is('My_Class_Name')
                 | also works
             li
               b json:
-              code  = ['asdf', 'qwer']|json
+              code.
+                = ['asdf', 'qwer']|json
               | returns
-              code "['asdf','qwer']"
+              code.
+                "['asdf','qwer']"
 
 // jQuery Version 1.11.0
 script(src='vendor/twitter/bootstrap/dist/js/jquery-1.11.0.js')
