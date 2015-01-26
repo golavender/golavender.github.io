@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<head><title>Guide - Lavender Templating Engine for PHP</title>
+<meta name="keywords" content="Lavender, Lavender programming language, lavenderlang, lavender-lang">
+<meta name="description" content="A templating engine for PHP, designed to make your life easier.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Quattrocento:400,700">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lily+Script+One">
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body><div role="navigation" class="navbar navbar-default navbar-static-top"><div class="container"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+<div class="navbar-collapse collapse"><ul class="nav navbar-nav"><li><a href="/lavender.html" title="Home">Home</a>
+</li>
+<li><a href="https://github.com/golavender/lavender" title="GitHub">GitHub</a>
+</li>
+<li><a href="https://github.com/daftlabs" title="GitHub">Creators</a>
+</li>
+<li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"> Language Reference <span class="caret"></span>
+</a>
+<ul role="menu" class="dropdown-menu"><li class="active"><a href="/guide.html">Lang Ref Home</a>
+</li>
+<li class="dropdown-header">Installation</li>
+<li><a href="https://github.com/golavender/lavender" title="GitHub">via Composer</a>
+</li>
+<li><a href="/guide.html#github">via GitHub</a>
+</li>
+<li><a href="/guide.html#usage">Usage</a>
+</li>
+<li class="divider"></li>
+<li><a href="/guide.html#langref">Language Reference</a>
+</li>
+</ul>
+</li>
+<li><a href="/about.html">About</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="container"><div class="col-md-3"><div data-spy="affix" data-offset-top="60" data-offset-bottom="200" class="sidebar guide img-rounded"><h3>Navigation</h3>
+<h2>Installation</h2>
+<ul><li><a href="#composer">via Composer</a>
+</li>
+<li><a href="#github">via GitHub</a>
+</li>
+<li><a href="#usage">Usage</a>
+</li>
+</ul>
+<h2>Language Reference</h2>
+<ul><li><a href="#html">html</a>
+</li>
+<li><a href="#doctype">doctype</a>
+</li>
+<li><a href="#comments">comments</a>
+</li>
+<li><a href="#concomments">conditional comments</a>
+</li>
+<li><a href="#variables">variables</a>
+</li>
+<li><a href="#conditionals">conditionals</a>
+</li>
+<li><a href="#loops">loops</a>
+</li>
+<li><a href="#else">else</a>
+</li>
+<li><a href="#math">math</a>
+</li>
+<li><a href="#include">include</a>
+</li>
+<li><a href="#extends">extends</a>
+</li>
+<li><a href="#whitespace">whitespace</a>
+</li>
+<li><a href="#helpers">helpers</a>
+</li>
+<li><a href="#filters">filters</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-8"><div class="guide img-rounded"><h1 class="title">The Lavender Guide</h1>
+<p> Hey! We're here to teach you about Lavender. If you know Jade, you'll find this easier   to pick up. If not, take your time and learn! Yay!</p>
+<h3>Installation <h2 id="composer">via composer</h2>
+<p> first, get yourself some composer. next, you need to make yourself a <code>composer.json</code>
+ , here's an example. <pre><code>{
+  "require": {
+    "lavender/lavender": "*"
+  }
+}
+</code>
+</pre>
+ then run <code>php composer.phar install</code>
+ or <code>composer install</code>
+ depending on how you've installed composer. Once composer has finished it will generate an   autoloader in  <code>vendor/autoload.php</code>
+ which you can  <code>require()</code>
+ from your application's bootstrap process.</p>
+<h2 id="github">via Github</h2>
+<p> Add the lavender submodule with  <code>git submodule add git@github.com:golavender/lavender.git (folder to clone to)</code>
+ and include it with  <code>require "(where you put lavender)/src/Lavender/lavender.php</code>
+</p>
+</h3>
+<h3 id="usage">Usage</h3>
+<p> Once you have installed and included lavender, the only required configuration is to tell  lavender where the views directory is. <pre><code>Lavender::config(array(
+/*
+ * required - path to views directory
+ */
+'view_dir'       => String,
+/*
+* optional - defaults to "lavender"
+*/
+//'file_extension' => String,
+/*
+* optional - defaults to TRUE
+*
+* renders a debugging error page instead of throwing an exception.
+* in production you should disable this and use a 500 page.
+*/
+//'handle_errors'  => Boolean, 
+));
+</code>
+</pre>
+ once it's been rendered, it's as easy as... <pre><code>$output = Lavender::view('some_template')->compile();
+// or if you need to pass data into the template (probably the case)
+$output = Lavender::view('some_template')->compile(array(
+  'data'      => 'some data that the template will use',
+  'more_data' => "moar data",
+));
+</code>
+</pre>
+</p>
+<h3 id="langref">Language Reference <h2 id="html">html</h2>
+<p><pre><code>section#some_id.foo.bar(attribute1='foo',attribute2='bar')
+</code>
+</pre>
+ becomes <pre><code>&lt;section id="some_id" class="foo bar" attribute1="foo" attribute2="bar"&gt;&lt;/section&gt;
+</code>
+</pre>
+ Child nodes are indented below their parent <pre><code>section.foo
+ div(data-something='foo') 
+ div(data-something='bar')
+</code>
+</pre>
+ becomes <pre><code>&lt;section class="foo"&gt;
+  &lt;div data-something="foo"&gt; &lt;/div&gt;
+  &lt;div data-something="bar"&gt; &lt;/div&gt;
+&lt;/section&gt;
+</code>
+</pre>
+ There is a shortcut if you just want a div, you can skip right to class or id definitions. <pre><code>.foobar text text
+#foobar text text
+</code>
+</pre>
+ becomes <pre><code>&lt;div class="foobar"&gt;text text&lt;/div&gt;
+&lt;div id="foobar"&gt;text text&lt;/div&gt;   
+</code>
+</pre>
+ Text can be added to nodes in two ways. <pre><code>section.foo
+  div(data-something='foo') this is some text 
+  div(data-something='bar')
+    this is also some text          
+</code>
+</pre>
+ Lavender knows not to put a closing tag on certain nodes. (we got the list from <a href="http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements">here</a>
+<code>input(type="text",value="fooooobar")</code>
+ becomes <code>&lt;input type="text" value="fooooobar"&gt;</code>
+</p>
+<h2 id="doctype">doctype</h2>
+<p> Do you always forget the syntax for doctype? Lavender exists to solve your first world   problems. Just throw a  <code>!!!</code>
+  at the top of your layout and you get yourself a nice         html doctype. Doctypes supported are  <code>html</code>
+ ,  <code>transitional</code>
+ ,       <code>strict</code>
+ ,  <code>frameset</code>
+ ,  <code>1.1</code>
+ ,  <code>basic</code>
+  and       <code>mobile</code>
+ . Here are some pretty examples.   <p></p>
+<code>!!!</code>
+  will default to html, however you can also specify  <code>!!! html</code>
+ . The word  <code>doctype</code>
+  works as well!</p>
+</h3>
+<h2 id="comments">Comments</h2>
+<p> comments are a thing! <pre><code>// this is an html comment. it will be rendered to the page
+//- this is a lavender comment. it will not be rendered
+</code>
+</pre>
+</p>
+<h2 id="concomments">Conditional Comments</h2>
+<p> The  <code>IT</code>
+ shorthand can be used to generate conditional comments for Internet Explorer. check out  <a href="http://www.quirksmode.org/css/condcom.html">this</a>
+ if you are not familiar with conditional comments. <pre><code>IE
+  script(src="some script to make IE work")
+IE lt 7
+  script(src="some script to make super old IE work")
+</code>
+</pre>
+ becomes <pre><code>&lt;!--[if IE]&gt;
+  &lt;script src=&quot;some script to make IE work&quot;&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+&lt;!--[if lt IE 7]&gt;
+  &lt;script src=&quot;some script to make super old IE work&quot;&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+</code>
+</pre>
+<h3 id="variables">Variables</h3>
+<p> Lavender views can be passed variables from the parent php application or they can be   defined right in the template.</p>
+<p> This just assigns a variable without outputting anything to the page. <pre><code>- some_variable = "this is stored in a variable"
+</code>
+</pre>
+</p>
+<p> Note the <code>-</code>
+ symbol, which evaluates an expression without outputting. the content of the variable can then  later be output using the   symbol. <pre><code>- some_variable = "this is stored in a variable"
+span.foo= some_variable
+span.bar
+  = some_variable
+</code>
+</pre>
+ becomes <pre><code>&lt;span class=&quot;foo&quot;&gt;this is stored in a variable&lt;/div&gt;
+&lt;span class=&quot;bar&quot;&gt;this is stored in a variable&lt;/div&gt;
+</code>
+</pre>
+ arrays too <code>- some_array = ['foo', 'bar', 'baz']</code>
+ and associative arrays <code>- some_array = {key1: 'foo', key2: 'bar', key3: 'baz'}</code>
+</p>
+<h3 id="conditionals">Conditionals</h3>
+<p> Markup can be conditionally rendered using the if keyword. Lavender supports all the   conditional operations you know and love: <code>!, &amp;&amp;, ||, &lt;, &gt;, &lt;=, &gt;=, ==, != 
+</code>
+ and does a truthy check against the result. <pre><code>- some_variable = "this is stored in a variable"
+if some_variable
+  span.foo= some_variable
+if some_variable_that_doesnt_exist
+  span.foo this won't be rendered
+if FALSE
+  div this isn't rendered
+elseif FALSE
+  div still not rendered
+elseif TRUE
+  div wooooooooo
+else
+  div sadface
+</code>
+</pre>
+</p>
+<p> becomes <pre><code>&lt;span class=&quot;foo&quot;&gt;this is stored in a variable&lt;/div&gt;
+&lt;div&gt;wooooooooo&lt;/div&gt
+</code>
+</pre>
+<code>TRUE</code>
+ and <code>FALSE</code>
+ (and <code>true</code>
+ and <code>false</code>
+ )  are keywords in Lavender, they can be assinged to variables or used in conditionals directly  (but if you actually do that then <a href="https://www.destroyallsoftware.com/talks/wat">wat</a>
+ ) <pre><code>- my_variable = TRUE
+if my_variable
+  div this will show up
+if false
+  div this will not
+</code>
+</pre>
+</p>
+<h2 id="loops">Loops</h2>
+<p> Lavender supports iterating over arrays and associative arrays with the  <code>each</code>
+ keyword <pre><code>ul
+  each value in some_random_array
+    li= value 
+ul
+  each value, key in some_random_array
+    li(data-key=key)= value 
+</code>
+</pre>
+ You may have noticed how we snuck in using variables for your html attributes there.   You can do that too!</p>
+<h2 id="else">Else</h2>
+<p> The else keyword can be used after loops or conditionals. <pre><code>  if FALSE
+  div will not show up
+else
+  div will show up
+- empty_array = []
+each value in empty_array
+  div nothing to see here
+else
+  div empty array!
+</code>
+</pre>
+</p>
+<h2 id="math">math</h2>
+<p> Math. You can do it. Supported operators are <code>%, +, -, *, /, (, )</code>
+ . <pre><code>  = 1 + 1 = 
+  = 1 + 1
+div
+   2 - 3 = 
+  = 2 - 3
+div
+   2 * 3 = 
+  = 2 * 3
+div
+   10 / 5 = 
+  = 10 / 5
+ul
+  each value, key in some_random_array
+    if key % 2 == 0
+      li(data-key=key)= value 
+</code>
+</pre>
+</p>
+<h2 id="include">Include</h2>
+<p> Partials are a thing. <pre><code>span stuff and things
+div.content
+  include /path/relative/to/view/directory/somefile
+div.content
+  include /path/relative/to/view/directory/somefile with {stuff: "Asdfasdf"}
+</code>
+</pre>
+</p>
+<h2 id="extends">Extends</h2>
+<p> Lavender supports block style layout extension. This means that in the parent template  you define blocks using the <code>block</code>
+ keyword. Then in the child template you <b>only have blocks</b>
+ which override the blocks in the parent template.</p>
+<p>  so if this was layout.lavender <pre><code>h1 this is a pretty cool web page
+block header
+   you can put some default content in here
+   it will be displayed if no child template
+   overrides it
+div.content
+  block content
+</code>
+</pre>
+ and this is the child template... <pre><code>extends layout
+block header
+  div
+    span
+       foo bar baz
+block content
+   content
+   more content
+   moar content
+</code>
+</pre>
+ and you were to render the child template, you would get... <pre><code>&lt;h1&gt;this is a pretty cool web page&lt;/h1&gt;
+&lt;div&gt;
+  &lt;span&gt;foo bar baz&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;content&quot;&gt;
+  content
+  more content
+  moar content
+&lt;/div&gt;
+</code>
+</pre>
+ A special case has been added to allow defining variables at the top of your child   templates, these variables can be referenced from the layout to do cool things like   specifying a list of javascript files necessary for a template to work   or setting the page title.</p>
+</p>
+<h2 id="whitespace">Whitespace</h2>
+<p> New lines are added automatically after every html element, if you do not want the newline  you can add a <code>-</code>
+ to the node definition like so.</p>
+<pre><code>p
+a(href=&quot;/some/place&quot;)- click here for some cool stuff
+.
+</code>
+</pre>
+ Automagic whitespace management is hard and subject to change. <h2 id="helpers">Helpers</h2>
+<p> Helpers are used to streamline the process even more. A constant helper... <pre><code>class Lavender_Helper_Constant
+{
+  public function execute($string)
+  {
+    return constant($string);
+  }
+}
+Lavender::register_helper('constant', 'Lavender_Helper_Constant');
+</code>
+</pre>
+ and a date helper... <pre><code>class Lavender_Helper_Date
+{
+  public function execute($format, $timestamp = NULL)
+  {
+    if ($timestamp) {
+      return date($format, $timestamp);
+    }
+    else {
+      return date($format);
+    }
+  }
+}
+Lavender::register_helper('date', 'Lavender_Helper_Date');
+</code>
+</pre>
+ are both available for use.</p>
+<h3 id="filters">Filters</h3>
+<p> Programatic expressions in Lavender are a little limited, none of your favorite php   functions are available for modifying the template data. This is by design, we do not think   there should be a ton of logic in templates when that logic could be in controllers or models.   However, since you have to be able to do some templating logic, we added filters. It is super   easy to add your own filters to Lavender and there are (or will be) plenty in place out of   the box. here is how they work. <pre><code>- myvariable = "some really cool text"
+div
+  span
+     i'm gonna filter some stuff. it's gonna be cool. 
+    = myvariable | upper 
+</code>
+</pre>
+ becomes <pre><code>&lt;div&gt;
+  &lt;span&gt;im gonna filter some stuff, it&apos;ll be cool. SOME REALLY COOL TEXT&lt;/span&gt;
+&lt;/div&gt;
+</code>
+</pre>
+ Profound right? Not that we invented this, we copied the idea from  <a href="http://twig.sensiolabs.org/">twig</a>
+ . The filters Lavender comes with are:</p>
+<p><ul class="list-unstyled"><li><b>upper:</b>
+<code>="string"|upper</code>
+ becomes <code>STRING</code>
+</li>
+<li><b>trim:</b>
+<code>=" string "|trim</code>
+ becomes <code>string</code>
+</li>
+<li><b>title:</b>
+<code>="this is a title"|title</code>
+ becomes <code>This Is A Title</code>
+</li>
+<li><b>split:</b>
+<code>"these are some words"|split(' ')</code>
+ becomes the array <code>['these', 'are', 'some', 'words']</code>
+</li>
+<li><b>sort:</b>
+<code>"these are some words"|split(' ')|sort</code>
+ becomes the array <code>['are', 'some', 'these', 'words']</code>
+</li>
+<li><b>capitalize:</b>
+<code>= "these are some words"|capitalize</code>
+ becomes <code>These are some words</code>
+</li>
+<li><b>date:</b>
+<code>= "1396372567"|date</code>
+ becomes <code>4/1/2014 = "1396372567"|date('Y')</code>
+ becomes <code>2014</code>
+</li>
+<li><b>default:</b>
+<code>= []|default('foobar')</code>
+ becomes <code>foobar</code>
+</li>
+<li><b>first:</b>
+<code>= ['asdf','qwer']|first</code>
+ becomes <code>asdf</code>
+</li>
+<li><b>join:</b>
+<code>= ['asdf','qwer']|join</code>
+ becomes <code>asdf qwer = ['asdf','qwer']|join('-')</code>
+ becomes <code>asdf-qwer</code>
+</li>
+<li><b>last:</b>
+<code>= ['asdf','qwer']|last</code>
+ becomes <code>qwer = ['asdf','qwer', 'zxcv']|last(2)|join('-')</code>
+ becomes <code>qwer-zxcv</code>
+</li>
+<li><b>keys:</b>
+<code>{'asdf': 'foo','qwer': 'bar'}|keys</code>
+ becomes the array <code>['asdf', 'qwer']</code>
+</li>
+<li><b>length:</b>
+<code>= ['asdf','qwer']|length</code>
+ becomes <code>2</code>
+</li>
+<li><b>lower:</b>
+<code>= "FOO BAR"|lower</code>
+ becomes <code>foo bar</code>
+</li>
+<li><b>nl2br:</b>
+<code>= "new&bsol;nline"|nl2br</code>
+ becomes <code>new&lt;br&gt;line</code>
+</li>
+<li><b>round:</b>
+<code>= 12345.123|round(2)</code>
+ becomes <code>12345.12</code>
+</li>
+<li><b>merge:</b>
+<code>['foo', 'bar']|merge(['baz'])</code>
+ becomes the array <code>['foo', 'bar', 'baz']</code>
+</li>
+<li><b>replace:</b>
+<code>= "foo bar"|replace(' ', '-')</code>
+ becomes <code>foo-bar</code>
+</li>
+<li><b>reverse:</b>
+<code>['asdf', 'qwer']|reverse</code>
+ becomes the array <code>['qwer', 'asdf']</code>
+</li>
+<li><b>slice:</b>
+<code>['foo', 'bar', 'baz']|slice(1, 1)</code>
+ becomes the array <code>['bar']</code>
+</li>
+<li><b>number_format:</b>
+<code>= 10000000000.12345|number_format()</code>
+ becomes <code>0,000,000,000 = 10000000000.12345|number_format(2, ',', '.')</code>
+ becomes <code>10.000.000.000,12</code>
+</li>
+<li><b>ceil:</b>
+<code>= 10000000000.12345|ceil</code>
+ becomes <code>10000000001</code>
+</li>
+<li><b>floor:</b>
+<code>= 10000000000.12345|floor</code>
+ becomes <code>10000000000</code>
+</li>
+<li><b>relative:</b>
+ if you had a <code>timestamp</code>
+ variable <code>timestamp|relative</code>
+ would return things like 'just now' or 'in 3 days' or <code>6 minutes ago</code>
+</li>
+<li><b>contains:</b>
+<code>= ['asdf', 'qwer']|contains('asdf')</code>
+ returns TRUE</li>
+<li><b>is:</b>
+</li>
+<ul><li><code>= ['asdf', 'qwer']|is('list')</code>
+ returns TRUE</li>
+<li><code>= {asdf: 'qwer'}|is('object')</code>
+ returns TRUE</li>
+<li><code>= 8|is('number')</code>
+ returns TRUE</li>
+<li><code>= myVariable|is('My_Class_Name')</code>
+ also works</li>
+</ul>
+<li><b>json:</b>
+<code>= ['asdf', 'qwer']|json</code>
+ returns <code>"['asdf','qwer']"</code>
+</li>
+<li><b>round:</b>
+<code>3.6|round</code>
+ becomes <code>4</code>
+</li>
+<li><b>floor:</b>
+<code>3.14|floor</code>
+ becomes <code>3</code>
+</li>
+<li><b>chunk:</b>
+<code>'foo, bar, baz, qux'| chunk 2</code>
+ becomes <code>'foo,bar' 'baz, qux'</code>
+</li>
+<li><b>range:</b>
+<code>5| range 10</code>
+ becomes <code>5, 6, 7, 8, 9, 10</code>
+</li>
+</ul>
+</p>
+</div>
+</div>
+</div>
+<footer><div class="footer"><h6>Lavender is supported and created by Daft Labs. Enjoy!</h6>
+</div>
+</footer>
+</body>
