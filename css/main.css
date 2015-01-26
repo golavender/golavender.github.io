@@ -141,7 +141,6 @@ code {
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
-/* Button Qualities */
 .btn-home { 
   color: #dad1d9; 
   background-color: rgba(66,56,66,.8);  
