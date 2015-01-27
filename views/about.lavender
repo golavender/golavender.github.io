@@ -83,6 +83,6 @@ body
             | cheese and biscuits bavarian bergkase jarlsberg edam camembert de normandie. Danish fontina 
             | bocconcini halloumi caerphilly stinking bishop edam cheese and wine cheese slices. Port-salut 
             | brie say cheese croque monsieur.
-  footer
-    .footer
+  footer.footer
+    .container-fluid
       h6 Lavender is supported and created by Daft Labs. Enjoy!

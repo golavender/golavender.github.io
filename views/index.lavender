@@ -14,94 +14,94 @@ head
   script(src='https://code.jquery.com/jquery-1.11.2.min.js')
   script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js")
   script(src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
-body  
-  .container.blip
-    .row
-      .col-md-2
-        img.img-responsive(src='http://i.imgur.com/Cc99kpg.png')        
-      .col-md-6.maintitle
-        h1 Lavender Templating Engine for PHP
-        h4 Why? Because why not.
-      .col-md-4
-        pre
-          code.
-              h1 cool title bro.
+body 
+    .container.blip
+      .row
+        .col-md-2
+          img.img-responsive(src='http://i.imgur.com/Cc99kpg.png')        
+        .col-md-6.maintitle
+          h1 Lavender Templating Engine for PHP
+          h4 Why? Because why not.
+        .col-md-4
+          pre
+            code.
+                h1 cool title bro.
 
-                block header
-                  | We're gonna put
-                  | CodeMirror here so you can understand
-                  | how awesome this really is!
+                  block header
+                    | We're gonna put
+                    | CodeMirror here so you can understand
+                    | how awesome this really is!
 
-                div.content
-                  block content        
-  .nav
-    .navbar.navbar-default.navbar-static.spaaace(
-      data-spy="affix", 
-      data-offset-top="200",
-      data-offset-bottom="200"
-      )
-      .container-fluid
-        a.navbar-toggle(data-toggle='collapse', data-target='.navbar-collapse')
-          i.fa.fa-bars.fa-2x
-        .navbar-collapse.collapse
-          ul.nav.navbar-nav
-            li
-              a(href='https://github.com/golavender/lavender/archive/master.zip', role='button') Download
-            li
-              a(href='/guide.html', role='button') Language Reference
-            li
-              a(href='https://github.com/daftlabs', role='button') Creators
-            li
-              a(href='/about.html', role='button') About
-  .container-fluid.main
-    .row.info
-      .col-md-2.col-md-offset-2
-        h3 What is it (Other Than a Colour?)
-      .col-md-5.col-md-offset-1
-        p
-          | Lavender is loosely based off of
-          a(href='http://jade-lang.com/') Jade
-          | , created by the
-          | founders of the Daft Labs team to bring peace and order to their office.
-        p
-          | Easy to dive in and use, so you&#39;ll have more time to spend on other projects than
-          | checking syntax.       
-  .container.whowhatwhy
-    .row.info
-      .col-md-3.col-md-offset-1
-          h3 Lavender Usage
-          img.img-responsive.img-thumbnail(src='http://www.fillmurray.com/g/150/150')
-          img.img-responsive.img-thumbnail(src='http://www.fillmurray.com/g/150/150')
-          img.img-responsive.img-thumbnail(src='http://www.fillmurray.com/g/150/150')
-      .col-md-7
-        .col-md-5
-          h3 Why?
+                  div.content
+                    block content        
+    .nav
+      .navbar.navbar-default.navbar-static.spaaace(
+        data-spy="affix", 
+        data-offset-top="200",
+        data-offset-bottom="200"
+        )
+        .container-fluid
+          a.navbar-toggle(data-toggle='collapse', data-target='.navbar-collapse')
+            i.fa.fa-bars.fa-2x
+          .navbar-collapse.collapse
+            ul.nav.navbar-nav
+              li
+                a(href='https://github.com/golavender/lavender/archive/master.zip', role='button') Download
+              li
+                a(href='/guide.html', role='button') Language Reference
+              li
+                a(href='https://github.com/daftlabs', role='button') Creators
+              li
+                a(href='/about.html', role='button') About
+    .container-fluid.main
+      .row.info
+        .col-md-2.col-md-offset-2
+          h3 What is it (Other Than a Colour?)
+        .col-md-5.col-md-offset-1
           p
-            | Cheese strings say cheese feta. When the cheese comes out everybody's happy queso halloumi 
-            | parmesan who moved my cheese smelly cheese edam when the cheese comes out everybody's happy.
-            | Rubber cheese cheesy grin cheese triangles boursin chalk and cheese parmesan st. agur blue 
-            | cheese fondue. Cheese slices gouda queso manchego jarlsberg mozzarella taleggio fondue. 
-        .col-md-3
-            h3 News!
-            ul
-              li I'm
-              li gonna
-              li be
-              li some
-              li boring
-              li news list
-      .col-md-6
-            h3 How to Start?
-            p.special
-              | Manchego croque monsieur cheeseburger. Brie roquefort monterey jack taleggio squirty cheese
-              | cream cheese feta hard cheese. Cheddar babybel port-salut rubber cheese everyone loves 
-              | cheddar roquefort cheeseburger. Melted cheese parmesan.                     
-  a(href='https://github.com/golavender/lavender')
-    img(style='position: absolute; top: 0; right: 0; border: 0;', 
-     src='http://tinyurl.com/kv8nu28',
-     alt='Fork me on GitHub',
-     data-canonical-src='https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png')
-  footer
-    .footer
-      .pull-left
-        h6 Lavender is supported and created by Daft Labs. Enjoy!
+            | Lavender is loosely based off of
+            a(href='http://jade-lang.com/') Jade
+            | , created by the
+            | founders of the Daft Labs team to bring peace and order to their office.
+          p
+            | Easy to dive in and use, so you&#39;ll have more time to spend on other projects than
+            | checking syntax.       
+    .container.whowhatwhy
+      .row.info
+        .col-md-3.col-md-offset-1
+            h3 Lavender Usage
+            img.img-responsive.img-thumbnail(src='http://www.fillmurray.com/g/150/150')
+            img.img-responsive.img-thumbnail(src='http://www.fillmurray.com/g/150/150')
+            img.img-responsive.img-thumbnail(src='http://www.fillmurray.com/g/150/150')
+        .col-md-7
+          .col-md-5
+            h3 Why?
+            p
+              | Cheese strings say cheese feta. When the cheese comes out everybody's happy queso halloumi 
+              | parmesan who moved my cheese smelly cheese edam when the cheese comes out everybody's happy.
+              | Rubber cheese cheesy grin cheese triangles boursin chalk and cheese parmesan st. agur blue 
+              | cheese fondue. Cheese slices gouda queso manchego jarlsberg mozzarella taleggio fondue. 
+          .col-md-3
+              h3 News!
+              ul
+                li I'm
+                li gonna
+                li be
+                li some
+                li boring
+                li news list
+        .col-md-6
+              h3 How to Start?
+              p.special
+                | Manchego croque monsieur cheeseburger. Brie roquefort monterey jack taleggio squirty cheese
+                | cream cheese feta hard cheese. Cheddar babybel port-salut rubber cheese everyone loves 
+                | cheddar roquefort cheeseburger. Melted cheese parmesan.                     
+    a(href='https://github.com/golavender/lavender')
+      img(style='position: absolute; top: 0; right: 0; border: 0;', 
+       src='http://tinyurl.com/kv8nu28',
+       alt='Fork me on GitHub',
+       data-canonical-src='https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png')
+
+  footer.footer
+    .container-fluid
+      h6 Lavender is supported and created by Daft Labs. Enjoy!
