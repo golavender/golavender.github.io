@@ -26,7 +26,7 @@ body
       .navbar-collapse.collapse
         ul.nav.navbar-nav
           li
-            a(href="/lavender.html", title="Home") Home
+            a(href="/index.html", title="Home") Home
           li
             a(href="https://github.com/golavender/lavender", title="GitHub") GitHub
           li
@@ -105,7 +105,9 @@ body
         h3 Installation
           h2#composer via composer
           p
-            | first, get yourself some composer. next, you need to make yourself a
+            | first, get yourself some 
+            a(href="https://getcomposer.org/doc/00-intro.md#installation-nix") composer. 
+            | next, you need to make yourself a
             code composer.json
             | , here's an example.
             pre
