@@ -26,18 +26,18 @@ body
       .navbar-collapse.collapse
         ul.nav.navbar-nav
           li
-            a(href="index.html", title="Home") Home
+            a(href="/index.html", title="Home") Home
           li
             a(href="https://github.com/golavender/lavender", title="GitHub") GitHub
           li
             a(href="https://github.com/daftlabs", title="GitHub") Creators
           li.dropdown
             a.dropdown-toggle(href='#', data-toggle='dropdown')
-              | Language Reference
+              | Guide
               span.caret
             ul.dropdown-menu(role='menu')
               li.active
-                a(href='guide.html') Lang Ref Home
+                a(href='/guide.html') Guide Home
               li.dropdown-header Installation
               li
                 a(href="/guide.html#composer", title="GitHub") via Composer
