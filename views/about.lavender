@@ -24,7 +24,7 @@ body
       .navbar-collapse.collapse
         ul.nav.navbar-nav
           li
-            a(href="/index.html", title="Home") Home
+            a(href="index.html", title="Home") Home
           li
             a(href="https://github.com/golavender/lavender", title="GitHub") GitHub
           li
@@ -38,16 +38,16 @@ body
                 a(href='#') Guide Home
               li.dropdown-header Installation
               li
-                a(href="https://github.com/golavender/lavender", title="GitHub") via Composer
+                a(href="/guide.html#composer", title="GitHub") via Composer
               li
-                a(href='#') via GitHub
+                a(href='/guide.html#github') via GitHub
               li
-                a(href='#') Usage
+                a(href='/guide.html#usage') Usage
               li.divider
               li
-                a(href='#') Language Reference
+                a(href='/guide.html#langref') Language Reference
           li.active
-            a(href="/about.html") About
+            a(href="about.html") About
   div
   .container
     .row
