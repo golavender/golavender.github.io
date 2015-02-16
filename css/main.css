@@ -1,12 +1,18 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   background-image: url('https://ununsplash.imgix.net/photo-1415045384817-2f9cf7f2ed79?q=75&fm=jpg&s=a0d8ebf44a449c7855ca4128e914a7c5');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   font-family: 'Quattrocento', sans-serif;
+  margin-bottom: 75px;
 }
 
 .guide {
@@ -97,48 +103,25 @@ h4 {
   float: none;
 }
 
-.fluff {
-  padding-left: 100px;
-}
-
 .header {
   font-size: 80%;
   font-weight: bold;
 }
 
-.footer {
-  background:rgb(66,56,66);
-  color: rgb(230,230,250);
-  overflow:auto;
-  padding-top: 5px;
-  padding-left: 25px;
-  height: 40px;
-}
-
-.footer .pull-right>a>i {
-  color: rgb(230,230,250);
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.navbar-right {
-  padding-right: 5px;
-}
-
 pre {
-    white-space: pre-wrap;       /* CSS 3 */
-    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-    white-space: -pre-wrap;      /* Opera 4-6 */
-    white-space: -o-pre-wrap;    /* Opera 7 */
-    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
 }
 
 code {
-    white-space: pre-wrap;       /* CSS 3 */
-    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-    white-space: -pre-wrap;      /* Opera 4-6 */
-    white-space: -o-pre-wrap;    /* Opera 7 */
-    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
 }
 
 .btn-home { 
@@ -237,4 +220,13 @@ header {
 
 .affix-top {
   position: static;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(81,69,76);
+  color: #776167;
+  padding-top: 5px;
 }

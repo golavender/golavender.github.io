@@ -724,6 +724,6 @@ body
               code 5| range 10
               | becomes
               code 5, 6, 7, 8, 9, 10
-  footer
-    .footer
+  footer.footer
+    .container-fluid
       h6 Lavender is supported and created by Daft Labs. Enjoy!
