@@ -35,17 +35,17 @@ body
               span.caret
             ul.dropdown-menu(role='menu')
               li
-                a(href='#') Guide Home
+                a(href='/guide.html') Guide Home
               li.dropdown-header Installation
               li
-                a(href="https://github.com/golavender/lavender", title="GitHub") via Composer
+                a(href="/guide.html#composer", title="GitHub") via Composer
               li
-                a(href='#') via GitHub
+                a(href='/guide.html#github') via GitHub
               li
-                a(href='#') Usage
+                a(href='/guide.html#usage') Usage
               li.divider
               li
-                a(href='#') Language Reference
+                a(href='/guide.html#langref') Language Reference
           li.active
             a(href="/about.html") About
   div
@@ -83,6 +83,6 @@ body
             | cheese and biscuits bavarian bergkase jarlsberg edam camembert de normandie. Danish fontina 
             | bocconcini halloumi caerphilly stinking bishop edam cheese and wine cheese slices. Port-salut 
             | brie say cheese croque monsieur.
-  footer.footer
-    .container-fluid
+  footer
+    .footer
       h6 Lavender is supported and created by Daft Labs. Enjoy!
