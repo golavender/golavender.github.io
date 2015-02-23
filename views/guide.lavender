@@ -26,21 +26,21 @@ body
       .navbar-collapse.collapse
         ul.nav.navbar-nav
           li
-            a(href="/lavender.html", title="Home") Home
+            a(href="/index.html", title="Home") Home
           li
             a(href="https://github.com/golavender/lavender", title="GitHub") GitHub
           li
             a(href="https://github.com/daftlabs", title="GitHub") Creators
           li.dropdown
             a.dropdown-toggle(href='#', data-toggle='dropdown')
-              | Language Reference
+              | Guide
               span.caret
             ul.dropdown-menu(role='menu')
               li.active
-                a(href='/guide.html') Lang Ref Home
+                a(href='/guide.html') Guide Home
               li.dropdown-header Installation
               li
-                a(href="https://github.com/golavender/lavender", title="GitHub") via Composer
+                a(href="/guide.html#composer", title="GitHub") via Composer
               li
                 a(href='/guide.html#github') via GitHub
               li
@@ -105,7 +105,9 @@ body
         h3 Installation
           h2#composer via composer
           p
-            | first, get yourself some composer. next, you need to make yourself a
+            | first, get yourself some 
+            a(href="https://getcomposer.org/doc/00-intro.md#installation-nix") composer. 
+            | next, you need to make yourself a
             code composer.json
             | , here's an example.
             pre
@@ -722,6 +724,6 @@ body
               code 5| range 10
               | becomes
               code 5, 6, 7, 8, 9, 10
-  footer.footer
-    .container-fluid
+  footer
+    .footer
       h6 Lavender is supported and created by Daft Labs. Enjoy!

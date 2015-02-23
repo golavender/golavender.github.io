@@ -44,7 +44,7 @@ body {
 }
 
 @media (max-width: 990px){
-  .title {
+  .maintitle {
     margin-left: 0px;
     margin-top: 0px;
   }
