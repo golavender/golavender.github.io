@@ -1,7 +1,8 @@
 {
-  "name": "thing",
+  "name": "golavender",
   "version": "0.1.0",
-  "devDependencies": {
+  "main": "Gruntfile.js",
+  "dependencies": {
     "grunt": "~0.4.5",
     "grunt-exec": "*",
     "grunt-contrib-watch": "*"
