@@ -66,7 +66,6 @@ body
                 a(href='/guide.html#langref') Language Reference
           li.disabled
             a(href="/about.html") About
-  div
   .container
     .row
       .col-md-8.col-md-offset-2.about.img-rounded

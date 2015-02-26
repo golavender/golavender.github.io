@@ -1,0 +1,7 @@
+{
+  "run_list": [ "recipe[golavender]" ],
+  "mysql": {
+    "server_debian_password": "",
+    "server_repl_password": ""
+  }
+}
