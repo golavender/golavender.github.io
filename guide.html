@@ -3,12 +3,30 @@
 <meta name="keywords" content="Lavender, Lavender programming language, lavenderlang, lavender-lang">
 <meta name="description" content="A templating engine for PHP, designed to make your life easier.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/img/favicons/favicon-194x194.png" sizes="194x194">
+<link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/img/favicons/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/img/favicons/manifest.json">
+<meta name="msapplication-TileColor" content="#cdb4cc">
+<meta name="msapplication-TileImage" content="/img/favicons/mstile-144x144.png">
+<meta name="theme-color" content="#796878">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,700">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Special+Elite">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700">
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Quattrocento:400,700">
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lily+Script+One">
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
@@ -19,18 +37,18 @@
 <span class="icon-bar"></span>
 </button>
 </div>
-<div class="navbar-collapse collapse"><ul class="nav navbar-nav"><li><a href="/lavender.html" title="Home">Home</a>
+<div class="navbar-collapse collapse"><ul class="nav navbar-nav"><li><a href="/index.html" title="Home">Home</a>
 </li>
 <li><a href="https://github.com/golavender/lavender" title="GitHub">GitHub</a>
 </li>
 <li><a href="https://github.com/daftlabs" title="GitHub">Creators</a>
 </li>
-<li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"> Language Reference <span class="caret"></span>
+<li class="dropdown active"><a href="#" data-toggle="dropdown" class="dropdown-toggle"> Guide <span class="caret"></span>
 </a>
-<ul role="menu" class="dropdown-menu"><li class="active"><a href="/guide.html">Lang Ref Home</a>
+<ul role="menu" class="dropdown-menu"><li class="active"><a href="/guide.html">Guide Home</a>
 </li>
 <li class="dropdown-header">Installation</li>
-<li><a href="https://github.com/golavender/lavender" title="GitHub">via Composer</a>
+<li><a href="/guide.html#composer" title="GitHub">via Composer</a>
 </li>
 <li><a href="/guide.html#github">via GitHub</a>
 </li>
@@ -91,7 +109,8 @@
 <div class="col-md-8"><div class="guide img-rounded"><h1 class="title">The Lavender Guide</h1>
 <p> Hey! We're here to teach you about Lavender. If you know Jade, you'll find this easier   to pick up. If not, take your time and learn! Yay!</p>
 <h3>Installation <h2 id="composer">via composer</h2>
-<p> first, get yourself some composer. next, you need to make yourself a <code>composer.json</code>
+<p> First, get yourself some  <a href="https://getcomposer.org/doc/00-intro.md#installation-nix">composer.</a>
+  Next, you need to make yourself a <code>composer.json</code>
  , here's an example. <pre><code>{
   "require": {
     "lavender/lavender": "*"
@@ -229,7 +248,7 @@ span.bar
 &lt;span class=&quot;bar&quot;&gt;this is stored in a variable&lt;/div&gt;
 </code>
 </pre>
- arrays too <code>- some_array = ['foo', 'bar', 'baz']</code>
+ Arrays too <code>- some_array = ['foo', 'bar', 'baz']</code>
  and associative arrays <code>- some_array = {key1: 'foo', key2: 'bar', key3: 'baz'}</code>
 </p>
 <h3 id="conditionals">Conditionals</h3>
@@ -325,7 +344,7 @@ div.content
 <p> Lavender supports block style layout extension. This means that in the parent template  you define blocks using the <code>block</code>
  keyword. Then in the child template you <b>only have blocks</b>
  which override the blocks in the parent template.</p>
-<p>  so if this was layout.lavender <pre><code>h1 this is a pretty cool web page
+<p>  So if this was layout.lavender.. <pre><code>h1 this is a pretty cool web page
 block header
    you can put some default content in here
    it will be displayed if no child template
@@ -334,7 +353,7 @@ div.content
   block content
 </code>
 </pre>
- and this is the child template... <pre><code>extends layout
+ And this is the child template... <pre><code>extends layout
 block header
   div
     span
@@ -345,7 +364,7 @@ block content
    moar content
 </code>
 </pre>
- and you were to render the child template, you would get... <pre><code>&lt;h1&gt;this is a pretty cool web page&lt;/h1&gt;
+ And you were to render the child template, you would get... <pre><code>&lt;h1&gt;this is a pretty cool web page&lt;/h1&gt;
 &lt;div&gt;
   &lt;span&gt;foo bar baz&lt;/span&gt;
 &lt;/div&gt;
@@ -377,7 +396,7 @@ a(href=&quot;/some/place&quot;)- click here for some cool stuff
 Lavender::register_helper('constant', 'Lavender_Helper_Constant');
 </code>
 </pre>
- and a date helper... <pre><code>class Lavender_Helper_Date
+ And a date helper... <pre><code>class Lavender_Helper_Date
 {
   public function execute($format, $timestamp = NULL)
   {
@@ -392,9 +411,9 @@ Lavender::register_helper('constant', 'Lavender_Helper_Constant');
 Lavender::register_helper('date', 'Lavender_Helper_Date');
 </code>
 </pre>
- are both available for use.</p>
+ Are both available for use.</p>
 <h3 id="filters">Filters</h3>
-<p> Programatic expressions in Lavender are a little limited, none of your favorite php   functions are available for modifying the template data. This is by design, we do not think   there should be a ton of logic in templates when that logic could be in controllers or models.   However, since you have to be able to do some templating logic, we added filters. It is super   easy to add your own filters to Lavender and there are (or will be) plenty in place out of   the box. here is how they work. <pre><code>- myvariable = "some really cool text"
+<p> Programatic expressions in Lavender are a little limited, none of your favorite php   functions are available for modifying the template data. This is by design, we do not think   there should be a ton of logic in templates when that logic could be in controllers or models.   However, since you have to be able to do some templating logic, we added filters. It is super   easy to add your own filters to Lavender and there are (or will be) plenty in place out of   the box. Here is how they work... <pre><code>- myvariable = "some really cool text"
 div
   span
      i'm gonna filter some stuff. it's gonna be cool. 
