@@ -40,7 +40,6 @@ GRAPH
     xml (>= 0.0.0)
     yum-epel (>= 0.0.0)
   rbac (1.0.2)
-  resource-control (0.1.1)
   smf (2.2.1)
     rbac (>= 1.0.1)
     resource-control (>= 0.0.0)
