@@ -11,40 +11,44 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  font-family: 'Quattrocento', sans-serif;
+  font-family: 'Lato', sans-serif;
   margin-bottom: 75px;
 }
 
 .guide {
+  background: rgb(230,230,250);
   background: rgba(230,230,250,0.4);
   padding: 2em;
   margin-top: 25px;
 }
 
 .about {
+  background: rgb(230,230,250);
   background: rgba(230,230,250,0.4);
   padding: 2em;
   margin-top: 25px;
 }
 
 .main {
+  background: rgb(66,56,66);
   background: rgba(66,56,66,.9);
   padding-top: 2em;
   margin-top: 25px;
-  color: #cdb4cc;
+  color: rgb(254,246,234);
+  color: rgba(254,246,234,.8);
 }
 
 .blip {
   margin-top: 60px;
 }
 
-.maintitle {
-  margin-left: -60px;
-  margin-top: -20px;
+.logo-front {
+  margin-bottom: 30px;
 }
 
 @media (max-width: 990px){
   .maintitle {
+    text-align: center;
     margin-left: 0px;
     margin-top: 0px;
   }
@@ -59,7 +63,6 @@ body {
 }
 
 .whowhatwhy {
-  background-color: rgba(230,230,250,0.4);
   padding-top: 2em;
   color: #362F35;
 }
@@ -69,8 +72,8 @@ body {
 }
 
 h1 {
-  font-family: 'Lily Script One', cursive;
-  font-size: 300%;
+  font-family: 'Special Elite', cursive;
+  font-size: 280%;
   color: #796878;
 }
 
@@ -84,7 +87,7 @@ h2 {
 h3 {
   font-family: 'Oswald', sans-serif;
   color: #796878;
-  font-size: 250%;
+  font-size: 240%;
 }
 
 h4 {
@@ -92,7 +95,6 @@ h4 {
   font-size: 150%;
   margin-top: -5px;
   margin-bottom: 20px;
-  margin-left: 50px;
 }
 
 .special{
@@ -126,6 +128,7 @@ code {
 
 .btn-home { 
   color: #dad1d9; 
+  background-color: rgb(66,56,66);
   background-color: rgba(66,56,66,.8);  
   margin-top: 3px;
   margin-bottom: 2px;
@@ -177,6 +180,7 @@ fieldset[disabled] .btn-home.active {
   border-radius: 0 !important;
   border-color: transparent;
   font-size: 18px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -186,6 +190,11 @@ fieldset[disabled] .btn-home.active {
 
 .navbar-form input, .form-inline input {
   width:auto;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
+  background-color: #333;
+  color:#ffffff;
 }
 
 header {
@@ -229,4 +238,42 @@ header {
   background-color: rgb(81,69,76);
   color: #776167;
   padding-top: 5px;
+}
+
+/*Fixes breaking point for Windows Phone*/
+@media (max-width: 769px) {
+  .navbar-header {
+    float: none;
+  }
+  .navbar-left,.navbar-right {
+    float: none !important;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+    display: none!important;
+  }
+  .navbar-nav {
+    float: none!important;
+    margin-top: 7.5px;
+  }
+  .navbar-nav>li {
+    float: none;
+  }
+  .navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .collapse.in{
+    display:block !important;
+  }
 }
