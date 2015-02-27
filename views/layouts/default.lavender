@@ -12,19 +12,12 @@ head
     content='A templating engine for PHP, designed to make your life easier.'
   )
   meta(name='viewport', content='width=device-width, initial-scale=1')
-  -sizes = [57,60,72,76]
+  -sizes = [57,60,72,76,114,120,144,152,180]
   for size in sizes
     link(rel="apple-touch-icon", sizes="#{size}x#{size}", href="/img/favicons/apple-touch-icon-#{size}x#{size}.png")
-  link(rel="apple-touch-icon", sizes="114x114", href="/img/favicons/apple-touch-icon-114x114.png")
-  link(rel="apple-touch-icon", sizes="120x120", href="/img/favicons/apple-touch-icon-120x120.png")
-  link(rel="apple-touch-icon", sizes="144x144", href="/img/favicons/apple-touch-icon-144x144.png")
-  link(rel="apple-touch-icon", sizes="152x152", href="/img/favicons/apple-touch-icon-152x152.png")
-  link(rel="apple-touch-icon", sizes="180x180", href="/img/favicons/apple-touch-icon-180x180.png")
-  link(rel="icon", type="image/png", href="/img/favicons/favicon-32x32.png", sizes="32x32")
-  link(rel="icon", type="image/png", href="/img/favicons/favicon-194x194.png", sizes="194x194")
-  link(rel="icon", type="image/png", href="/img/favicons/favicon-96x96.png", sizes="96x96")
-  link(rel="icon", type="image/png", href="/img/favicons/android-chrome-192x192.png", sizes="192x192")
-  link(rel="icon", type="image/png", href="/img/favicons/favicon-16x16.png", sizes="16x16")
+  -sizes2 = [16,32,96,192,194]
+  for size2 in sizes2
+    link(rel="icon", sizes="#{size2}x#{size2}", type="image/png", href="/img/favicons/favicon-#{size2}x#{size2}.png")
   link(rel="manifest", href="/img/favicons/manifest.json")
   meta(name="msapplication-TileColor", content="#cdb4cc")
   meta(name="msapplication-TileImage", content="/img/favicons/mstile-144x144.png")

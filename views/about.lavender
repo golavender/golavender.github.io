@@ -9,7 +9,7 @@ block content
   .container
     .row
       .col-md-8.col-md-offset-2.about.img-rounded
-          h1.title About Usessss
+          h1.title About Us
           p
             | So you want to learn a little bit about us. Sweet.
   .container
