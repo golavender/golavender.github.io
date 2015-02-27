@@ -20,9 +20,10 @@ block content
         .col-md-4.col-md-offset-2
           h1 Lavender
           p
-            | Lavender was formed out of a need for simplicity and ease. The syntax is faster and easier to
+            | Lavender was formed out of a need for simplicity and ease. The syntax 
+            | is faster and easier to
             | type, but functions very similar to Jade. If you feel like it, why not
-            a(href="https://github.com/golavender/lavender") fork us
+            a(href="https://github.com/golavender/lavender", target="_blank") fork us
             | and help us make a difference.
   .container
     .row
@@ -32,9 +33,9 @@ block content
         .col-md-3.col-md-offset-2
           h1 Daft Labs
           p
-            | Daft Labs was founded in 2013, slowly bringing together a team of hodge podge people in both
-            | front end and back end development.  
-          a(href="http://www.daftlabs.com") Come Visit Us.
+            | Daft Labs was founded in 2013, slowly bringing together a team of hodge 
+            | podge people in both front end and back end development.  
+          a(href="http://www.daftlabs.com", target="_blank") Come Visit Us.
   footer.footer
     .container-fluid
       h6 Lavender is supported and created by Daft Labs. Enjoy!

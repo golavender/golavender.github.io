@@ -9,17 +9,19 @@ block content
   .container-fluid.main
     .row.info
       .col-md-2.col-md-offset-2
-        h3 What is it (Other Than a Colour?)
+        h3 Lavender: a color, a thing or something else? 
       .col-md-5.col-md-offset-1
         p
-          | Lavender is loosely based off of
-          a(href='http://jade-lang.com/') Jade
+          | Lavender is loosely based on
+          a(href="http://jade-lang.com/", target="_blank") Jade
           | , created by the
-          | founders of the Daft Labs team to bring peace and order to their office. Lavender is a 
-          | templating engine with further simplified syntax to allow for ease of use (as well as less time
-          | spent double checking for proper useage).
+          | founders of the Daft Labs team to bring peace and order to their office. 
+          | Lavender is a templating engine with further simplified syntax to allow 
+          | for ease of use (as well as less time spent double checking for proper 
+          | useage).
         p
-          | This project is maintained on GitHub, allowing users to collaborate and further building.
+          | This project is maintained on GitHub, allowing users to collaborate and 
+          | further building.
   .container.whowhatwhy
     .row.info
       .col-md-5
@@ -69,11 +71,12 @@ block content
                   block content  
               &lt;/body&gt;
             &lt;/html&gt;            
-  a(href='https://github.com/golavender/lavender')
-    img(style='position: absolute; top: 0; right: 0; border: 0;', 
-     src='http://tinyurl.com/kv8nu28',
-     alt='Fork me on GitHub',
-     data-canonical-src='https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png')
+  a(href="https://github.com/golavender/lavender", target="_blank)
+    img(style="position: absolute; top: 0; right: 0; border: 0;", 
+     src="http://tinyurl.com/kv8nu28",
+     alt="Fork me on GitHub",
+     data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"
+    )
 
   footer.footer
     .container-fluid

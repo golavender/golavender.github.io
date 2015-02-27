@@ -56,13 +56,16 @@ block content
       .guide.img-rounded
         h1.title The Lavender Guide
         p
-          | Hey! We're here to teach you about Lavender. If you know Jade, you'll find this easier 
-          | to pick up. If not, take your time and learn! Yay!
+          | Hey! We're here to teach you about Lavender. If you know Jade, you'll 
+          | find this easier to pick up. If not, take your time and learn! Yay!
         h3 Installation
           h2#composer via composer
           p
             | First, get yourself some 
-            a(href="https://getcomposer.org/doc/00-intro.md#installation-nix") composer.
+            a(
+              href="https://getcomposer.org/doc/00-intro.md#installation-nix", 
+              target="_blank"
+            ) composer.
             |  Next, you need to make yourself a
             code composer.json
             | , here's an example.
@@ -77,8 +80,8 @@ block content
             code php composer.phar install 
             | or
             code composer install
-            | depending on how you've installed composer. Once composer has finished it will generate an 
-            | autoloader in 
+            | depending on how you've installed composer. Once composer has finished 
+            |it will generate an autoloader in 
             code vendor/autoload.php
             | which you can 
             code require()
@@ -86,13 +89,13 @@ block content
           h2#github via Github      
           p
             | Add the lavender submodule with 
-            code git submodule add git@github.com:golavender/lavender.git (folder to clone to) 
-            | and include it with 
+            code git submodule add git@github.com:golavender/lavender.git (folder to 
+            | clone to) and include it with 
             code require "(where you put lavender)/src/Lavender/lavender.php   
         h3#usage Usage     
         p
-          | Once you have installed and included lavender, the only required configuration is to tell
-          | lavender where the views directory is.
+          | Once you have installed and included lavender, the only required 
+          | configuration is to tell lavender where the views directory is.
           pre
             code.
               Lavender::config(array(
@@ -135,7 +138,8 @@ block content
             | becomes
             pre
               code.
-                &lt;section id="some_id" class="foo bar" attribute1="foo" attribute2="bar"&gt;&lt;/section&gt;
+                &lt;section id="some_id" class="foo bar" attribute1="foo" 
+                attribute2="bar"&gt;&lt;/section&gt;
             | Child nodes are indented below their parent
             pre
               code.
@@ -149,7 +153,8 @@ block content
                   &lt;div data-something="foo"&gt; &lt;/div&gt;
                   &lt;div data-something="bar"&gt; &lt;/div&gt;
                 &lt;/section&gt;
-            | There is a shortcut if you just want a div, you can skip right to class or id definitions.
+            | There is a shortcut if you just want a div, you can skip right to class 
+            | or id definitions.
             pre
               code.
                 .foobar text text
@@ -166,15 +171,19 @@ block content
                   div(data-something='foo') this is some text 
                   div(data-something='bar')
                    | this is also some text          
-            | Lavender knows not to put a closing tag on certain nodes. (we got the list from
-            a(href="http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements") here
+            | Lavender knows not to put a closing tag on certain nodes. (we got the 
+            | list from
+            a(
+              href="http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements", 
+              target="_blank"
+              ) here
             code input(type="text",value="fooooobar")
             | becomes
             code &lt;input type="text" value="fooooobar"&gt;
           h2#doctype doctype   
           p
-            | Do you always forget the syntax for doctype? Lavender exists to solve your first world 
-            | problems. Just throw a 
+            | Do you always forget the syntax for doctype? Lavender exists to solve 
+            | your first world problems. Just throw a 
             code !!!
             |  at the top of your layout and you get yourself a nice 
             |       html doctype. Doctypes supported are 
@@ -210,9 +219,12 @@ block content
         p
           | The 
           code IT
-          | shorthand can be used to generate conditional comments for Internet Explorer. check out 
-          a(href="http://www.quirksmode.org/css/condcom.html") this 
-          | if you are not familiar with conditional comments.
+          | shorthand can be used to generate conditional comments for Internet 
+          | Explorer. check out 
+          a(
+            href="http://www.quirksmode.org/css/condcom.html", 
+            target="_blank"
+            ) this if you are not familiar with conditional comments.
           pre
             code.
               IE
@@ -223,15 +235,17 @@ block content
           pre
             code.
               &lt;!--[if IE]&gt;
-                &lt;script src=&quot;some script to make IE work&quot;&gt;&lt;/script&gt;
+                &lt;script src=&quot;some script to make IE work&quot;&gt;&lt;
+                /script&gt;
               &lt;![endif]--&gt;
               &lt;!--[if lt IE 7]&gt;
-                &lt;script src=&quot;some script to make super old IE work&quot;&gt;&lt;/script&gt;
+                &lt;script src=&quot;some script to make super old IE work&quot;&gt;
+                &lt;/script&gt;
               &lt;![endif]--&gt;
           h3#variables Variables
           p
-            | Lavender views can be passed variables from the parent php application or they can be 
-            | defined right in the template.
+            | Lavender views can be passed variables from the parent php application 
+            | or they can be defined right in the template.
           p
             | This just assigns a variable without outputting anything to the page.
             pre 
@@ -240,8 +254,8 @@ block content
           p
             | Note the
             code -
-            | symbol, which evaluates an expression without outputting. the content of the variable can then
-            | later be output using the 
+            | symbol, which evaluates an expression without outputting. the content 
+            | of the variable can then later be output using the 
               code. =
             | symbol.
             pre
@@ -263,7 +277,8 @@ block content
             code - some_array = {key1: 'foo', key2: 'bar', key3: 'baz'} 
           h3#conditionals Conditionals
           p
-            | Markup can be conditionally rendered using the if keyword. Lavender supports all the 
+            | Markup can be conditionally rendered using the if keyword. Lavender 
+            | supports all the 
             | conditional operations you know and love:
             code.
               !, &amp;&amp;, ||, &lt;, &gt;, &lt;=, &gt;=, ==, != 
@@ -300,9 +315,11 @@ block content
             | and
             code false
             | )
-            | are keywords in Lavender, they can be assinged to variables or used in conditionals directly
-            | (but if you actually do that then
-            a(href='https://www.destroyallsoftware.com/talks/wat') wat
+            | are keywords in Lavender, they can be assinged to variables or used in 
+            | conditionals directly (but if you actually do that then
+            a(
+              href="https://www.destroyallsoftware.com/talks/wat", 
+              target="_blank") wat
             | )
             pre
               code.
@@ -327,8 +344,8 @@ block content
                  ul
                    each value, key in some_random_array
                      li(data-key=key)= value 
-            | You may have noticed how we snuck in using variables for your html attributes there. 
-            | You can do that too!
+            | You may have noticed how we snuck in using variables for your html 
+            | attributes there. You can do that too!
           h2#else Else
           p
             | The else keyword can be used after loops or conditionals.
@@ -385,8 +402,8 @@ block content
                   include /path/relative/to/view/directory/somefile with {stuff: "Asdfasdf"}
           h2#extends Extends
           p
-            | Lavender supports block style layout extension. This means that in the parent template
-            | you define blocks using the
+            | Lavender supports block style layout extension. This means that in the 
+            | parent template you define blocks using the
             code block
             | keyword. Then in the child template you
             b only have blocks
@@ -432,14 +449,14 @@ block content
                    more content
                    moar content
                  &lt;/div&gt;
-            | A special case has been added to allow defining variables at the top of your child 
-            | templates, these variables can be referenced from the layout to do cool things like 
-            | specifying a list of javascript files necessary for a template to work 
-            | or setting the page title.
+            | A special case has been added to allow defining variables at the top of 
+            | your child templates, these variables can be referenced from the layout 
+            | to do cool things like specifying a list of javascript files necessary 
+            | for a template to work or setting the page title.
         h2#whitespace Whitespace
         p
-          | New lines are added automatically after every html element, if you do not want the newline
-          | you can add a
+          | New lines are added automatically after every html element, if you do not 
+          | want the newline you can add a
           code -
           | to the node definition like so.
         pre
@@ -480,12 +497,13 @@ block content
           | Are both available for use.
         h3#filters Filters
         p
-          | Programatic expressions in Lavender are a little limited, none of your favorite php 
-          | functions are available for modifying the template data. This is by design, we do not think 
-          | there should be a ton of logic in templates when that logic could be in controllers or models. 
-          | However, since you have to be able to do some templating logic, we added filters. It is super 
-          | easy to add your own filters to Lavender and there are (or will be) plenty in place out of 
-          | the box. Here is how they work...
+          | Programatic expressions in Lavender are a little limited, none of your 
+          | favorite php functions are available for modifying the template data. 
+          | This is by design, we do not think there should be a ton of logic in 
+          | templates when that logic could be in controllers or models. However, 
+          | since you have to be able to do some templating logic, we added filters. 
+          | It is super easy to add your own filters to Lavender and there are 
+          | (or will be) plenty in place out of the box. Here is how they work...
           pre
             code.
               - myvariable = "some really cool text"
@@ -501,7 +519,7 @@ block content
                 &lt;span&gt;im gonna filter some stuff, it&apos;ll be cool. SOME REALLY COOL TEXT&lt;/span&gt;
               &lt;/div&gt;
           | Profound right? Not that we invented this, we copied the idea from 
-          a(href="http://twig.sensiolabs.org/") twig
+          a(href="http://twig.sensiolabs.org/", target="_blank") twig
           | . The filters Lavender comes with are:
         p
           ul.list-unstyled
