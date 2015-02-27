@@ -1,73 +1,11 @@
-!!!
+extends layouts/default
 
-head
-  title Guide - Lavender Templating Engine for PHP
-  meta(name='keywords', content='Lavender, Lavender programming language, lavenderlang, lavender-lang')
-  meta(name='description', content='A templating engine for PHP, designed to make your life easier.')
-  meta(name='viewport', content='width=device-width, initial-scale=1')
-  link(rel="apple-touch-icon", sizes="57x57", href="/img/favicons/apple-touch-icon-57x57.png")
-  link(rel="apple-touch-icon", sizes="60x60", href="/img/favicons/apple-touch-icon-60x60.png")
-  link(rel="apple-touch-icon", sizes="72x72", href="/img/favicons/apple-touch-icon-72x72.png")
-  link(rel="apple-touch-icon", sizes="76x76", href="/img/favicons/apple-touch-icon-76x76.png")
-  link(rel="apple-touch-icon", sizes="114x114", href="/img/favicons/apple-touch-icon-114x114.png")
-  link(rel="apple-touch-icon", sizes="120x120", href="/img/favicons/apple-touch-icon-120x120.png")
-  link(rel="apple-touch-icon", sizes="144x144", href="/img/favicons/apple-touch-icon-144x144.png")
-  link(rel="apple-touch-icon", sizes="152x152", href="/img/favicons/apple-touch-icon-152x152.png")
-  link(rel="apple-touch-icon", sizes="180x180", href="/img/favicons/apple-touch-icon-180x180.png")
-  link(rel="icon", type="image/png", href="/img/favicons/favicon-32x32.png", sizes="32x32")
-  link(rel="icon", type="image/png", href="/img/favicons/favicon-194x194.png", sizes="194x194")
-  link(rel="icon", type="image/png", href="/img/favicons/favicon-96x96.png", sizes="96x96")
-  link(rel="icon", type="image/png", href="/img/favicons/android-chrome-192x192.png", sizes="192x192")
-  link(rel="icon", type="image/png", href="/img/favicons/favicon-16x16.png", sizes="16x16")
-  link(rel="manifest", href="/img/favicons/manifest.json")
-  meta(name="msapplication-TileColor", content="#cdb4cc")
-  meta(name="msapplication-TileImage", content="/img/favicons/mstile-144x144.png")
-  meta(name="theme-color", content="#796878")
-  link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Oswald:400,700')
-  link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lato:300,700')
-  link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Special+Elite')
-  link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
-  link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
-  link(rel='stylesheet', href='css/main.css')
-  script(src='https://code.jquery.com/jquery-1.11.2.min.js')
-  script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js")
-  script(src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
-body
-  .navbar.navbar-default.navbar-static-top(role='navigation')
-    .container
-      .navbar-header
-        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-          span.sr-only Toggle navigation
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
-      .navbar-collapse.collapse
-        ul.nav.navbar-nav
-          li
-            a(href="/index.html", title="Home") Home
-          li
-            a(href="https://github.com/golavender/lavender", title="GitHub") GitHub
-          li
-            a(href="https://github.com/daftlabs", title="GitHub") Creators
-          li.dropdown.active
-            a.dropdown-toggle(href='#', data-toggle='dropdown')
-              | Guide
-              span.caret
-            ul.dropdown-menu(role='menu')
-              li.active
-                a(href='/guide.html') Guide Home
-              li.dropdown-header Installation
-              li
-                a(href="/guide.html#composer", title="GitHub") via Composer
-              li
-                a(href='/guide.html#github') via GitHub
-              li
-                a(href='/guide.html#usage') Usage
-              li.divider
-              li
-                a(href='/guide.html#langref') Language Reference
-          li
-            a(href="/about.html") About
+-active_class_guide = "disabled"
+
+block title
+  | Guide - Lavender Templating Engine for PHP
+
+block content
   .container
     div.col-md-3
       .sidebar.guide.img-rounded(

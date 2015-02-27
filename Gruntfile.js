@@ -19,7 +19,7 @@ module.exports = function(grunt) {
     },
     watch: {
       scripts: {
-        files: ['views/*.lavender'],
+        files: ['views/*.lavender','views/layouts/*.lavender'],
         tasks: ['exec:lavender'],
         options: {
           spawn: false,
