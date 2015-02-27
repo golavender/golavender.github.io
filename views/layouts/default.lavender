@@ -12,12 +12,12 @@ head
     content='A templating engine for PHP, designed to make your life easier.'
   )
   meta(name='viewport', content='width=device-width, initial-scale=1')
-  -sizes = [57,60,72,76,114,120,144,152,180]
-  for size in sizes
-    link(rel="apple-touch-icon", sizes="#{size}x#{size}", href="/img/favicons/apple-touch-icon-#{size}x#{size}.png")
-  -sizes2 = [16,32,96,192,194]
-  for size2 in sizes2
-    link(rel="icon", sizes="#{size2}x#{size2}", type="image/png", href="/img/favicons/favicon-#{size2}x#{size2}.png")
+  -appleTouchIconSizes = [57,60,72,76,114,120,144,152,180]
+  for appleTouchIconSize in appleTouchIconSizes
+    link(rel="apple-touch-icon", sizes="#{appleTouchIconSize}x#{appleTouchIconSize}", href="/img/favicons/apple-touch-icon-#{appleTouchIconSize}x#{appleTouchIconSize}.png")
+  -faviconSizes = [16,32,96,192,194]
+  for faviconSize in faviconSizes
+    link(rel="icon", sizes="#{faviconSize}x#{faviconSize}", type="image/png", href="/img/favicons/favicon-#{faviconSize}x#{faviconSize}.png")
   link(rel="manifest", href="/img/favicons/manifest.json")
   meta(name="msapplication-TileColor", content="#cdb4cc")
   meta(name="msapplication-TileImage", content="/img/favicons/mstile-144x144.png")
