@@ -71,7 +71,7 @@ block content
                   block content  
               &lt;/body&gt;
             &lt;/html&gt;            
-  a(href="https://github.com/golavender/lavender", target="_blank)
+  a(href="https://github.com/golavender/lavender", target="_blank")
     img(style="position: absolute; top: 0; right: 0; border: 0;", 
      src="http://tinyurl.com/kv8nu28",
      alt="Fork me on GitHub",
