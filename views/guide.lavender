@@ -1,73 +1,11 @@
-!!!
+extends layouts/default
 
-head
-  title Guide - Lavender Templating Engine for PHP
-  meta(name='keywords', content='Lavender, Lavender programming language, lavenderlang, lavender-lang')
-  meta(name='description', content='A templating engine for PHP, designed to make your life easier.')
-  meta(name='viewport', content='width=device-width, initial-scale=1')
-  link(rel="apple-touch-icon", sizes="57x57", href="/img/favicons/apple-touch-icon-57x57.png")
-  link(rel="apple-touch-icon", sizes="60x60", href="/img/favicons/apple-touch-icon-60x60.png")
-  link(rel="apple-touch-icon", sizes="72x72", href="/img/favicons/apple-touch-icon-72x72.png")
-  link(rel="apple-touch-icon", sizes="76x76", href="/img/favicons/apple-touch-icon-76x76.png")
-  link(rel="apple-touch-icon", sizes="114x114", href="/img/favicons/apple-touch-icon-114x114.png")
-  link(rel="apple-touch-icon", sizes="120x120", href="/img/favicons/apple-touch-icon-120x120.png")
-  link(rel="apple-touch-icon", sizes="144x144", href="/img/favicons/apple-touch-icon-144x144.png")
-  link(rel="apple-touch-icon", sizes="152x152", href="/img/favicons/apple-touch-icon-152x152.png")
-  link(rel="apple-touch-icon", sizes="180x180", href="/img/favicons/apple-touch-icon-180x180.png")
-  link(rel="icon", type="image/png", href="/img/favicons/favicon-32x32.png", sizes="32x32")
-  link(rel="icon", type="image/png", href="/img/favicons/favicon-194x194.png", sizes="194x194")
-  link(rel="icon", type="image/png", href="/img/favicons/favicon-96x96.png", sizes="96x96")
-  link(rel="icon", type="image/png", href="/img/favicons/android-chrome-192x192.png", sizes="192x192")
-  link(rel="icon", type="image/png", href="/img/favicons/favicon-16x16.png", sizes="16x16")
-  link(rel="manifest", href="/img/favicons/manifest.json")
-  meta(name="msapplication-TileColor", content="#cdb4cc")
-  meta(name="msapplication-TileImage", content="/img/favicons/mstile-144x144.png")
-  meta(name="theme-color", content="#796878")
-  link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Oswald:400,700')
-  link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lato:300,700')
-  link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Special+Elite')
-  link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
-  link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
-  link(rel='stylesheet', href='css/main.css')
-  script(src='https://code.jquery.com/jquery-1.11.2.min.js')
-  script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js")
-  script(src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
-body
-  .navbar.navbar-default.navbar-static-top(role='navigation')
-    .container
-      .navbar-header
-        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-          span.sr-only Toggle navigation
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
-      .navbar-collapse.collapse
-        ul.nav.navbar-nav
-          li
-            a(href="/index.html", title="Home") Home
-          li
-            a(href="https://github.com/golavender/lavender", title="GitHub") GitHub
-          li
-            a(href="https://github.com/daftlabs", title="GitHub") Creators
-          li.dropdown.active
-            a.dropdown-toggle(href='#', data-toggle='dropdown')
-              | Guide
-              span.caret
-            ul.dropdown-menu(role='menu')
-              li.active
-                a(href='/guide.html') Guide Home
-              li.dropdown-header Installation
-              li
-                a(href="/guide.html#composer", title="GitHub") via Composer
-              li
-                a(href='/guide.html#github') via GitHub
-              li
-                a(href='/guide.html#usage') Usage
-              li.divider
-              li
-                a(href='/guide.html#langref') Language Reference
-          li
-            a(href="/about.html") About
+-active_class_guide = "disabled"
+
+block title
+  | Guide - Lavender Templating Engine for PHP
+
+block content
   .container
     div.col-md-3
       .sidebar.guide.img-rounded(
@@ -118,13 +56,16 @@ body
       .guide.img-rounded
         h1.title The Lavender Guide
         p
-          | Hey! We're here to teach you about Lavender. If you know Jade, you'll find this easier 
-          | to pick up. If not, take your time and learn! Yay!
+          | Hey! We're here to teach you about Lavender. If you know Jade, you'll 
+          | find this easier to pick up. If not, take your time and learn! Yay!
         h3 Installation
           h2#composer via composer
           p
             | First, get yourself some 
-            a(href="https://getcomposer.org/doc/00-intro.md#installation-nix") composer.
+            a(
+              href="https://getcomposer.org/doc/00-intro.md#installation-nix", 
+              target="_blank"
+            ) composer.
             |  Next, you need to make yourself a
             code composer.json
             | , here's an example.
@@ -139,8 +80,8 @@ body
             code php composer.phar install 
             | or
             code composer install
-            | depending on how you've installed composer. Once composer has finished it will generate an 
-            | autoloader in 
+            | depending on how you've installed composer. Once composer has finished 
+            |it will generate an autoloader in 
             code vendor/autoload.php
             | which you can 
             code require()
@@ -148,13 +89,13 @@ body
           h2#github via Github      
           p
             | Add the lavender submodule with 
-            code git submodule add git@github.com:golavender/lavender.git (folder to clone to) 
-            | and include it with 
+            code git submodule add git@github.com:golavender/lavender.git (folder to 
+            | clone to) and include it with 
             code require "(where you put lavender)/src/Lavender/lavender.php   
         h3#usage Usage     
         p
-          | Once you have installed and included lavender, the only required configuration is to tell
-          | lavender where the views directory is.
+          | Once you have installed and included lavender, the only required 
+          | configuration is to tell lavender where the views directory is.
           pre
             code.
               Lavender::config(array(
@@ -197,7 +138,8 @@ body
             | becomes
             pre
               code.
-                &lt;section id="some_id" class="foo bar" attribute1="foo" attribute2="bar"&gt;&lt;/section&gt;
+                &lt;section id="some_id" class="foo bar" attribute1="foo" 
+                attribute2="bar"&gt;&lt;/section&gt;
             | Child nodes are indented below their parent
             pre
               code.
@@ -211,7 +153,8 @@ body
                   &lt;div data-something="foo"&gt; &lt;/div&gt;
                   &lt;div data-something="bar"&gt; &lt;/div&gt;
                 &lt;/section&gt;
-            | There is a shortcut if you just want a div, you can skip right to class or id definitions.
+            | There is a shortcut if you just want a div, you can skip right to class 
+            | or id definitions.
             pre
               code.
                 .foobar text text
@@ -228,15 +171,19 @@ body
                   div(data-something='foo') this is some text 
                   div(data-something='bar')
                    | this is also some text          
-            | Lavender knows not to put a closing tag on certain nodes. (we got the list from
-            a(href="http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements") here
+            | Lavender knows not to put a closing tag on certain nodes. (we got the 
+            | list from
+            a(
+              href="http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements", 
+              target="_blank"
+              ) here
             code input(type="text",value="fooooobar")
             | becomes
             code &lt;input type="text" value="fooooobar"&gt;
           h2#doctype doctype   
           p
-            | Do you always forget the syntax for doctype? Lavender exists to solve your first world 
-            | problems. Just throw a 
+            | Do you always forget the syntax for doctype? Lavender exists to solve 
+            | your first world problems. Just throw a 
             code !!!
             |  at the top of your layout and you get yourself a nice 
             |       html doctype. Doctypes supported are 
@@ -272,9 +219,12 @@ body
         p
           | The 
           code IT
-          | shorthand can be used to generate conditional comments for Internet Explorer. check out 
-          a(href="http://www.quirksmode.org/css/condcom.html") this 
-          | if you are not familiar with conditional comments.
+          | shorthand can be used to generate conditional comments for Internet 
+          | Explorer. check out 
+          a(
+            href="http://www.quirksmode.org/css/condcom.html", 
+            target="_blank"
+            ) this if you are not familiar with conditional comments.
           pre
             code.
               IE
@@ -285,15 +235,17 @@ body
           pre
             code.
               &lt;!--[if IE]&gt;
-                &lt;script src=&quot;some script to make IE work&quot;&gt;&lt;/script&gt;
+                &lt;script src=&quot;some script to make IE work&quot;&gt;&lt;
+                /script&gt;
               &lt;![endif]--&gt;
               &lt;!--[if lt IE 7]&gt;
-                &lt;script src=&quot;some script to make super old IE work&quot;&gt;&lt;/script&gt;
+                &lt;script src=&quot;some script to make super old IE work&quot;&gt;
+                &lt;/script&gt;
               &lt;![endif]--&gt;
           h3#variables Variables
           p
-            | Lavender views can be passed variables from the parent php application or they can be 
-            | defined right in the template.
+            | Lavender views can be passed variables from the parent php application 
+            | or they can be defined right in the template.
           p
             | This just assigns a variable without outputting anything to the page.
             pre 
@@ -302,8 +254,8 @@ body
           p
             | Note the
             code -
-            | symbol, which evaluates an expression without outputting. the content of the variable can then
-            | later be output using the 
+            | symbol, which evaluates an expression without outputting. the content 
+            | of the variable can then later be output using the 
               code. =
             | symbol.
             pre
@@ -325,7 +277,8 @@ body
             code - some_array = {key1: 'foo', key2: 'bar', key3: 'baz'} 
           h3#conditionals Conditionals
           p
-            | Markup can be conditionally rendered using the if keyword. Lavender supports all the 
+            | Markup can be conditionally rendered using the if keyword. Lavender 
+            | supports all the 
             | conditional operations you know and love:
             code.
               !, &amp;&amp;, ||, &lt;, &gt;, &lt;=, &gt;=, ==, != 
@@ -362,9 +315,11 @@ body
             | and
             code false
             | )
-            | are keywords in Lavender, they can be assinged to variables or used in conditionals directly
-            | (but if you actually do that then
-            a(href='https://www.destroyallsoftware.com/talks/wat') wat
+            | are keywords in Lavender, they can be assinged to variables or used in 
+            | conditionals directly (but if you actually do that then
+            a(
+              href="https://www.destroyallsoftware.com/talks/wat", 
+              target="_blank") wat
             | )
             pre
               code.
@@ -389,8 +344,8 @@ body
                  ul
                    each value, key in some_random_array
                      li(data-key=key)= value 
-            | You may have noticed how we snuck in using variables for your html attributes there. 
-            | You can do that too!
+            | You may have noticed how we snuck in using variables for your html 
+            | attributes there. You can do that too!
           h2#else Else
           p
             | The else keyword can be used after loops or conditionals.
@@ -447,8 +402,8 @@ body
                   include /path/relative/to/view/directory/somefile with {stuff: "Asdfasdf"}
           h2#extends Extends
           p
-            | Lavender supports block style layout extension. This means that in the parent template
-            | you define blocks using the
+            | Lavender supports block style layout extension. This means that in the 
+            | parent template you define blocks using the
             code block
             | keyword. Then in the child template you
             b only have blocks
@@ -494,14 +449,14 @@ body
                    more content
                    moar content
                  &lt;/div&gt;
-            | A special case has been added to allow defining variables at the top of your child 
-            | templates, these variables can be referenced from the layout to do cool things like 
-            | specifying a list of javascript files necessary for a template to work 
-            | or setting the page title.
+            | A special case has been added to allow defining variables at the top of 
+            | your child templates, these variables can be referenced from the layout 
+            | to do cool things like specifying a list of javascript files necessary 
+            | for a template to work or setting the page title.
         h2#whitespace Whitespace
         p
-          | New lines are added automatically after every html element, if you do not want the newline
-          | you can add a
+          | New lines are added automatically after every html element, if you do not 
+          | want the newline you can add a
           code -
           | to the node definition like so.
         pre
@@ -542,12 +497,13 @@ body
           | Are both available for use.
         h3#filters Filters
         p
-          | Programatic expressions in Lavender are a little limited, none of your favorite php 
-          | functions are available for modifying the template data. This is by design, we do not think 
-          | there should be a ton of logic in templates when that logic could be in controllers or models. 
-          | However, since you have to be able to do some templating logic, we added filters. It is super 
-          | easy to add your own filters to Lavender and there are (or will be) plenty in place out of 
-          | the box. Here is how they work...
+          | Programatic expressions in Lavender are a little limited, none of your 
+          | favorite php functions are available for modifying the template data. 
+          | This is by design, we do not think there should be a ton of logic in 
+          | templates when that logic could be in controllers or models. However, 
+          | since you have to be able to do some templating logic, we added filters. 
+          | It is super easy to add your own filters to Lavender and there are 
+          | (or will be) plenty in place out of the box. Here is how they work...
           pre
             code.
               - myvariable = "some really cool text"
@@ -563,7 +519,7 @@ body
                 &lt;span&gt;im gonna filter some stuff, it&apos;ll be cool. SOME REALLY COOL TEXT&lt;/span&gt;
               &lt;/div&gt;
           | Profound right? Not that we invented this, we copied the idea from 
-          a(href="http://twig.sensiolabs.org/") twig
+          a(href="http://twig.sensiolabs.org/", target="_blank") twig
           | . The filters Lavender comes with are:
         p
           ul.list-unstyled
