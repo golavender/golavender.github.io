@@ -1,6 +1,6 @@
 extends layouts/default
 
--active_class_index = "disabled"
+-active_class_index = 'disabled'
 
 block title
   | Lavender Templating Engine for PHP
@@ -13,7 +13,7 @@ block content
       .col-md-5.col-md-offset-1
         p
           | Lavender is loosely based on
-          a(href="http://jade-lang.com/", target="_blank") Jade
+          a(href='http://jade-lang.com/', target='_blank') Jade
           | , created by the
           | founders of the Daft Labs team to bring peace and order to their office. 
           | Lavender is a templating engine with further simplified syntax to allow 
@@ -57,7 +57,7 @@ block content
               &lt;body&gt;
                 &lt;h1&gt;cool title bro.&lt;/h1&gt;
 
-                &lt;div id="container" class="col"&gt;
+                &lt;div id='container' class='col'&gt;
                   &lt;p&gt;
                     | We're gonna put
                     | CodeMirror here so
@@ -71,13 +71,11 @@ block content
                   block content  
               &lt;/body&gt;
             &lt;/html&gt;            
-  a(href="https://github.com/golavender/lavender", target="_blank)
-    img(style="position: absolute; top: 0; right: 0; border: 0;", 
-     src="http://tinyurl.com/kv8nu28",
-     alt="Fork me on GitHub",
-     data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"
+  a(href='https://github.com/golavender/lavender', target='_blank')
+    img(style='position: absolute; top: 0; right: 0; border: 0;', 
+     src='http://tinyurl.com/kv8nu28',
+     alt='Fork me on GitHub',
+     data-canonical-src='https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png'
     )
 
-  footer.footer
-    .container-fluid
-      h6 Lavender is supported and created by Daft Labs. Enjoy!
+  include layouts/footer
