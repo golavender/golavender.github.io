@@ -9,19 +9,21 @@ block content
   .container-fluid.main
     .row.info
       .col-md-2.col-md-offset-2
-        h3 Lavender: a color, a thing or something else? 
+        h3 Lavender: is it a color, a thing or something else?
       .col-md-5.col-md-offset-1
         p
           | Lavender is loosely based on
           a(href="http://jade-lang.com/", target="_blank") Jade
           | , created by the
-          | founders of the Daft Labs team to bring peace and order to their office. 
-          | Lavender is a templating engine with further simplified syntax to allow 
-          | for ease of use (as well as less time spent double checking for proper 
-          | useage).
+          | founders of
+          a(href="http://daftlabs.com/", target="_blank") daft labs
+          | to bring peace and order to their office.
+          | Lavender is a templating engine with a simplified syntax that is easy
+          | to use and efficient. The less time you spend double checking proper
+          | useage the more you are free to create beautiful, powerful projects.
         p
-          | This project is maintained on GitHub, allowing users to collaborate and 
-          | further building.
+          | This project is maintained on GitHub, allowing users to collaborate to
+          | help further the cause.
   .container.whowhatwhy
     .row.info
       .col-md-5
@@ -80,4 +82,6 @@ block content
 
   footer.footer
     .container-fluid
-      h6 Lavender is supported and created by Daft Labs. Enjoy!
+      h6 Lavender is created and supported by
+        a(href='http://daftlabs.com/', title='daft labs', target='_blank') daft labs
+        | . Enjoy!
