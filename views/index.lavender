@@ -67,10 +67,7 @@ block content
                     | how awesome this 
                     | really is!
                   &lt;p&gt;
-                &lt;div&gt;
-
-                div.content
-                  block content  
+                &lt;/div&gt; 
               &lt;/body&gt;
             &lt;/html&gt;            
   a(href='https://github.com/golavender/lavender', target='_blank')
