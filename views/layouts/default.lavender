@@ -60,7 +60,7 @@ body
               title='GitHub', target='_blank'
               ) GitHub
           li
-            a(href='https://github.com/daftlabs', title='GitHub', target='_blank') 
+            a(href="http://daftlabs.com", title="daft labs", target="_blank")
               | Creators
           li(class='#{active_class_guide} dropdown')
             a.dropdown-toggle(href='#', data-toggle='dropdown')
