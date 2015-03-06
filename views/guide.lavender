@@ -1,146 +1,87 @@
-!!!
+extends layouts/default
 
-head
-  title Guide - Lavender Templating Engine for PHP
-  meta(name='keywords', content='Lavender, Lavender programming language, lavenderlang, lavender-lang')
-  meta(name='description', content='A templating engine for PHP, designed to make your life easier.')
-  meta(name='viewport', content='width=device-width, initial-scale=1')
-  link(rel="apple-touch-icon", sizes="57x57", href="/img/favicons/apple-touch-icon-57x57.png")
-  link(rel="apple-touch-icon", sizes="60x60", href="/img/favicons/apple-touch-icon-60x60.png")
-  link(rel="apple-touch-icon", sizes="72x72", href="/img/favicons/apple-touch-icon-72x72.png")
-  link(rel="apple-touch-icon", sizes="76x76", href="/img/favicons/apple-touch-icon-76x76.png")
-  link(rel="apple-touch-icon", sizes="114x114", href="/img/favicons/apple-touch-icon-114x114.png")
-  link(rel="apple-touch-icon", sizes="120x120", href="/img/favicons/apple-touch-icon-120x120.png")
-  link(rel="apple-touch-icon", sizes="144x144", href="/img/favicons/apple-touch-icon-144x144.png")
-  link(rel="apple-touch-icon", sizes="152x152", href="/img/favicons/apple-touch-icon-152x152.png")
-  link(rel="apple-touch-icon", sizes="180x180", href="/img/favicons/apple-touch-icon-180x180.png")
-  link(rel="icon", type="image/png", href="/img/favicons/favicon-32x32.png", sizes="32x32")
-  link(rel="icon", type="image/png", href="/img/favicons/favicon-194x194.png", sizes="194x194")
-  link(rel="icon", type="image/png", href="/img/favicons/favicon-96x96.png", sizes="96x96")
-  link(rel="icon", type="image/png", href="/img/favicons/android-chrome-192x192.png", sizes="192x192")
-  link(rel="icon", type="image/png", href="/img/favicons/favicon-16x16.png", sizes="16x16")
-  link(rel="manifest", href="/img/favicons/manifest.json")
-  meta(name="msapplication-TileColor", content="#cdb4cc")
-  meta(name="msapplication-TileImage", content="/img/favicons/mstile-144x144.png")
-  meta(name="theme-color", content="#796878")
-  link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Oswald:400,700')
-  link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lato:300,700')
-  link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Special+Elite')
-  link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
-  link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
-  link(rel='stylesheet', href='css/main.css')
-  script(src='https://code.jquery.com/jquery-1.11.2.min.js')
-  script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js")
-  script(src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
-body
-  .navbar.navbar-default.navbar-static-top(role='navigation')
-    .container
-      .navbar-header
-        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-          span.sr-only Toggle navigation
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
-      .navbar-collapse.collapse
-        ul.nav.navbar-nav
-          li
-            a(href="/index.html", title="Home") Home
-          li
-            a(href="https://github.com/golavender/lavender", title="GitHub") GitHub
-          li
-            a(href="https://github.com/daftlabs", title="GitHub") Creators
-          li.dropdown.active
-            a.dropdown-toggle(href='#', data-toggle='dropdown')
-              | Guide
-              span.caret
-            ul.dropdown-menu(role='menu')
-              li.active
-                a(href='/guide.html') Guide Home
-              li.dropdown-header Installation
-              li
-                a(href="/guide.html#composer", title="GitHub") via Composer
-              li
-                a(href='/guide.html#github') via GitHub
-              li
-                a(href='/guide.html#usage') Usage
-              li.divider
-              li
-                a(href='/guide.html#langref') Language Reference
-          li
-            a(href="/about.html") About
+-currentPage = 3
+
+block title
+  | Guide - Lavender Templating Engine for PHP
+
+block content
   .container
     div.col-md-3
       .sidebar.guide.img-rounded(
-        data-spy="affix", 
-        data-offset-top="60",
-        data-offset-bottom="200"
+        data-spy='affix', 
+        data-offset-top='60',
+        data-offset-bottom='200'
         )
         h3 Navigation
         h2 Installation
         ul
           li
-            a(href="#composer") via Composer
+            a(href='#composer') via Composer
           li
-            a(href="#github") via GitHub
+            a(href='#github') via GitHub
           li
-            a(href="#usage") Usage
+            a(href='#usage') Usage
         h2 Language Reference
         ul
           li
-            a(href="#html") html
+            a(href='#html') html
           li
-            a(href="#doctype") doctype 
+            a(href='#doctype') doctype 
           li
-            a(href="#comments") comments         
+            a(href='#comments') comments         
           li
-            a(href="#concomments") conditional comments
+            a(href='#concomments') conditional comments
           li
-            a(href="#variables") variables
+            a(href='#variables') variables
           li
-            a(href="#conditionals") conditionals
+            a(href='#conditionals') conditionals
           li
-            a(href="#loops") loops 
+            a(href='#loops') loops 
           li
-            a(href="#else") else
+            a(href='#else') else
           li
-            a(href="#math") math
+            a(href='#math') math
           li
-            a(href="#include") include
+            a(href='#include') include
           li
-            a(href="#extends") extends
+            a(href='#extends') extends
           li
-            a(href="#whitespace") whitespace
+            a(href='#whitespace') whitespace
           li
-            a(href="#helpers") helpers
+            a(href='#helpers') helpers
           li
-            a(href="#filters") filters
+            a(href='#filters') filters
     div.col-md-8
       .guide.img-rounded
         h1.title The Lavender Guide
         p
-          | Hey! We're here to teach you about Lavender. If you know Jade, you'll find this easier 
-          | to pick up. If not, take your time and learn! Yay!
+          | Hey! We're here to teach you about Lavender. If you know Jade, you'll 
+          | find this easier to pick up. If not, take your time and learn! Yay!
         h3 Installation
           h2#composer via composer
           p
             | First, get yourself some 
-            a(href="https://getcomposer.org/doc/00-intro.md#installation-nix") composer.
+            a(
+              href='https://getcomposer.org/doc/00-intro.md#installation-nix', 
+              target='_blank'
+            ) composer.
             |  Next, you need to make yourself a
             code composer.json
             | , here's an example.
             pre
               code.
                 {
-                  "require": {
-                    "lavender/lavender": "*"
+                  'require': {
+                    'lavender/lavender': '*'
                   }
                 }
             | then run
             code php composer.phar install 
             | or
             code composer install
-            | depending on how you've installed composer. Once composer has finished it will generate an 
-            | autoloader in 
+            | depending on how you've installed composer. Once composer has finished 
+            |it will generate an autoloader in 
             code vendor/autoload.php
             | which you can 
             code require()
@@ -148,13 +89,13 @@ body
           h2#github via Github      
           p
             | Add the lavender submodule with 
-            code git submodule add git@github.com:golavender/lavender.git (folder to clone to) 
-            | and include it with 
-            code require "(where you put lavender)/src/Lavender/lavender.php   
+            code git submodule add git@github.com:golavender/lavender.git (folder to 
+            | clone to) and include it with 
+            code require '(where you put lavender)/src/Lavender/lavender.php'   
         h3#usage Usage     
         p
-          | Once you have installed and included lavender, the only required configuration is to tell
-          | lavender where the views directory is.
+          | Once you have installed and included lavender, the only required 
+          | configuration is to tell lavender where the views directory is.
           pre
             code.
               Lavender::config(array(
@@ -165,7 +106,7 @@ body
               'view_dir'       => String,
 
               /*
-              * optional - defaults to "lavender"
+              * optional - defaults to 'lavender'
               */
               //'file_extension' => String,
 
@@ -186,7 +127,7 @@ body
 
               $output = Lavender::view('some_template')->compile(array(
                 'data'      => 'some data that the template will use',
-                'more_data' => "moar data",
+                'more_data' => 'moar data',
               ));
         h3#langref Language Reference
           h2#html html
@@ -197,7 +138,8 @@ body
             | becomes
             pre
               code.
-                &lt;section id="some_id" class="foo bar" attribute1="foo" attribute2="bar"&gt;&lt;/section&gt;
+                &lt;section id='some_id' class='foo bar' attribute1='foo' 
+                attribute2='bar'&gt;&lt;/section&gt;
             | Child nodes are indented below their parent
             pre
               code.
@@ -207,11 +149,12 @@ body
             | becomes
             pre
               code.
-                &lt;section class="foo"&gt;
-                  &lt;div data-something="foo"&gt; &lt;/div&gt;
-                  &lt;div data-something="bar"&gt; &lt;/div&gt;
+                &lt;section class='foo'&gt;
+                  &lt;div data-something='foo'&gt; &lt;/div&gt;
+                  &lt;div data-something='bar'&gt; &lt;/div&gt;
                 &lt;/section&gt;
-            | There is a shortcut if you just want a div, you can skip right to class or id definitions.
+            | There is a shortcut if you just want a div, you can skip right to class 
+            | or id definitions.
             pre
               code.
                 .foobar text text
@@ -219,8 +162,8 @@ body
             | becomes
             pre
               code.
-                &lt;div class="foobar"&gt;text text&lt;/div&gt;
-                &lt;div id="foobar"&gt;text text&lt;/div&gt;   
+                &lt;div class='foobar'&gt;text text&lt;/div&gt;
+                &lt;div id='foobar'&gt;text text&lt;/div&gt;   
             | Text can be added to nodes in two ways.
             pre
               code.
@@ -228,15 +171,19 @@ body
                   div(data-something='foo') this is some text 
                   div(data-something='bar')
                    | this is also some text          
-            | Lavender knows not to put a closing tag on certain nodes. (we got the list from
-            a(href="http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements") here
-            code input(type="text",value="fooooobar")
+            | Lavender knows not to put a closing tag on certain nodes. (we got the 
+            | list from
+            a(
+              href='http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements', 
+              target='_blank'
+              ) here
+            code input(type='text',value='fooooobar')
             | becomes
-            code &lt;input type="text" value="fooooobar"&gt;
+            code &lt;input type='text' value='fooooobar'&gt;
           h2#doctype doctype   
           p
-            | Do you always forget the syntax for doctype? Lavender exists to solve your first world 
-            | problems. Just throw a 
+            | Do you always forget the syntax for doctype? Lavender exists to solve 
+            | your first world problems. Just throw a 
             code !!!
             |  at the top of your layout and you get yourself a nice 
             |       html doctype. Doctypes supported are 
@@ -271,44 +218,50 @@ body
         h2#concomments Conditional Comments
         p
           | The 
-          code IT
-          | shorthand can be used to generate conditional comments for Internet Explorer. check out 
-          a(href="http://www.quirksmode.org/css/condcom.html") this 
+          code IE
+          | shorthand can be used to generate conditional comments for Internet 
+          | Explorer. Check out 
+          a(
+            href='http://www.quirksmode.org/css/condcom.html', 
+            target='_blank'
+            ) this
           | if you are not familiar with conditional comments.
           pre
             code.
               IE
-                script(src="some script to make IE work")
+                script(src='some script to make IE work')
               IE lt 7
-                script(src="some script to make super old IE work")
+                script(src='some script to make super old IE work')
           | becomes
           pre
             code.
               &lt;!--[if IE]&gt;
-                &lt;script src=&quot;some script to make IE work&quot;&gt;&lt;/script&gt;
+                &lt;script src=&#39;some script to make IE work&#39;&gt;&lt;
+                /script&gt;
               &lt;![endif]--&gt;
               &lt;!--[if lt IE 7]&gt;
-                &lt;script src=&quot;some script to make super old IE work&quot;&gt;&lt;/script&gt;
+                &lt;script src=&#39;some script to make super old IE work&#39;&gt;
+                &lt;/script&gt;
               &lt;![endif]--&gt;
           h3#variables Variables
           p
-            | Lavender views can be passed variables from the parent php application or they can be 
-            | defined right in the template.
+            | Lavender views can be passed variables from the parent php application 
+            | or they can be defined right in the template.
           p
             | This just assigns a variable without outputting anything to the page.
             pre 
               code.
-               - some_variable = "this is stored in a variable"
+               - some_variable = 'this is stored in a variable'
           p
             | Note the
             code -
-            | symbol, which evaluates an expression without outputting. the content of the variable can then
-            | later be output using the 
+            | symbol, which evaluates an expression without outputting. the content 
+            | of the variable can then later be output using the 
               code. =
             | symbol.
             pre
               code.
-                 - some_variable = "this is stored in a variable"
+                 - some_variable = 'this is stored in a variable'
 
                  span.foo= some_variable
 
@@ -317,22 +270,23 @@ body
             | becomes
             pre
               code.
-                &lt;span class=&quot;foo&quot;&gt;this is stored in a variable&lt;/div&gt;
-                &lt;span class=&quot;bar&quot;&gt;this is stored in a variable&lt;/div&gt;
+                &lt;span class=&#39;foo&#39;&gt;this is stored in a variable&lt;/div&gt;
+                &lt;span class=&#39;bar&#39;&gt;this is stored in a variable&lt;/div&gt;
             | Arrays too
             code - some_array = ['foo', 'bar', 'baz']
             | and associative arrays
             code - some_array = {key1: 'foo', key2: 'bar', key3: 'baz'} 
           h3#conditionals Conditionals
           p
-            | Markup can be conditionally rendered using the if keyword. Lavender supports all the 
+            | Markup can be conditionally rendered using the if keyword. Lavender 
+            | supports all the 
             | conditional operations you know and love:
             code.
               !, &amp;&amp;, ||, &lt;, &gt;, &lt;=, &gt;=, ==, != 
             | and does a truthy check against the result.
             pre
               code.
-                - some_variable = "this is stored in a variable"
+                - some_variable = 'this is stored in a variable'
 
                 if some_variable
                   span.foo= some_variable
@@ -352,7 +306,7 @@ body
             | becomes
             pre
               code.
-                &lt;span class=&quot;foo&quot;&gt;this is stored in a variable&lt;/div&gt;
+                &lt;span class=&#39;foo&#39;&gt;this is stored in a variable&lt;/div&gt;
                 &lt;div&gt;wooooooooo&lt;/div&gt
             code TRUE
             | and
@@ -362,9 +316,11 @@ body
             | and
             code false
             | )
-            | are keywords in Lavender, they can be assinged to variables or used in conditionals directly
-            | (but if you actually do that then
-            a(href='https://www.destroyallsoftware.com/talks/wat') wat
+            | are keywords in Lavender, they can be assinged to variables or used in 
+            | conditionals directly (but if you actually do that then
+            a(
+              href='https://www.destroyallsoftware.com/talks/wat', 
+              target='_blank') wat
             | )
             pre
               code.
@@ -389,8 +345,8 @@ body
                  ul
                    each value, key in some_random_array
                      li(data-key=key)= value 
-            | You may have noticed how we snuck in using variables for your html attributes there. 
-            | You can do that too!
+            | You may have noticed how we snuck in using variables for your html 
+            | attributes there. You can do that too!
           h2#else Else
           p
             | The else keyword can be used after loops or conditionals.
@@ -407,7 +363,7 @@ body
                   div nothing to see here
                 else
                   div empty array!
-          h2#math math
+          h2#math Math
           p
             | Math. You can do it. Supported operators are
             code %, +, -, *, /, (, )
@@ -444,11 +400,11 @@ body
                   include /path/relative/to/view/directory/somefile
 
                 div.content
-                  include /path/relative/to/view/directory/somefile with {stuff: "Asdfasdf"}
+                  include /path/relative/to/view/directory/somefile with {stuff: 'Asdfasdf'}
           h2#extends Extends
           p
-            | Lavender supports block style layout extension. This means that in the parent template
-            | you define blocks using the
+            | Lavender supports block style layout extension. This means that in the 
+            | parent template you define blocks using the
             code block
             | keyword. Then in the child template you
             b only have blocks
@@ -489,25 +445,25 @@ body
                    &lt;span&gt;foo bar baz&lt;/span&gt;
                  &lt;/div&gt;
 
-                 &lt;div class=&quot;content&quot;&gt;
+                 &lt;div class=&#39;content&#39;&gt;
                    content
                    more content
                    moar content
                  &lt;/div&gt;
-            | A special case has been added to allow defining variables at the top of your child 
-            | templates, these variables can be referenced from the layout to do cool things like 
-            | specifying a list of javascript files necessary for a template to work 
-            | or setting the page title.
+            | A special case has been added to allow defining variables at the top of 
+            | your child templates, these variables can be referenced from the layout 
+            | to do cool things like specifying a list of javascript files necessary 
+            | for a template to work or setting the page title.
         h2#whitespace Whitespace
         p
-          | New lines are added automatically after every html element, if you do not want the newline
-          | you can add a
+          | New lines are added automatically after every html element, if you do not 
+          | want the newline you can add a
           code -
           | to the node definition like so.
         pre
           code.
             p
-            a(href=&quot;/some/place&quot;)- click here for some cool stuff
+            a(href=&#39;/some/place&#39;)- click here for some cool stuff
             |.
         | Automagic whitespace management is hard and subject to change.
         h2#helpers Helpers
@@ -542,15 +498,16 @@ body
           | Are both available for use.
         h3#filters Filters
         p
-          | Programatic expressions in Lavender are a little limited, none of your favorite php 
-          | functions are available for modifying the template data. This is by design, we do not think 
-          | there should be a ton of logic in templates when that logic could be in controllers or models. 
-          | However, since you have to be able to do some templating logic, we added filters. It is super 
-          | easy to add your own filters to Lavender and there are (or will be) plenty in place out of 
-          | the box. Here is how they work...
+          | Programatic expressions in Lavender are a little limited, none of your 
+          | favorite php functions are available for modifying the template data. 
+          | This is by design, we do not think there should be a ton of logic in 
+          | templates when that logic could be in controllers or models. However, 
+          | since you have to be able to do some templating logic, we added filters. 
+          | It is super easy to add your own filters to Lavender and there are 
+          | (or will be) plenty in place out of the box. Here is how they work...
           pre
             code.
-              - myvariable = "some really cool text"
+              - myvariable = 'some really cool text'
 
               div
                 span
@@ -563,185 +520,264 @@ body
                 &lt;span&gt;im gonna filter some stuff, it&apos;ll be cool. SOME REALLY COOL TEXT&lt;/span&gt;
               &lt;/div&gt;
           | Profound right? Not that we invented this, we copied the idea from 
-          a(href="http://twig.sensiolabs.org/") twig
+          a(href='http://twig.sensiolabs.org/', target='_blank') twig
           | . The filters Lavender comes with are:
-        p
-          ul.list-unstyled
-            li
-              b upper:
-              code ="string"|upper
-              | becomes
-              code STRING
-            li
-              b trim:
-              code =" string "|trim
-              | becomes
-              code string
-            li
-              b title:
-              code ="this is a title"|title
-              | becomes
-              code This Is A Title 
-            li
-              b split:
-              code "these are some words"|split(' ')
-              | becomes the array
-              code ['these', 'are', 'some', 'words'] 
-            li
-              b sort:
-              code "these are some words"|split(' ')|sort
-              | becomes the array
-              code ['are', 'some', 'these', 'words'] 
-            li
-              b capitalize:
-              code = "these are some words"|capitalize
-              | becomes
-              code These are some words 
-            li
-              b date:
-              code = "1396372567"|date
-              | becomes
-              code 4/1/2014 = "1396372567"|date('Y') 
-              | becomes
-              code 2014 
-            li
-              b default:
-              code = []|default('foobar')
-              | becomes
-              code foobar
-            li
-              b first:
-              code = ['asdf','qwer']|first
-              | becomes
-              code asdf
-            li
-              b join:
-              code = ['asdf','qwer']|join
-              | becomes
-              code asdf qwer = ['asdf','qwer']|join('-')
-              | becomes
-              code asdf-qwer
-            li
-              b last:
-              code = ['asdf','qwer']|last
-              | becomes
-              code qwer = ['asdf','qwer', 'zxcv']|last(2)|join('-')
-              | becomes
-              code qwer-zxcv
-            li
-              b keys:
-              code {'asdf': 'foo','qwer': 'bar'}|keys
-              | becomes the array
-              code ['asdf', 'qwer']
-            li
-              b length:
-              code = ['asdf','qwer']|length
-              | becomes
-              code 2
-            li
-              b lower:
-              code = "FOO BAR"|lower
-              | becomes
-              code foo bar
-            li
-              b nl2br:
-              code = "new&bsol;nline"|nl2br
-              | becomes
-              code new&lt;br&gt;line 
-            li
-              b round:
-              code = 12345.123|round(2)
-              | becomes
-              code 12345.12
-            li
-              b merge:
-              code ['foo', 'bar']|merge(['baz'])
-              | becomes the array
-              code ['foo', 'bar', 'baz']
-            li
-              b replace:
-              code = "foo bar"|replace(' ', '-')
-              | becomes
-              code foo-bar
-            li
-              b reverse:
-              code ['asdf', 'qwer']|reverse
-              | becomes the array
-              code ['qwer', 'asdf']
-            li
-              b slice:
-              code ['foo', 'bar', 'baz']|slice(1, 1)
-              | becomes the array
-              code ['bar']
-            li
-              b number_format:
-              code = 10000000000.12345|number_format()
-              | becomes
-              code 0,000,000,000 = 10000000000.12345|number_format(2, ',', '.')
-              | becomes
-              code 10.000.000.000,12
-            li
-              b ceil:
-              code = 10000000000.12345|ceil
-              | becomes
-              code 10000000001
-            li
-              b floor:
-              code = 10000000000.12345|floor
-              | becomes
-              code 10000000000
-            li
-              b relative:
-              | if you had a
-              code timestamp
-              | variable
-              code timestamp|relative
-              | would return things like 'just now' or 'in 3 days' or
-              code 6 minutes ago
-            li
-              b contains:
-              code = ['asdf', 'qwer']|contains('asdf')
-              | returns TRUE
-            li
-              b is:
-            ul
-              li
-                code = ['asdf', 'qwer']|is('list')
-                | returns TRUE
-              li
-                code = {asdf: 'qwer'}|is('object')
-                | returns TRUE
-              li
-                code = 8|is('number')
-                | returns TRUE
-              li
-                code = myVariable|is('My_Class_Name')
-                | also works
-            li
-              b json:
-              code = ['asdf', 'qwer']|json
-              | returns
-              code "['asdf','qwer']"
-            li
-              b round:
-              code 3.6|round
-              | becomes
-              code 4
-            li
-              b floor:
-              code 3.14|floor
-              | becomes
-              code 3
-            li
-              b chunk:
-              code 'foo, bar, baz, qux'| chunk 2
-              | becomes
-              code 'foo,bar' 'baz, qux'
-            li
-              b range:
-              code 5| range 10
-              | becomes
-              code 5, 6, 7, 8, 9, 10
-  footer
-    .footer
-      h6 Lavender is supported and created by Daft Labs. Enjoy!
+        div.table-responsive  
+          table.table.table-hover
+              thead
+                tr
+                  th Filter
+                  th Start
+                  th Becomes
+              tbody
+                tr
+                  td 
+                    b upper
+                  td 
+                    code ='string'|upper
+                  td 
+                    code STRING
+                tr
+                  td 
+                    b trim
+                  td 
+                    code =' string '|trim
+                  td
+                    code string
+                tr
+                  td
+                    b title
+                  td
+                    code ='this is a title'|title
+                  td
+                    code This Is A Title
+                tr
+                  td
+                    b split
+                  td
+                    code 'these are some words'|split(' ')
+                  td
+                    code ['these', 'are', 'some', 'words']
+                tr
+                  td
+                    b sort
+                  td
+                    code 'these are some words'|split(' ')|sort
+                  td
+                    code ['are', 'some', 'these', 'words'] 
+                tr
+                  td
+                    b capitalize
+                  td
+                    code = 'these are some words'|capitalize
+                  td
+                    code These are some words 
+                tr
+                  td
+                    b date 
+                  td
+                    code = '1396372567'|date
+                  td 
+                    code 4/1/2014 = '1396372567'|date('Y')
+                    | becomes
+                    code 2014
+                tr
+                  td
+                    b default 
+                  td
+                    code = []|default('foobar')
+                  td
+                    code foobar
+                tr
+                  td
+                    b first
+                  td
+                    code = ['asdf','qwer']|first
+                  td 
+                    code asdf
+                tr
+                  td
+                    b join
+                  td
+                    code = ['asdf','qwer']|join
+                  td
+                    code asdf qwer = ['asdf','qwer']|join('-')
+                    | becomes
+                    code asdf-qwer
+                tr
+                  td 
+                    b last 
+                  td
+                    code = ['asdf','qwer']|last
+                  td
+                    code qwer = ['asdf','qwer', 'zxcv']|last(2)|join('-')
+                    | becomes
+                    code 'qwer-zxcv'
+                tr
+                  td 
+                    b keys
+                  td
+                    code {'asdf': 'foo','qwer': 'bar'}|keys
+                  td
+                    code ['asdf', 'qwer']
+                tr
+                  td 
+                    b length
+                  td
+                    code = ['asdf','qwer']|length
+                  td             
+                    code 2
+                tr
+                  td
+                    b lower
+                  td
+                    code = 'FOO BAR'|lower
+                  td
+                    code foo bar
+                tr
+                  td 
+                    b nl2br
+                  td
+                    code = 'new&bsol;nline'|nl2br
+                  td
+                    code new&lt;br&gt;line 
+                tr
+                  td 
+                    b round
+                  td
+                    code = 12345.123|round(2)
+                  td
+                    code 12345.12
+                tr
+                  td 
+                    b merge
+                  td
+                    code ['foo', 'bar']|merge(['baz'])
+                  td
+                    code ['foo', 'bar', 'baz']
+                tr
+                  td 
+                    b replace
+                  td
+                    code = 'foo bar'|replace(' ', '-')
+                  td
+                    code foo-bar
+                tr
+                  td 
+                    b reverse
+                  td
+                    code ['asdf', 'qwer']|reverse
+                  td
+                    code ['qwer', 'asdf']
+                tr
+                  td 
+                    b slice 
+                  td
+                    code ['foo', 'bar', 'baz']|slice(1, 1)
+                  td
+                    code ['bar']
+                tr
+                  td 
+                    b number_format
+                  td
+                    code = 10000000000.12345|number_format()
+                  td
+                    code 0,000,000,000 = 10000000000.12345|number_format(2, ',', '.')
+                    | becomes
+                    code 10.000.000.000,12
+                tr
+                  td 
+                    b ceil 
+                  td
+                    code = 10000000000.12345|ceil
+                  td
+                    code 10000000001
+                tr
+                  td 
+                    b floor
+                  td
+                    code = 10000000000.12345|floor
+                  td
+                    code 10000000000
+                tr
+                  td 
+                    b relative
+                  td
+                    | if you had a
+                    code timestamp
+                    | variable
+                  td
+                    code timestamp|relative
+                    | would return things like 'just now' or 'in 3 days' or
+                    code 6 minutes ago
+                tr
+                  td 
+                    b contains
+                  td
+                    code = ['asdf', 'qwer']|contains('asdf')
+                  td
+                    | returns TRUE
+                tr
+                  td 
+                    b is
+                  td
+                    code = ['asdf', 'qwer']|is('list')
+                  td
+                    | returns TRUE
+                tr
+                  td 
+                    |  
+                  td
+                    code = {asdf: 'qwer'}|is('object')
+                  td
+                    | returns TRUE
+                tr
+                  td 
+                    |  
+                  td
+                    code = 8|is('number')
+                  td
+                     | returns TRUE
+                tr
+                  td 
+                    |    
+                  td
+                    code = myVariable|is('My_Class_Name')
+                  td
+                    | also works.
+                tr
+                  td 
+                    b json
+                  td
+                    code = ['asdf', 'qwer']|json
+                  td
+                    code '['asdf','qwer']'
+                tr
+                  td 
+                    b round
+                  td
+                    code 3.6|round
+                  td
+                    code 4
+                tr
+                  td 
+                    b floor
+                  td
+                    code 3.14|floor
+                  td
+                    code 3
+                tr
+                  td 
+                    b chunk
+                  td
+                    code 'foo, bar, baz, qux'| chunk 2
+                  td
+                    code 'foo,bar' 'baz, qux'
+                tr
+                  td 
+                    b range
+                  td
+                    code 5| range 11
+                  td
+                    code 5, 6, 7, 8, 9, 10, 11
+  include layouts/footer
