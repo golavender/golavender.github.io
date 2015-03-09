@@ -23,6 +23,13 @@ block content
             | Lavender was formed in the pursuit of simplicity and ease. The syntax 
             | is faster and easier to
             | type and works like Jade. If you feel like it, why not help us make a difference?
+          h2 The Name
+          p
+            | When naming Lavender, we took inspiration from Jade itself. Jade is three things:
+            | a color, an item and a programming language. We also had help from JT, the co-founder
+            | of daft labs, whose favorite color is purple. It was his wife who made the connection
+            | between the name Lavender and the budding programming language, and thus the
+            | name stuck.
           a.btn.btn-default(href='https://github.com/golavender/lavender', target='_blank') Fork Us.
   .container
     .row
