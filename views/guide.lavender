@@ -67,38 +67,38 @@ block content
               target='_blank'
             ) composer.
             |  Next, you need to make yourself a
-            code composer.json
+            code.language-markup composer.json
             | , here's an example.
             pre
-              code.
+              code.language-markup.
                 {
                   'require': {
                     'lavender/lavender': '*'
                   }
                 }
             | then run
-            code php composer.phar install 
+            code.language-markup php composer.phar install 
             | or
-            code composer install
+            code.language-markup composer install
             | depending on how you've installed composer. Once composer has finished 
             |it will generate an autoloader in 
-            code vendor/autoload.php
+            code.language-markup vendor/autoload.php
             | which you can 
-            code require()
+            code.language-markup require()
             | from your application's bootstrap process.
           h2#github via Github      
           p
             | Add the lavender submodule with 
-            code git submodule add git@github.com:golavender/lavender.git (folder to
+            code.language-markup git submodule add git@github.com:golavender/lavender.git (folder to
               |clone to)
             | and include it with 
-            code require '(where you put lavender)/src/Lavender/lavender.php'   
+            code.language-markup require '(where you put lavender)/src/Lavender/lavender.php'   
         h3#usage Usage     
         p
           | Once you have installed and included lavender, the only required 
           | configuration is to tell lavender where the views directory is.
           pre
-            code.
+            code.language-jade.
               Lavender::config(array(
 
               /*
@@ -121,7 +121,7 @@ block content
               ));
           | once it's been rendered, it's as easy as...
           pre
-            code.
+            code.language-jade.
               $output = Lavender::view('some_template')->compile();
 
               // or if you need to pass data into the template (probably the case)
@@ -134,22 +134,22 @@ block content
           h2#html html
           p
             pre
-              code.
+              code.language-jade.
                 section#some_id.foo.bar(attribute1='foo',attribute2='bar')
             | becomes
             pre
-              code.
+              code.language-markup.
                 &lt;section id='some_id' class='foo bar' attribute1='foo' 
                 attribute2='bar'&gt;&lt;/section&gt;
             | Child nodes are indented below their parent
             pre
-              code.
+              code.language-jade.
                section.foo
                 div(data-something='foo') 
                 div(data-something='bar')
             | becomes
             pre
-              code.
+              code.language-markup.
                 &lt;section class='foo'&gt;
                   &lt;div data-something='foo'&gt; &lt;/div&gt;
                   &lt;div data-something='bar'&gt; &lt;/div&gt;
@@ -157,17 +157,17 @@ block content
             | There is a shortcut if you just want a div, you can skip right to class 
             | or id definitions.
             pre
-              code.
+              code.language-jade.
                 .foobar text text
                 #foobar text text
             | becomes
             pre
-              code.
+              code.language-markup.
                 &lt;div class='foobar'&gt;text text&lt;/div&gt;
                 &lt;div id='foobar'&gt;text text&lt;/div&gt;   
             | Text can be added to nodes in two ways.
             pre
-              code.
+              code.language-jade.
                 section.foo
                   div(data-something='foo') this is some text 
                   div(data-something='bar')
@@ -178,48 +178,48 @@ block content
               href='http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements', 
               target='_blank'
               ) here
-            code input(type='text',value='fooooobar')
+            code.language-markup input(type='text',value='fooooobar')
             | becomes
-            code &lt;input type='text' value='fooooobar'&gt;
+            code.language-markup &lt;input type='text' value='fooooobar'&gt;
           h2#doctype doctype   
           p
             | Do you always forget the syntax for doctype? Lavender exists to solve 
             | your first world problems. Just throw a 
-            code !!!
+            code.language-markup !!!
             |  at the top of your layout and you get yourself a nice 
             |       html doctype. Doctypes supported are 
-            code html
+            code.language-markup html
             | , 
-            code transitional
+            code.language-markup transitional
             | ,      
-            code strict
+            code.language-markup strict
             | , 
-            code frameset
+            code.language-markup frameset
             | , 
-            code 1.1
+            code.language-markup 1.1
             | , 
-            code basic
+            code.language-markup basic
             |  and      
-            code mobile
+            code.language-markup mobile
             | . Here are some pretty examples.  
             p
-            code !!!
+            code.language-markup !!!
             |  will default to html, however you can also specify 
-            code !!! html
+            code.language-markup !!! html
             | . The word 
-            code doctype
+            code.language-markup doctype
             |  works as well!
         h2#comments Comments
         p
           | comments are a thing!
           pre
-            code.
+            code.language-jade.
               // this is an html comment. it will be rendered to the page
               //- this is a lavender comment. it will not be rendered
         h2#concomments Conditional Comments
         p
           | The 
-          code IE
+          code.language-markup IE
           | shorthand can be used to generate conditional comments for Internet 
           | Explorer. Check out 
           a(
@@ -228,17 +228,17 @@ block content
             ) this
           | if you are not familiar with conditional comments.
           pre
-            code.
+            code.language-jade.
               IE
                 script(src='some script to make IE work')
               IE lt 7
                 script(src='some script to make super old IE work')
           | becomes
           pre
-            code.
+            code.language-markup.
               &lt;!--[if IE]&gt;
-                &lt;script src=&#39;some script to make IE work&#39;&gt;&lt;
-                /script&gt;
+                &lt;script src=&#39;some script to make IE work&#39;&gt;
+                &lt;/script&gt;
               &lt;![endif]--&gt;
               &lt;!--[if lt IE 7]&gt;
                 &lt;script src=&#39;some script to make super old IE work&#39;&gt;
@@ -251,17 +251,17 @@ block content
           p
             | This just assigns a variable without outputting anything to the page.
             pre 
-              code.
+              code.language-jade.
                - some_variable = 'this is stored in a variable'
           p
             | Note the
-            code -
+            code.language-markup -
             | symbol, which evaluates an expression without outputting. the content 
             | of the variable can then later be output using the 
-              code. =
+              code.language-markup. =
             | symbol.
             pre
-              code.
+              code.language-jade.
                  - some_variable = 'this is stored in a variable'
 
                  span.foo= some_variable
@@ -270,23 +270,23 @@ block content
                    = some_variable
             | becomes
             pre
-              code.
+              code.language-markup.
                 &lt;span class=&#39;foo&#39;&gt;this is stored in a variable&lt;/div&gt;
                 &lt;span class=&#39;bar&#39;&gt;this is stored in a variable&lt;/div&gt;
             | Arrays too
-            code - some_array = ['foo', 'bar', 'baz']
+            code.language-markup - some_array = ['foo', 'bar', 'baz']
             | and associative arrays
-            code - some_array = {key1: 'foo', key2: 'bar', key3: 'baz'} 
+            code.language-markup - some_array = {key1: 'foo', key2: 'bar', key3: 'baz'} 
           h3#conditionals Conditionals
           p
             | Markup can be conditionally rendered using the if keyword. Lavender 
             | supports all the 
             | conditional operations you know and love:
-            code.
+            code.language-markup.
               !, &amp;&amp;, ||, &lt;, &gt;, &lt;=, &gt;=, ==, != 
             | and does a truthy check against the result.
             pre
-              code.
+              code.language-jade.
                 - some_variable = 'this is stored in a variable'
 
                 if some_variable
@@ -306,16 +306,16 @@ block content
           p
             | becomes
             pre
-              code.
+              code.language-markup.
                 &lt;span class=&#39;foo&#39;&gt;this is stored in a variable&lt;/div&gt;
                 &lt;div&gt;wooooooooo&lt;/div&gt
-            code TRUE
+            code.language-markup TRUE
             | and
-            code FALSE
+            code.language-markup FALSE
             | (and
-            code true
+            code.language-markup true
             | and
-            code false
+            code.language-markup false
             | )
             | are keywords in Lavender, they can be assinged to variables or used in 
             | conditionals directly (but if you actually do that then
@@ -324,7 +324,7 @@ block content
               target='_blank') wat
             | )
             pre
-              code.
+              code.language-jade.
                 - my_variable = TRUE
 
                 if my_variable
@@ -335,10 +335,10 @@ block content
           h2#loops Loops
           p
             | Lavender supports iterating over arrays and associative arrays with the 
-            code each
+            code.language-markup each
             | keyword
             pre
-              code.
+              code.language-jade.
                  ul
                    each value in some_random_array
                      li= value 
@@ -352,7 +352,7 @@ block content
           p
             | The else keyword can be used after loops or conditionals.
             pre
-              code.
+              code.language-jade.
                   if FALSE
                   div will not show up
                 else
@@ -367,10 +367,10 @@ block content
           h2#math Math
           p
             | Math. You can do it. Supported operators are
-            code %, +, -, *, /, (, )
+            code.language-markup %, +, -, *, /, (, )
             | .
             pre
-              code.
+              code.language-jade.
                   = 1 + 1 = 
                   = 1 + 1
 
@@ -394,7 +394,7 @@ block content
           p
             | Partials are a thing.
             pre
-              code.
+              code.language-jade.
                 span stuff and things
 
                 div.content
@@ -406,14 +406,14 @@ block content
           p
             | Lavender supports block style layout extension. This means that in the 
             | parent template you define blocks using the
-            code block
+            code.language-markup block
             | keyword. Then in the child template you
             b only have blocks
             | which override the blocks in the parent template.
           p
             |  So if this was layout.lavender..
             pre
-              code.
+              code.language-jade.
                 h1 this is a pretty cool web page
 
                 block header
@@ -425,7 +425,7 @@ block content
                   block content
             | And this is the child template...
             pre
-              code.
+              code.language-jade.
                 extends layout
 
                 block header
@@ -439,7 +439,7 @@ block content
                   | moar content
             | And you were to render the child template, you would get...
             pre
-              code.
+              code.language-markup.
                  &lt;h1&gt;this is a pretty cool web page&lt;/h1&gt;
 
                  &lt;div&gt;
@@ -459,10 +459,10 @@ block content
         p
           | New lines are added automatically after every html element, if you do not 
           | want the newline you can add a
-          code -
+          code.language-markup -
           | to the node definition like so.
         pre
-          code.
+          code.language-jade.
             p
             a(href=&#39;/some/place&#39;)- click here for some cool stuff
             |.
@@ -471,7 +471,7 @@ block content
         p
           | Helpers are used to streamline the process even more. A constant helper...
           pre
-            code.
+            code.language-jade.
               class Lavender_Helper_Constant
               {
                 public function execute($string)
@@ -482,7 +482,7 @@ block content
               Lavender::register_helper('constant', 'Lavender_Helper_Constant');
           | And a date helper...
           pre
-            code.
+            code.language-jade.
               class Lavender_Helper_Date
               {
                 public function execute($format, $timestamp = NULL)
@@ -507,7 +507,7 @@ block content
           | It is super easy to add your own filters to Lavender and there are 
           | (or will be) plenty in place out of the box. Here is how they work...
           pre
-            code.
+            code.language-jade.
               - myvariable = 'some really cool text'
 
               div
@@ -516,7 +516,7 @@ block content
                   = myvariable | upper 
           | becomes
           pre
-            code.
+            code.language-markup.
               &lt;div&gt;
                 &lt;span&gt;im gonna filter some stuff, it&apos;ll be cool. SOME REALLY COOL TEXT&lt;/span&gt;
               &lt;/div&gt;
@@ -535,250 +535,250 @@ block content
                   td 
                     b upper
                   td 
-                    code ='string'|upper
+                    code.language-markup ='string'|upper
                   td 
-                    code STRING
+                    code.language-markup STRING
                 tr
                   td 
                     b trim
                   td 
-                    code =' string '|trim
+                    code.language-markup =' string '|trim
                   td
-                    code string
+                    code.language-markup string
                 tr
                   td
                     b title
                   td
-                    code ='this is a title'|title
+                    code.language-markup ='this is a title'|title
                   td
-                    code This Is A Title
+                    code.language-markup This Is A Title
                 tr
                   td
                     b split
                   td
-                    code 'these are some words'|split(' ')
+                    code.language-markup 'these are some words'|split(' ')
                   td
-                    code ['these', 'are', 'some', 'words']
+                    code.language-markup ['these', 'are', 'some', 'words']
                 tr
                   td
                     b sort
                   td
-                    code 'these are some words'|split(' ')|sort
+                    code.language-markup 'these are some words'|split(' ')|sort
                   td
-                    code ['are', 'some', 'these', 'words'] 
+                    code.language-markup ['are', 'some', 'these', 'words'] 
                 tr
                   td
                     b capitalize
                   td
-                    code = 'these are some words'|capitalize
+                    code.language-markup = 'these are some words'|capitalize
                   td
-                    code These are some words 
+                    code.language-markup These are some words 
                 tr
                   td
                     b date 
                   td
-                    code = '1396372567'|date
+                    code.language-markup = '1396372567'|date
                   td 
-                    code 4/1/2014 = '1396372567'|date('Y')
+                    code.language-markup 4/1/2014 = '1396372567'|date('Y')
                     | becomes
-                    code 2014
+                    code.language-markup 2014
                 tr
                   td
                     b default 
                   td
-                    code = []|default('foobar')
+                    code.language-markup = []|default('foobar')
                   td
-                    code foobar
+                    code.language-markup foobar
                 tr
                   td
                     b first
                   td
-                    code = ['asdf','qwer']|first
+                    code.language-markup = ['asdf','qwer']|first
                   td 
-                    code asdf
+                    code.language-markup asdf
                 tr
                   td
                     b join
                   td
-                    code = ['asdf','qwer']|join
+                    code.language-markup = ['asdf','qwer']|join
                   td
-                    code asdf qwer = ['asdf','qwer']|join('-')
+                    code.language-markup asdf qwer = ['asdf','qwer']|join('-')
                     | becomes
-                    code asdf-qwer
+                    code.language-markup asdf-qwer
                 tr
                   td 
                     b last 
                   td
-                    code = ['asdf','qwer']|last
+                    code.language-markup = ['asdf','qwer']|last
                   td
-                    code qwer = ['asdf','qwer', 'zxcv']|last(2)|join('-')
+                    code.language-markup qwer = ['asdf','qwer', 'zxcv']|last(2)|join('-')
                     | becomes
-                    code 'qwer-zxcv'
+                    code.language-markup 'qwer-zxcv'
                 tr
                   td 
                     b keys
                   td
-                    code {'asdf': 'foo','qwer': 'bar'}|keys
+                    code.language-markup {'asdf': 'foo','qwer': 'bar'}|keys
                   td
-                    code ['asdf', 'qwer']
+                    code.language-markup ['asdf', 'qwer']
                 tr
                   td 
                     b length
                   td
-                    code = ['asdf','qwer']|length
+                    code.language-markup = ['asdf','qwer']|length
                   td             
-                    code 2
+                    code.language-markup 2
                 tr
                   td
                     b lower
                   td
-                    code = 'FOO BAR'|lower
+                    code.language-markup = 'FOO BAR'|lower
                   td
-                    code foo bar
+                    code.language-markup foo bar
                 tr
                   td 
                     b nl2br
                   td
-                    code = 'new&bsol;nline'|nl2br
+                    code.language-markup = 'new&bsol;nline'|nl2br
                   td
-                    code new&lt;br&gt;line 
+                    code.language-markup new&lt;br&gt;line 
                 tr
                   td 
                     b round
                   td
-                    code = 12345.123|round(2)
+                    code.language-markup = 12345.123|round(2)
                   td
-                    code 12345.12
+                    code.language-markup 12345.12
                 tr
                   td 
                     b merge
                   td
-                    code ['foo', 'bar']|merge(['baz'])
+                    code.language-markup ['foo', 'bar']|merge(['baz'])
                   td
-                    code ['foo', 'bar', 'baz']
+                    code.language-markup ['foo', 'bar', 'baz']
                 tr
                   td 
                     b replace
                   td
-                    code = 'foo bar'|replace(' ', '-')
+                    code.language-markup = 'foo bar'|replace(' ', '-')
                   td
-                    code foo-bar
+                    code.language-markup foo-bar
                 tr
                   td 
                     b reverse
                   td
-                    code ['asdf', 'qwer']|reverse
+                    code.language-markup ['asdf', 'qwer']|reverse
                   td
-                    code ['qwer', 'asdf']
+                    code.language-markup ['qwer', 'asdf']
                 tr
                   td 
                     b slice 
                   td
-                    code ['foo', 'bar', 'baz']|slice(1, 1)
+                    code.language-markup ['foo', 'bar', 'baz']|slice(1, 1)
                   td
-                    code ['bar']
+                    code.language-markup ['bar']
                 tr
                   td 
                     b number_format
                   td
-                    code = 10000000000.12345|number_format()
+                    code.language-markup = 10000000000.12345|number_format()
                   td
-                    code 0,000,000,000 = 10000000000.12345|number_format(2, ',', '.')
+                    code.language-markup 0,000,000,000 = 10000000000.12345|number_format(2, ',', '.')
                     | becomes
-                    code 10.000.000.000,12
+                    code.language-markup 10.000.000.000,12
                 tr
                   td 
                     b ceil 
                   td
-                    code = 10000000000.12345|ceil
+                    code.language-markup = 10000000000.12345|ceil
                   td
-                    code 10000000001
+                    code.language-markup 10000000001
                 tr
                   td 
                     b floor
                   td
-                    code = 10000000000.12345|floor
+                    code.language-markup = 10000000000.12345|floor
                   td
-                    code 10000000000
+                    code.language-markup 10000000000
                 tr
                   td 
                     b relative
                   td
                     | if you had a
-                    code timestamp
+                    code.language-markup timestamp
                     | variable
                   td
-                    code timestamp|relative
+                    code.language-markup timestamp|relative
                     | would return things like 'just now' or 'in 3 days' or
-                    code 6 minutes ago
+                    code.language-markup 6 minutes ago
                 tr
                   td 
                     b contains
                   td
-                    code = ['asdf', 'qwer']|contains('asdf')
+                    code.language-markup = ['asdf', 'qwer']|contains('asdf')
                   td
                     | returns TRUE
                 tr
                   td 
                     b is
                   td
-                    code = ['asdf', 'qwer']|is('list')
+                    code.language-markup = ['asdf', 'qwer']|is('list')
                   td
                     | returns TRUE
                 tr
                   td 
                     |  
                   td
-                    code = {asdf: 'qwer'}|is('object')
+                    code.language-markup = {asdf: 'qwer'}|is('object')
                   td
                     | returns TRUE
                 tr
                   td 
                     |  
                   td
-                    code = 8|is('number')
+                    code.language-markup = 8|is('number')
                   td
                      | returns TRUE
                 tr
                   td 
                     |    
                   td
-                    code = myVariable|is('My_Class_Name')
+                    code.language-markup = myVariable|is('My_Class_Name')
                   td
                     | also works.
                 tr
                   td 
                     b json
                   td
-                    code = ['asdf', 'qwer']|json
+                    code.language-markup = ['asdf', 'qwer']|json
                   td
-                    code '['asdf','qwer']'
+                    code.language-markup '['asdf','qwer']'
                 tr
                   td 
                     b round
                   td
-                    code 3.6|round
+                    code.language-markup 3.6|round
                   td
-                    code 4
+                    code.language-markup 4
                 tr
                   td 
                     b floor
                   td
-                    code 3.14|floor
+                    code.language-markup 3.14|floor
                   td
-                    code 3
+                    code.language-markup 3
                 tr
                   td 
                     b chunk
                   td
-                    code 'foo, bar, baz, qux'| chunk 2
+                    code.language-markup 'foo, bar, baz, qux'| chunk 2
                   td
-                    code 'foo,bar' 'baz, qux'
+                    code.language-markup 'foo,bar' 'baz, qux'
                 tr
                   td 
                     b range
                   td
-                    code 5| range 11
+                    code.language-markup 5| range 11
                   td
-                    code 5, 6, 7, 8, 9, 10, 11
+                    code.language-markup 5, 6, 7, 8, 9, 10, 11
   include layouts/footer
