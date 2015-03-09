@@ -1,6 +1,6 @@
 extends layouts/default
 
--active_class_index = 'disabled'
+-currentPage = 0
 
 block title
   | Lavender Templating Engine for PHP

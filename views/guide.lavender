@@ -1,6 +1,6 @@
 extends layouts/default
 
--active_class_guide = 'disabled'
+-currentPage = 3
 
 block title
   | Guide - Lavender Templating Engine for PHP
