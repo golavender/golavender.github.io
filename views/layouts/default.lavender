@@ -83,4 +83,7 @@ body
                 a(href='/guide.html#langref') Language Reference
           li(class='#{active_class_about}')
             a(href='/about.html') About
+          li(class='#{active_class_download}')
+            a(href='/download.html', title='Download') Download
+          li
   block content

@@ -1,0 +1,60 @@
+extends layouts/default
+
+-active_class_download = 'disabled'
+
+block title
+  | Download - Lavender Templating Engine for PHP
+
+block content
+  .container
+    div.col-md-3
+      
+    div.col-md-8
+      .guide.img-rounded
+        h1.title Download Lavender
+        p
+          | We don't need no stinkin' manual...
+        p
+          | I want to download Lavender now!
+        h3 Download Lavender
+        p
+          | You can download Lavender from its
+          a(
+            href='https://github.com/golavender/lavender', 
+            target='_blank'
+            ) github repository
+          |. 
+        h3 Installation
+          h2#composer via composer
+          p
+            | First, get yourself some 
+            a(
+              href='https://getcomposer.org/doc/00-intro.md#installation-nix', 
+              target='_blank'
+            ) composer.
+            |  Next, you need to make yourself a
+            code.language-markup composer.json
+            | . Here's an example:
+            pre
+              code.language-markup.
+                {
+                  'require': {
+                    'lavender/lavender': '*'
+                  }
+                }
+            | then run
+            code.language-markup php composer.phar install 
+            | or
+            code.language-markup composer install
+            | depending on how you've installed composer. Once composer has finished 
+            |it will generate an autoloader in 
+            code.language-markup vendor/autoload.php
+            | which you can 
+            code.language-markup require()
+            | from your application's bootstrap process.
+          h2#github via Github      
+          p
+            | Add the lavender submodule with: 
+            code.language-markup git submodule add git@github.com:golavender/lavender.git (folder to 
+            | clone to) and include it with: 
+            code.language-markup require '(where you put lavender)/src/Lavender/lavender.php' 

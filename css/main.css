@@ -130,6 +130,7 @@ pre {
   white-space: -pre-wrap;
   white-space: -o-pre-wrap;
   word-wrap: break-word;
+
 }
 
 code {
@@ -142,10 +143,10 @@ code {
 
 .btn-home { 
   color: #dad1d9; 
-  background-color: rgb(66,56,66);
-  background-color: rgba(66,56,66,.8);  
-  margin-top: 3px;
-  margin-bottom: 2px;
+  background: rgb(230,230,250);
+  background: rgba(230,230,250,0.4);
+  margin-top: 10px;
+  margin-bottom: 20px;
   margin-right: 5px;
 } 
  

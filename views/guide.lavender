@@ -68,7 +68,7 @@ block content
             ) composer.
             |  Next, you need to make yourself a
             code.language-markup composer.json
-            | , here's an example.
+            | . Here's an example:
             pre
               code.language-markup.
                 {
@@ -172,12 +172,12 @@ block content
                   div(data-something='foo') this is some text 
                   div(data-something='bar')
                    | this is also some text          
-            | Lavender knows not to put a closing tag on certain nodes. (we got the 
+            | Lavender knows not to put a closing tag on certain nodes (we got the 
             | list from
             a(
               href='http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements', 
               target='_blank'
-              ) here
+              ) here).
             code.language-markup input(type='text',value='fooooobar')
             | becomes
             code.language-markup &lt;input type='text' value='fooooobar'&gt;
@@ -256,9 +256,9 @@ block content
           p
             | Note the
             code.language-markup -
-            | symbol, which evaluates an expression without outputting. the content 
+            | symbol, which evaluates an expression without outputting. The content 
             | of the variable can then later be output using the 
-              code.language-markup. =
+              code.language-markup =
             | symbol.
             pre
               code.language-jade.
@@ -297,10 +297,13 @@ block content
 
                 if FALSE
                   div this isn't rendered
+
                 elseif FALSE
                   div still not rendered
+
                 elseif TRUE
                   div wooooooooo
+
                 else
                   div sadface
           p
@@ -322,7 +325,7 @@ block content
             a(
               href='https://www.destroyallsoftware.com/talks/wat', 
               target='_blank') wat
-            | )
+            | )).
             pre
               code.language-jade.
                 - my_variable = TRUE
