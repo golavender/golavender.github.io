@@ -24,6 +24,7 @@ block content
         p
           | This project is maintained on GitHub, allowing users to collaborate to
           | help further the cause.
+        a.btn.btn-home(href="/download.html") Download Lavender
   .container.whowhatwhy
     .row.info
       .col-md-5
