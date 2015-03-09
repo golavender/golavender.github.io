@@ -29,7 +29,7 @@ block content
       .col-md-5
         h3 Lavender...
         pre
-          code.
+          code.language-jade.
             !!!
               head
                 title Hello World!
@@ -39,18 +39,17 @@ block content
 
                   div.container.col
                     p
-                      | We're gonna put
-                      | CodeMirror here so 
-                      | you can understand
-                      | how awesome this 
-                      | really is!
+                      | &#124; Welcome...
+                      | &#124; To the world 
+                      | &#124; of
+                      | &#124; TOMORROW! 
 
                     div.content
                       block content
       .col-md-5.col-md-offset-1
         h3 vs. HTML
         pre
-          code.
+          code.language-markup.
             &lt;!DOCTYPE html&gt;
               &lt;head&gt;
                 &lt;title&gt;Hello World!&lt;/title&gt;
@@ -61,11 +60,10 @@ block content
 
                 &lt;div id='container' class='col'&gt;
                   &lt;p&gt;
-                    | We're gonna put
-                    | CodeMirror here so
-                    | you can understand
-                    | how awesome this 
-                    | really is!
+                    | &#124; Welcome...
+                    | &#124; To the world 
+                    | &#124; of
+                    | &#124; TOMORROW! 
                   &lt;p&gt;
                 &lt;/div&gt; 
               &lt;/body&gt;
