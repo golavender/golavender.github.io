@@ -13,8 +13,8 @@ block content
         data-offset-top='60',
         data-offset-bottom='200'
         )
-        h3 Navigation
-        h2 Installation
+        h2 Navigation
+        h3 Installation
         ul
           li
             a(href='#composer') via Composer
@@ -22,7 +22,7 @@ block content
             a(href='#github') via GitHub
           li
             a(href='#usage') Usage
-        h2 Language Reference
+        h3 Language Reference
         ul
           li
             a(href='#html') html
@@ -58,11 +58,11 @@ block content
         p
           | Hey! We're here to teach you about Lavender. If you know Jade, you'll 
           | find this easier to pick up. If not, take your time and learn! Yay!
-        h3 Installation
-          h2#composer via composer
+        h2 Installation
+          h3#composer via composer
           p
             | First, get yourself some 
-            a(
+            a.guide-link(
               href='https://getcomposer.org/doc/00-intro.md#installation-nix', 
               target='_blank'
             ) composer.
@@ -86,19 +86,19 @@ block content
             | which you can 
             code.language-markup require()
             | from your application's bootstrap process.
-          h2#github via Github      
+          h3#github via Github      
           p
-            | Add the lavender submodule with 
+            | Add the Lavender submodule with 
             code.language-markup git submodule add git@github.com:golavender/lavender.git (folder to 
             | clone to) and include it with 
-            code.language-markup require '(where you put lavender)/src/Lavender/lavender.php'   
-        h3#usage Usage     
+            code.language-markup require '(where you put lavender)/src/lavender/lavender.php'   
+        h2#usage Usage     
         p
-          | Once you have installed and included lavender, the only required 
-          | configuration is to tell lavender where the views directory is.
+          | Once you have installed and included Lavender, the only required 
+          | configuration is to tell Lavender where the views directory is.
           pre
             code.language-jade.
-              Lavender::config(array(
+              lavender::config(array(
 
               /*
                * required - path to views directory
@@ -121,16 +121,16 @@ block content
           | once it's been rendered, it's as easy as...
           pre
             code.language-jade.
-              $output = Lavender::view('some_template')->compile();
+              $output = lavender::view('some_template')->compile();
 
               // or if you need to pass data into the template (probably the case)
 
-              $output = Lavender::view('some_template')->compile(array(
+              $output = lavender::view('some_template')->compile(array(
                 'data'      => 'some data that the template will use',
                 'more_data' => 'moar data',
               ));
-        h3#langref Language Reference
-          h2#html html
+        h2#langref Language Reference
+          h3#html html
           p
             pre
               code.language-jade.
@@ -173,14 +173,14 @@ block content
                    | this is also some text          
             | Lavender knows not to put a closing tag on certain nodes. (we got the 
             | list from
-            a(
+            a.guide-link(
               href='http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements', 
               target='_blank'
               ) here
             code.language-markup input(type='text',value='fooooobar')
             | becomes
             code.language-markup &lt;input type='text' value='fooooobar'&gt;
-          h2#doctype doctype   
+          h3#doctype doctype   
           p
             | Do you always forget the syntax for doctype? Lavender exists to solve 
             | your first world problems. Just throw a 
@@ -208,20 +208,20 @@ block content
             | . The word 
             code.language-markup doctype
             |  works as well!
-        h2#comments Comments
+        h3#comments Comments
         p
           | comments are a thing!
           pre
             code.language-jade.
               // this is an html comment. it will be rendered to the page
-              //- this is a lavender comment. it will not be rendered
-        h2#concomments Conditional Comments
+              //- this is a Lavender comment. it will not be rendered
+        h3#concomments Conditional Comments
         p
           | The 
           code.language-markup IE
           | shorthand can be used to generate conditional comments for Internet 
           | Explorer. Check out 
-          a(
+          a.guide-link(
             href='http://www.quirksmode.org/css/condcom.html', 
             target='_blank'
             ) this
@@ -263,7 +263,7 @@ block content
               code.language-jade.
                  - some_variable = 'this is stored in a variable'
 
-                 span.foo= some_variable
+                 span.foo = some_variable
 
                  span.bar
                    = some_variable
@@ -318,7 +318,7 @@ block content
             | )
             | are keywords in Lavender, they can be assinged to variables or used in 
             | conditionals directly (but if you actually do that then
-            a(
+            a.guide-link(
               href='https://www.destroyallsoftware.com/talks/wat', 
               target='_blank') wat
             | )
@@ -331,7 +331,7 @@ block content
 
                 if false
                   div this will not
-          h2#loops Loops
+          h3#loops Loops
           p
             | Lavender supports iterating over arrays and associative arrays with the 
             code.language-markup each
@@ -347,7 +347,7 @@ block content
                      li(data-key=key)= value 
             | You may have noticed how we snuck in using variables for your html 
             | attributes there. You can do that too!
-          h2#else Else
+          h3#else Else
           p
             | The else keyword can be used after loops or conditionals.
             pre
@@ -363,7 +363,7 @@ block content
                   div nothing to see here
                 else
                   div empty array!
-          h2#math Math
+          h3#math Math
           p
             | Math. You can do it. Supported operators are
             code.language-markup %, +, -, *, /, (, )
@@ -389,7 +389,7 @@ block content
                   each value, key in some_random_array
                     if key % 2 == 0
                       li(data-key=key)= value 
-          h2#include Include
+          h3#include Include
           p
             | Partials are a thing.
             pre
@@ -401,13 +401,13 @@ block content
 
                 div.content
                   include /path/relative/to/view/directory/somefile with {stuff: 'Asdfasdf'}
-          h2#extends Extends
+          h3#extends Extends
           p
             | Lavender supports block style layout extension. This means that in the 
             | parent template you define blocks using the
             code.language-markup block
             | keyword. Then in the child template you
-            b only have blocks
+            u only have blocks
             | which override the blocks in the parent template.
           p
             |  So if this was layout.lavender..
@@ -454,7 +454,7 @@ block content
             | your child templates, these variables can be referenced from the layout 
             | to do cool things like specifying a list of javascript files necessary 
             | for a template to work or setting the page title.
-        h2#whitespace Whitespace
+        h3#whitespace Whitespace
         p
           | New lines are added automatically after every html element, if you do not 
           | want the newline you can add a
@@ -466,7 +466,7 @@ block content
             a(href=&#39;/some/place&#39;)- click here for some cool stuff
             |.
         | Automagic whitespace management is hard and subject to change.
-        h2#helpers Helpers
+        h3#helpers Helpers
         p
           | Helpers are used to streamline the process even more. A constant helper...
           pre
@@ -478,7 +478,7 @@ block content
                   return constant($string);
                 }
               }
-              Lavender::register_helper('constant', 'Lavender_Helper_Constant');
+              lavender::register_helper('constant', 'Lavender_Helper_Constant');
           | And a date helper...
           pre
             code.language-jade.
@@ -494,7 +494,7 @@ block content
                   }
                 }
               }
-              Lavender::register_helper('date', 'Lavender_Helper_Date');
+              lavender::register_helper('date', 'Lavender_Helper_Date');
           | Are both available for use.
         h3#filters Filters
         p
@@ -520,7 +520,7 @@ block content
                 &lt;span&gt;im gonna filter some stuff, it&apos;ll be cool. SOME REALLY COOL TEXT&lt;/span&gt;
               &lt;/div&gt;
           | Profound right? Not that we invented this, we copied the idea from 
-          a(href='http://twig.sensiolabs.org/', target='_blank') twig
+          a.guide-link(href='http://twig.sensiolabs.org/', target='_blank') twig
           | . The filters Lavender comes with are:
         div.table-responsive  
           table.table.table-hover
@@ -619,6 +619,7 @@ block content
                   td
                     code.language-markup {'asdf': 'foo','qwer': 'bar'}|keys
                   td
+                    | becomes the array
                     code.language-markup ['asdf', 'qwer']
                 tr
                   td 
@@ -780,4 +781,3 @@ block content
                     code.language-markup 5| range 11
                   td
                     code.language-markup 5, 6, 7, 8, 9, 10, 11
-  include layouts/footer
