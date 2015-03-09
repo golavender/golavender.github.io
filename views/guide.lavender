@@ -89,8 +89,9 @@ block content
           h2#github via Github      
           p
             | Add the lavender submodule with 
-            code git submodule add git@github.com:golavender/lavender.git (folder to 
-            | clone to) and include it with 
+            code git submodule add git@github.com:golavender/lavender.git (folder to
+            code clone to)
+            | and include it with 
             code require '(where you put lavender)/src/Lavender/lavender.php'   
         h3#usage Usage     
         p
