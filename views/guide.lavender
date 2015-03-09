@@ -88,9 +88,10 @@ block content
             | from your application's bootstrap process.
           h2#github via Github      
           p
-            | Add the lavender submodule with: 
-            code.language-markup git submodule add git@github.com:golavender/lavender.git (folder to 
-            | clone to) and include it with: 
+            | Add the lavender submodule with 
+            code.language-markup git submodule add git@github.com:golavender/lavender.git (folder to
+              |clone to)
+            | and include it with 
             code.language-markup require '(where you put lavender)/src/Lavender/lavender.php'   
         h3#usage Usage     
         p
