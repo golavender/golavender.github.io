@@ -1,85 +1,29 @@
-!!!
+extends layouts/default
 
-head
-  title Lavender Templating Engine for PHP
-  meta(name='keywords', content='Lavender, Lavender programming language, lavenderlang, lavender-lang')
-  meta(name='description', content='A templating engine for PHP, designed to make your life easier.')
-  meta(name='viewport', content='width=device-width, initial-scale=1')
-  link(rel="apple-touch-icon", sizes="57x57", href="/img/favicons/apple-touch-icon-57x57.png")
-  link(rel="apple-touch-icon", sizes="60x60", href="/img/favicons/apple-touch-icon-60x60.png")
-  link(rel="apple-touch-icon", sizes="72x72", href="/img/favicons/apple-touch-icon-72x72.png")
-  link(rel="apple-touch-icon", sizes="76x76", href="/img/favicons/apple-touch-icon-76x76.png")
-  link(rel="apple-touch-icon", sizes="114x114", href="/img/favicons/apple-touch-icon-114x114.png")
-  link(rel="apple-touch-icon", sizes="120x120", href="/img/favicons/apple-touch-icon-120x120.png")
-  link(rel="apple-touch-icon", sizes="144x144", href="/img/favicons/apple-touch-icon-144x144.png")
-  link(rel="apple-touch-icon", sizes="152x152", href="/img/favicons/apple-touch-icon-152x152.png")
-  link(rel="apple-touch-icon", sizes="180x180", href="/img/favicons/apple-touch-icon-180x180.png")
-  link(rel="icon", type="image/png", href="/img/favicons/favicon-32x32.png", sizes="32x32")
-  link(rel="icon", type="image/png", href="/img/favicons/favicon-194x194.png", sizes="194x194")
-  link(rel="icon", type="image/png", href="/img/favicons/favicon-96x96.png", sizes="96x96")
-  link(rel="icon", type="image/png", href="/img/favicons/android-chrome-192x192.png", sizes="192x192")
-  link(rel="icon", type="image/png", href="/img/favicons/favicon-16x16.png", sizes="16x16")
-  link(rel="manifest", href="/img/favicons/manifest.json")
-  meta(name="msapplication-TileColor", content="#cdb4cc")
-  meta(name="msapplication-TileImage", content="/img/favicons/mstile-144x144.png")
-  meta(name="theme-color", content="#796878")
-  link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Oswald:400,700')
-  link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lato:300,700')
-  link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Special+Elite')
-  link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
-  link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
-  link(rel='stylesheet', href='css/main.css')
-  script(src='https://code.jquery.com/jquery-1.11.2.min.js')
-  script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js")
-  script(src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
-body 
-  .container.blip
-    .row 
-      .col-md-2.logo-front
-        img.img-responsive.center-block(
-          src="http://www.sugarphlox.com/public/images/portfolio/lavender-logo-2015.png"
-          height=150
-          width=150)      
-      .col-md-10.maintitle
-        h1 Lavender Templating Engine for PHP
-        h4 Why? Because why not.
-  .nav
-    .navbar.navbar-default.navbar-static.spaaace(
-      data-spy="affix", 
-      data-offset-top="200",
-      data-offset-bottom="200"
-      )
-      .container-fluid
-        a.navbar-toggle(data-toggle='collapse', data-target='.navbar-collapse')
-          i.fa.fa-bars.fa-2x
-        .navbar-collapse.collapse
-          ul.nav.navbar-nav
-            li
-              a(
-                href='https://github.com/golavender/lavender/archive/master.zip',
-                role='button'
-                title='We recommend you read the language reference guide before you do this!') Download
-            li
-              a(href='/guide.html', role='button') Language Reference
-            li
-              a(href='https://github.com/daftlabs', role='button') Creators
-            li
-              a(href='/about.html', role='button') About
+-active_class_index = 'disabled'
+
+block title
+  | Lavender Templating Engine for PHP
+
+block content
   .container-fluid.main
     .row.info
       .col-md-2.col-md-offset-2
-        h3 What is it (Other Than a Colour?)
+        h3 Lavender: is it a color, a thing or something else?
       .col-md-5.col-md-offset-1
         p
-          | Lavender is loosely based off of
-          a(href='http://jade-lang.com/') Jade
+          | Lavender is loosely based on
+          a(href='http://jade-lang.com/', target='_blank') Jade
           | , created by the
-          | founders of the Daft Labs team to bring peace and order to their office. Lavender is a 
-          | templating engine with further simplified syntax to allow for ease of use (as well as less time
-          | spent double checking for proper useage).
+          | founders of
+          a(href="http://daftlabs.com/", target="_blank") daft labs
+          | to bring peace and order to their office.
+          | Lavender is a templating engine with a simplified syntax that is easy
+          | to use and efficient. The less time you spend double checking proper
+          | useage the more you are free to create beautiful, powerful projects.
         p
-          | This project is maintained on GitHub, allowing users to collaborate and further building.
-
+          | This project is maintained on GitHub, allowing users to collaborate to
+          | help further the cause.
   .container.whowhatwhy
     .row.info
       .col-md-5
@@ -115,7 +59,7 @@ body
               &lt;body&gt;
                 &lt;h1&gt;cool title bro.&lt;/h1&gt;
 
-                &lt;div id="container" class="col"&gt;
+                &lt;div id='container' class='col'&gt;
                   &lt;p&gt;
                     | We're gonna put
                     | CodeMirror here so
@@ -129,12 +73,11 @@ body
                   block content  
               &lt;/body&gt;
             &lt;/html&gt;            
-  a(href='https://github.com/golavender/lavender')
+  a(href='https://github.com/golavender/lavender', target='_blank')
     img(style='position: absolute; top: 0; right: 0; border: 0;', 
      src='http://tinyurl.com/kv8nu28',
      alt='Fork me on GitHub',
-     data-canonical-src='https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png')
+     data-canonical-src='https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png'
+    )
 
-  footer.footer
-    .container-fluid
-      h6 Lavender is supported and created by Daft Labs. Enjoy!
+  include layouts/footer
