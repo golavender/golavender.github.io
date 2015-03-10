@@ -59,7 +59,7 @@ block content
           | Hey! We're here to teach you about Lavender. If you know Jade, you'll 
           | find this easier to pick up. If not, take your time and learn! Yay!
         h3 Installation
-          h2#Composer Via Composer
+          h2#composer Via Composer
           p
             | First, get yourself some 
             a(
@@ -79,7 +79,7 @@ block content
             | Then, run
             code.language-markup php composer.phar install 
             | or
-            code.language-markup Composer install
+            code.language-markup composer install
             | , depending on how you've installed Composer. Once Composer has finished, 
             |it will generate an autoloader in 
             code.language-markup vendor/autoload.php
