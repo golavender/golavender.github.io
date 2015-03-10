@@ -54,7 +54,7 @@ body
           i.fa.fa-bars.fa-2x
       .navbar-collapse.collapse
         ul.nav.navbar-nav
-          li(class='#{active_class_index}')
+          li(class='active_class_index')
             a(href='/index.html', title='Home') Home
           li
             a(
@@ -62,28 +62,25 @@ body
               title='GitHub', target='_blank'
               ) GitHub
           li
-            a(href="http://daftlabs.com", title="daft labs", target="_blank")
+            a(href='http://daftlabs.com', title='daft labs', target='_blank')
               | Creators
-          li(class='#{active_class_guide} dropdown')
+          li(class='active_class_guide')
+            a(href='/guide.html', title='Guide') Guide
+          li(class='active_class_about')
+            a(href='/about.html') About
+          li(class='active_class_download dropdown')
             a.dropdown-toggle(href='#', data-toggle='dropdown')
-              | Guide
+              | Download
               span.caret
             ul.dropdown-menu(role='menu')
               li
-                a(href='/guide.html') Guide Home
+                a(href='/download.html') Download Home
               li.dropdown-header Installation
               li
-                a(href='/guide.html#composer', title='GitHub') via Composer
+                a(href='/download.html#composer', title='GitHub') via Composer
               li
-                a(href='/guide.html#github') via GitHub
+                a(href='/download.html#github') via GitHub
               li
-                a(href='/guide.html#usage') Usage
-              li.divider
-              li
-                a(href='/guide.html#langref') Language Reference
-          li(class='#{active_class_about}')
-            a(href='/about.html') About
-          li(class='#{active_class_download}')
-            a(href='/download.html', title='Download') Download
+                a(href='/download.html#usage') Usage
           li
   block content

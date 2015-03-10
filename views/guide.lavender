@@ -13,16 +13,7 @@ block content
         data-offset-top='60',
         data-offset-bottom='200'
         )
-        h3 Navigation
-        h2 Installation
-        ul
-          li
-            a(href='#composer') via Composer
-          li
-            a(href='#github') via GitHub
-          li
-            a(href='#usage') Usage
-        h2 Language Reference
+        h3 Beam me down!
         ul
           li
             a(href='#html') html
@@ -57,79 +48,7 @@ block content
         h1.title The Lavender Guide
         p
           | Hey! We're here to teach you about Lavender. If you know Jade, you'll 
-          | find this easier to pick up. If not, take your time and learn! Yay!
-        h3 Installation
-          h2#composer via composer
-          p
-            | First, get yourself some 
-            a(
-              href='https://getcomposer.org/doc/00-intro.md#installation-nix', 
-              target='_blank'
-            ) composer.
-            |  Next, you need to make yourself a
-            code.language-markup composer.json
-            | . Here's an example:
-            pre
-              code.language-markup.
-                {
-                  'require': {
-                    'lavender/lavender': '*'
-                  }
-                }
-            | then run
-            code.language-markup php composer.phar install 
-            | or
-            code.language-markup composer install
-            | depending on how you've installed composer. Once composer has finished 
-            |it will generate an autoloader in 
-            code.language-markup vendor/autoload.php
-            | which you can 
-            code.language-markup require()
-            | from your application's bootstrap process.
-          h2#github via Github      
-          p
-            | Add the lavender submodule with 
-            code.language-markup git submodule add git@github.com:golavender/lavender.git (folder to
-              |clone to)
-            | and include it with 
-            code.language-markup require '(where you put lavender)/src/Lavender/lavender.php'   
-        h3#usage Usage     
-        p
-          | Once you have installed and included lavender, the only required 
-          | configuration is to tell lavender where the views directory is.
-          pre
-            code.language-jade.
-              Lavender::config(array(
-
-              /*
-               * required - path to views directory
-               */
-              'view_dir'       => String,
-
-              /*
-              * optional - defaults to 'lavender'
-              */
-              //'file_extension' => String,
-
-              /*
-              * optional - defaults to TRUE
-              *
-              * renders a debugging error page instead of throwing an exception.
-              * in production you should disable this and use a 500 page.
-              */
-              //'handle_errors'  => Boolean, 
-              ));
-          | once it's been rendered, it's as easy as...
-          pre
-            code.language-jade.
-              $output = Lavender::view('some_template')->compile();
-
-              // or if you need to pass data into the template (probably the case)
-
-              $output = Lavender::view('some_template')->compile(array(
-                'data'      => 'some data that the template will use',
-                'more_data' => 'moar data',
-              ));
+          | find this easier to pick up. If not, take your time and learn! Yay!   
         h3#langref Language Reference
           h2#html html
           p
@@ -324,8 +243,9 @@ block content
             | conditionals directly (but if you actually do that then
             a(
               href='https://www.destroyallsoftware.com/talks/wat', 
-              target='_blank') wat
-            | )).
+              target='_blank'
+              ) wat
+            | ).
             pre
               code.language-jade.
                 - my_variable = TRUE
