@@ -88,11 +88,12 @@ block content
             | from your application's bootstrap process.
           h3#github via Github      
           p
-            | Add the Lavender submodule with 
-            code.language-markup git submodule add git@github.com:golavender/lavender.git (folder to 
-            | clone to) and include it with 
-            code.language-markup require '(where you put lavender)/src/lavender/lavender.php'   
-        h2#usage Usage     
+            | Add the lavender submodule with 
+            code.language-markup git submodule add git@github.com:golavender/lavender.git (folder to
+              |clone to)
+            | and include it with 
+            code.language-markup require '(where you put lavender)/src/Lavender/lavender.php'   
+        h3#usage Usage     
         p
           | Once you have installed and included Lavender, the only required 
           | configuration is to tell Lavender where the views directory is.
