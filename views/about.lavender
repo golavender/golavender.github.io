@@ -43,4 +43,3 @@ block content
             |  was founded in 2013, bringing together a hodge podge
             | team of front and back end developers.  
           a.btn.btn-default(href='http://www.daftlabs.com', target='_blank') Come Visit Us.
-  include layouts/footer

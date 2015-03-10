@@ -74,5 +74,3 @@ block content
      alt='Fork me on GitHub',
      data-canonical-src='https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png'
     )
-
-  include layouts/footer
