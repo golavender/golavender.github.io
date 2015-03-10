@@ -1,8 +1,0 @@
-  footer.footer
-    .container-fluid
-      .col-md-1
-        img(src='/img/lavender-logo-2015.png', height='40', width='40')
-      .col-md-2
-        h6 
-          a(href='http://www.daftlabs.com', target='_blank') 2014-2015 daft labs, inc.
-          | enjoy.
