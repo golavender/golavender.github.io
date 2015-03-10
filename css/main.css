@@ -79,15 +79,14 @@ h1 {
 
 h2 {
   font-family: 'Oswald', sans-serif;
-  font-size: 200%;
-  font-weight: bold;
+  font-size: 240%;
   color: #796878;
 }
 
 h3 {
   font-family: 'Oswald', sans-serif;
   color: #796878;
-  font-size: 240%;
+  font-size: 200%;
 }
 
 h4 {
@@ -109,6 +108,12 @@ a{
 a:hover,
 a:focus {
   color: #888;
+}
+
+.guide-link {
+  color: #302230;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .special{
