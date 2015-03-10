@@ -7,12 +7,12 @@ block title
 
 block content
   .container
-    div.col-md-3
+    .col-md-3
       .sidebar.guide.img-rounded(
         data-spy='affix', 
         data-offset-top='60',
         data-offset-bottom='200'
-        )
+      )
         h2 Navigation
         h3 Installation
         ul
@@ -68,7 +68,7 @@ block content
             ) composer.
             |  Next, you need to make yourself a
             code.language-markup composer.json.
-            | . Here's an example:
+            | Here's an example:
             pre
               code.language-markup.
                 {
@@ -79,8 +79,8 @@ block content
             | Then, run
             code.language-markup php composer.phar install 
             | or
-            code.language-markup composer install,
-            | depending on how you've installed composer. Once composer has finished, 
+            code.language-markup composer install
+            | , depending on how you've installed Composer. Once Composer has finished, 
             |it will generate an autoloader in 
             code.language-markup vendor/autoload.php
             | which you can 
@@ -96,7 +96,7 @@ block content
         h3#usage Usage     
         p
           | Once you have installed and included Lavender, the only required 
-          | configuration is to tell Lavender where the views directory is.
+          | configuration is to tell Lavender where the views directory is located.
           pre
             code.language-jade.
               lavender::config(array(
@@ -227,8 +227,7 @@ block content
           a.guide-link(
             href='http://www.quirksmode.org/css/condcom.html', 
             target='_blank'
-            ) this  
-          
+            ) this
           |  out if you are not familiar with conditional comments.
         p
           |  This:
@@ -322,7 +321,7 @@ block content
             | and
             code.language-markup false
             | )
-            | are keywords in Lavender. They can be assinged to variables, or used in 
+            | are keywords in Lavender. They can be assigned to variables, or used in 
             | conditionals directly (but if you actually do that then...
             a.guide-link(
               href='https://www.destroyallsoftware.com/talks/wat', 
