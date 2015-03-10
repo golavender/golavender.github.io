@@ -32,7 +32,7 @@ head
   script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js')
   script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js')
 body
-  if currentPage == 0
+  if current_page == "Home"
     .container.blip
       .row 
         .col-md-2.logo-front
@@ -53,40 +53,44 @@ body
       .navbar-collapse.collapse
         ul.nav.navbar-nav
           -titles = [
-          "Home", 
-          "Github", 
-          "Creators", 
-          "Guide", 
-          "About"]
-          -urlPage = [
-          '/index.html', 
-          'https://github.com/golavender/lavender',
-          'http://daftlabs.com',
-          '/guide.html',
-          '/about.html'
+            'Home', 
+            'Github',
+            'Creators', 
+            'Guide', 
+            'Download'
+            'About'
+          ]
+          -url_page = [
+            '/index.html', 
+            'https://github.com/golavender/lavender',
+            'http://daftlabs.com',
+            '/guide.html',
+            '/download.html',
+            '/about.html'
           ]
           -target = [
-          '',
-          '_blank',
-          '_blank',
-          '',
-          ''
+            '',
+            '_blank',
+            '_blank',
+            '',
+            '',
+            ''
           ]
           each name,index in titles
-            if (currentPage==index)
-              -className='disabled'
+            if (current_page==titles[index])
+              -class_name='disabled'
             else
-              -className=''
+              -class_name=''
             if titles[index]!='Guide'
-              li(class=className)
+              li(class=class_name)
                 a(
-                  href=urlPage[index],
+                  href=url_page[index],
                   title=titles[index],
                   target=target[index],
                   )=titles[index]
             else
               li(class='dropdown')
-                a.dropdown-toggle(href='#', data-toggle='dropdown') Guide
+                a.dropdown-toggle(href='/guide.html', data-toggle='dropdown') Guide
                   span.caret
                 ul.dropdown-menu(role='menu')
                   li

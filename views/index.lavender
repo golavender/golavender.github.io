@@ -1,6 +1,6 @@
 extends layouts/default
 
--currentPage = 0
+-current_page = 'Home'
 
 block title
   | Lavender Templating Engine for PHP
@@ -16,7 +16,7 @@ block content
           a(href='http://jade-lang.com/', target='_blank') Jade
           | , created by the
           | founders of
-          a(href="http://daftlabs.com/", target="_blank") daft labs
+          a(href='http://daftlabs.com/', target='_blank') daft labs
           | to bring peace and order to their office.
           | Lavender is a templating engine with a simplified syntax that is easy
           | to use and efficient. The less time you spend double checking proper
