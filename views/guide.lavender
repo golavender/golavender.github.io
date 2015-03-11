@@ -203,7 +203,10 @@ block content
             | conditional operations you know and love:
             code.language-markup.
               !, &amp;&amp;, ||, &lt;, &gt;, &lt;=, &gt;=, ==, != 
-            | and does a truthy check against the result.
+            | and does a truthy check against the result. Note there are no compound
+            | keywords in Lavender so there is no space in the the keyword
+            code.language-markup elseif
+            | .
             pre
               code.language-jade.
                 - some_variable = 'this is stored in a variable'
