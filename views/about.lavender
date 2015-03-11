@@ -30,7 +30,7 @@ block content
             | of daft labs, whose favorite color is purple. It was his wife who made the connection
             | between the name Lavender and the budding programming language, and thus the
             | name stuck.
-          a.btn.btn-default(href='https://github.com/golavender/lavender', target='_blank') Fork Us.
+          a.btn.btn-home(href='https://github.com/golavender/lavender', target='_blank') Fork Us.
   .container
     .row
       .col-md-8.col-md-offset-2.about.img-rounded
@@ -42,4 +42,4 @@ block content
             a(href='http://daftlabs.com/', target='_blank') daft labs
             |  was founded in 2013, bringing together a hodge podge
             | team of front and back end developers.  
-          a.btn.btn-default(href='http://www.daftlabs.com', target='_blank') Come Visit Us.
+          a.btn.btn-home(href='http://www.daftlabs.com', target='_blank') Come Visit Us.

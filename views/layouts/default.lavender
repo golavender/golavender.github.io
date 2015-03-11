@@ -22,11 +22,14 @@ head
   meta(name='msapplication-TileColor', content='#cdb4cc')
   meta(name='msapplication-TileImage', content='/img/favicons/mstile-144x144.png')
   meta(name='theme-color', content='#796878')
-  link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Oswald:400,600|Lato:300,700|Special+Elite')
+  link(rel='stylesheet',
+    href='http://fonts.googleapis.com/css?family=Oswald:400,600|Lato:300,700|Special+Elite'
+  )
   link(rel='stylesheet', 
     href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
   link(rel='stylesheet', 
-    href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
+    href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'
+  )
   link(rel='stylesheet', href='css/prism.css')
   link(rel='stylesheet', href='css/main.css')
   script(src='js/prism.js')
@@ -87,9 +90,17 @@ body
 
 footer.footer
   .container-fluid
-    .col-md-1
-      img(src='/img/lavender-logo-2015.png', height='40', width='40')
-    .col-md-2
+      img.pull-left.footmrgn(
+        src='/img/lavender-logo-2015.png',
+        height='35',
+        width='35',
+      ) 
+      a(href='https://www.facebook.com/daftlabs', target='_blank')
+        i.pull-right.foottop.fa.fa-facebook-square.fa-2x
+      a(href='https://www.github.com/daftlabs', target='_blank')
+        i.pull-right.foottop.fa.fa-github-square.fa-2x
+      a(href='https://www.twitter.com/daftlabs', target='_blank')
+        i.pull-right.foottop.fa.fa-twitter-square.fa-2x
       h6 
         a(href='http://www.daftlabs.com', target='_blank') 2014-2015 daft labs, inc.
-        | enjoy.
+        | enjoy. 
