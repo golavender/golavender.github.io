@@ -158,3 +158,20 @@ body
                         )
                         =link.title
   block content
+
+footer.footer
+  .container-fluid
+      img.pull-left(
+        src='/img/lavender-logo-2015.png',
+        height='35',
+        width='35',
+      ) 
+      a(href='https://www.facebook.com/daftlabs', target='_blank')
+        i.pull-right.fa.fa-facebook-square.fa-2x
+      a(href='https://www.github.com/daftlabs', target='_blank')
+        i.pull-right.fa.fa-github-square.fa-2x
+      a(href='https://www.twitter.com/daftlabs', target='_blank')
+        i.pull-right.fa.fa-twitter-square.fa-2x
+      h6 
+        a(href='http://www.daftlabs.com', target='_blank') 2014-2015 daft labs, inc.
+        | enjoy. 
