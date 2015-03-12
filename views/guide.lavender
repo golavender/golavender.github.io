@@ -50,25 +50,26 @@ block content
         p
           | Hey! We're here to teach you about Lavender. If you know Jade, you'll 
           | find this easier to pick up. If not, take your time and learn! Yay!   
-        h3#langref Language Reference
-          h2#html html
+        h2#langref Language Reference
+          h3#html html
           p
             | This...
             pre
               code.language-jade.
                 section#some_id.foo.bar(attribute1='foo',attribute2='bar')
-            | becomes
+            | Becomes this:
             pre
               code.language-markup.
                 &lt;section id='some_id' class='foo bar' attribute1='foo' 
                 attribute2='bar'&gt;&lt;/section&gt;
-            | Child nodes are indented below their parent
+            | Child nodes are indented below their parent, which means
+            | this:
             pre
               code.language-jade.
                section.foo
                 div(data-something='foo') 
                 div(data-something='bar')
-            | becomes
+            | Becomes this:
             pre
               code.language-markup.
                 &lt;section class='foo'&gt;
@@ -76,38 +77,38 @@ block content
                   &lt;div data-something='bar'&gt; &lt;/div&gt;
                 &lt;/section&gt;
             | There is a shortcut if you just want a div, you can skip right to class 
-            | or id definitions.
+            | or id definitions. Therefore, this:
             pre
               code.language-jade.
                 .foobar text text
                 #foobar text text
-            | becomes
+            | Becomes this:
             pre
               code.language-markup.
                 &lt;div class='foobar'&gt;text text&lt;/div&gt;
                 &lt;div id='foobar'&gt;text text&lt;/div&gt;   
-            | Text can be added to nodes in two ways.
+            | Text can be added to nodes in two ways:
             pre
               code.language-jade.
                 section.foo
                   div(data-something='foo') this is some text 
                   div(data-something='bar')
                    &#124; this is also some text          
-            | Lavender knows not to put a closing tag on certain nodes (we got the 
+            | Lavender knows not to put a closing tag on certain nodes We got the 
             | list from
-            a(
+            a.guide-link(
               href='http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements', 
               target='_blank'
-              ) here).
+               here).
             code.language-markup input(type='text',value='fooooobar')
             | becomes
             code.language-markup &lt;input type='text' value='fooooobar'&gt;
-          h2#doctype doctype   
+          h3#doctype doctype   
           p
             | Do you always forget the syntax for doctype? Lavender exists to solve 
             | your first world problems. Just throw a 
             code.language-markup !!!
-            |  at the top of your layout and you get yourself a nice 
+            |  at the top of your layout, and you get yourself a nice 
             |       html doctype. Doctypes supported are 
             code.language-markup html
             | , 
@@ -125,19 +126,19 @@ block content
             | . Here are some pretty examples.  
             p
             code.language-markup !!!
-            |  will default to html, however you can also specify 
+            |  will default to html. However, you can also specify 
             code.language-markup !!! html
             | . The word 
             code.language-markup doctype
             |  works as well!
-        h2#comments Comments
+        h3#comments Comments
         p
-          | comments are a thing!
+          | Comments are a thing!
           pre
             code.language-jade.
               // this is an html comment. it will be rendered to the page
-              //- this is a lavender comment. it will not be rendered
-        h2#concomments Conditional Comments
+              //- this is a Lavender comment. it will not be rendered
+        h3#concomments Conditional Comments
         p
           | The 
           code.language-markup IE
@@ -154,7 +155,7 @@ block content
                 script(src='some script to make IE work')
               IE lt 7
                 script(src='some script to make super old IE work')
-          | becomes
+          | Becomes this:
           pre
             code.language-markup.
               &lt;!--[if IE]&gt;
@@ -167,7 +168,7 @@ block content
               &lt;![endif]--&gt;
           h3#variables Variables
           p
-            | Lavender views can be passed variables from the parent php application 
+            | Lavender views can be passed variables from the parent php application, 
             | or they can be defined right in the template.
           p
             | This just assigns a variable without outputting anything to the page.
@@ -180,7 +181,7 @@ block content
             | symbol, which evaluates an expression without outputting. The content 
             | of the variable can then later be output using the
             code.language-markup =
-            | symbol.
+            | symbol. In the examples below, this:
             pre
               code.language-jade.
                  - some_variable = 'this is stored in a variable'
@@ -188,7 +189,7 @@ block content
                  span.foo = some_variable
 
                  span.bar = some_variable
-            | becomes
+            | Becomes this:
             pre
               code.language-markup.
                 &lt;span class=&#39;foo&#39;&gt;this is stored in a variable&lt;/div&gt;
@@ -199,13 +200,13 @@ block content
             code.language-markup - some_array = {key1: 'foo', key2: 'bar', key3: 'baz'} 
           h3#conditionals Conditionals
           p
-            | Markup can be conditionally rendered using the if keyword. Lavender 
+            | Markup can be conditionally rendered using the 'if' keyword. Lavender 
             | supports all the 
             | conditional operations you know and love:
             code.language-markup.
               !, &amp;&amp;, ||, &lt;, &gt;, &lt;=, &gt;=, ==, != 
-            | and does a truthy check against the result. Note there are no compound
-            | keywords in Lavender so there is no space in the the keyword
+            | and does a truthy check against the result. Note, there are no compound
+            | keywords in Lavender, so there is no space in the the keyword. Thusly, this:
             code.language-markup elseif
             | .
             pre
@@ -230,7 +231,7 @@ block content
                 else
                   div sadface
           p
-            | becomes
+            | Becomes this:
             pre
               code.language-markup.
                 &lt;span class=&#39;foo&#39;&gt;this is stored in a variable&lt;/div&gt;
@@ -243,7 +244,7 @@ block content
             | and
             code.language-markup false
             | )
-            | are keywords in Lavender, they can be assigned to variables or used in 
+            | are keywords in Lavender. They can be assigned to variables or used in 
             | conditionals directly (but if you actually do that then
             a(
               href='https://www.destroyallsoftware.com/talks/wat', 
@@ -259,11 +260,11 @@ block content
 
                 if false
                   div this will not
-          h2#loops Loops
+          h3#loops Loops
           p
             | Lavender supports iterating over arrays and associative arrays with the 
             code.language-markup each
-            | keyword
+            | keyword.
             pre
               code.language-jade.
                  ul
@@ -275,7 +276,7 @@ block content
                      li(data-key=key)= value 
             | You may have noticed how we snuck in using variables for your html 
             | attributes there. You can do that too!
-          h2#else Else
+          h3#else Else
           p
             | The else keyword can be used after loops or conditionals.
             pre
@@ -291,9 +292,9 @@ block content
                   div nothing to see here
                 else
                   div empty array!
-          h2#math Math
+          h3#math Math
           p
-            | Math. You can do it. Supported operators are
+            | Math. You can do it. Supported operators are:
             code.language-markup %, +, -, *, /, (, )
             | .
             pre
@@ -317,7 +318,7 @@ block content
                   each value, key in some_random_array
                     if key % 2 == 0
                       li(data-key=key)= value 
-          h2#include Include
+          h3#include Include
           p
             | Partials are a thing.
             pre
@@ -329,16 +330,16 @@ block content
 
                 div.content
                   include /path/relative/to/view/directory/somefile with {stuff: 'Asdfasdf'}
-          h2#extends Extends
+          h3#extends Extends
           p
             | Lavender supports block style layout extension. This means that in the 
-            | parent template you define blocks using the
+            | parent template, you define blocks using the
             code.language-markup block
-            | keyword. Then in the child template you
+            | keyword. Then, in the child template, you
             b only have blocks
             | which override the blocks in the parent template.
           p
-            |  So if this was layout.lavender..
+            |  So if this was layout.lavender:
             pre
               code.language-jade.
                 h1 this is a pretty cool web page
@@ -350,7 +351,7 @@ block content
 
                 div.content
                   block content
-            | And this is the child template...
+            | And this is the child template:
             pre
               code.language-jade.
                 extends layout
@@ -364,7 +365,7 @@ block content
                   &#124; content
                   &#124; more content
                   &#124; moar content
-            | And you were to render the child template, you would get...
+            | And you were to render the child template, you would get:
             pre
               code.language-markup.
                  &lt;h1&gt;this is a pretty cool web page&lt;/h1&gt;
@@ -379,23 +380,23 @@ block content
                    moar content
                  &lt;/div&gt;
             | A special case has been added to allow defining variables at the top of 
-            | your child templates, these variables can be referenced from the layout 
-            | to do cool things like specifying a list of javascript files necessary 
+            | your child templates. These variables can be referenced from the layout 
+            | to accomplish tasks like specifying a list of javascript files necessary 
             | for a template to work or setting the page title.
-        h2#whitespace Whitespace
+        h3#whitespace Whitespace
         p
-          | New lines are added automatically after every html element, if you do not 
+          | New lines are added automatically after every html element. If you do not 
           | want the newline you can add a
           code.language-markup -
-          | to the node definition like so.
+          | to the node definition like so:
         pre
           code.language-jade.
             p
             a(href=&#39;/some/place&#39;)- click here for some cool stuff.
         | Automagic whitespace management is hard and subject to change.
-        h2#helpers Helpers
+        h3#helpers Helpers
         p
-          | Helpers are used to streamline the process even more. A constant helper...
+          | Helpers are used to streamline the process even more. A constant helper,
           pre
             code.language-jade.
               class Lavender_Helper_Constant
@@ -406,7 +407,7 @@ block content
                 }
               }
               Lavender::register_helper('constant', 'Lavender_Helper_Constant');
-          | And a date helper...
+          | And a date helper,
           pre
             code.language-jade.
               class Lavender_Helper_Date
@@ -425,13 +426,13 @@ block content
           | Are both available for use.
         h3#filters Filters
         p
-          | Programatic expressions in Lavender are a little limited, none of your 
+          | Programatic expressions in Lavender are a little limited; none of your 
           | favorite php functions are available for modifying the template data. 
-          | This is by design, we do not think there should be a ton of logic in 
-          | templates when that logic could be in controllers or models. However, 
+          | This is by design. We do not think there should be a ton of logic in 
+          | templates when that logic could be in controllers or models instead. However, 
           | since you have to be able to do some templating logic, we added filters. 
           | It is super easy to add your own filters to Lavender and there are 
-          | (or will be) plenty in place out of the box. Here is how they work...
+          | (or will be) plenty in place out of the box. Here is how they work!
           pre
             code.language-jade.
               - myvariable = 'some really cool text'
@@ -440,14 +441,14 @@ block content
                 span
                   &#124; i'm gonna filter some stuff. it's gonna be cool. 
                   = myvariable &#124; upper 
-          | becomes
+          | Becomes this:
           pre
             code.language-markup.
               &lt;div&gt;
                 &lt;span&gt;im gonna filter some stuff, it&apos;ll be cool. SOME REALLY COOL TEXT&lt;/span&gt;
               &lt;/div&gt;
           | Profound right? Not that we invented this, we copied the idea from 
-          a(href='http://twig.sensiolabs.org/', target='_blank') twig
+          a.guide-link(href='http://twig.sensiolabs.org/', target='_blank') twig
           | . The filters Lavender comes with are:
         div.table-responsive  
           table.table.table-hover
@@ -546,6 +547,7 @@ block content
                   td
                     code.language-markup {'asdf': 'foo','qwer': 'bar'}|keys
                   td
+                    | becomes the array
                     code.language-markup ['asdf', 'qwer']
                 tr
                   td 
