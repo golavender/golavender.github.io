@@ -37,7 +37,7 @@ body {
   color: rgb(254,246,234);
   color: rgba(254,246,234,.8);
 }
-.footmrgn {
+.footer img {
   margin-right:5px;
   margin-bottom:5px;
 }
@@ -71,7 +71,7 @@ body {
   color: #362F35;
 }
 
-.foottop {
+.footer .fa {
   margin-top: 3px;
 }
 
