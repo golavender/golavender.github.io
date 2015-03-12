@@ -1,6 +1,6 @@
 extends layouts/default
 
--active_class_about = 'disabled'
+-current_page = "About"
 
 block title
   | About Us - Lavender Templating Engine for PHP
