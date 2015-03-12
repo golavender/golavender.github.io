@@ -53,6 +53,7 @@ block content
         h3#langref Language Reference
           h2#html html
           p
+            | This...
             pre
               code.language-jade.
                 section#some_id.foo.bar(attribute1='foo',attribute2='bar')
