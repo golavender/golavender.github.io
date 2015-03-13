@@ -160,7 +160,7 @@ body
   block content
 
 footer.footer
-  .container-fluid
+  .container
       img.pull-left(
         src='/img/lavender-logo-2015.png',
         height='35',
@@ -174,4 +174,4 @@ footer.footer
         i.pull-right.fa.fa-twitter-square.fa-2x
       h6 
         a(href='http://www.daftlabs.com', target='_blank') 2014-2015 daft labs, inc.
-        | enjoy. 
+        | enjoy.

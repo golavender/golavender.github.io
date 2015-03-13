@@ -99,7 +99,8 @@ block content
             a.guide-link(
               href='http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements', 
               target='_blank'
-               here).
+              ) here
+            |.
             code.language-markup input(type='text',value='fooooobar')
             | becomes
             code.language-markup &lt;input type='text' value='fooooobar'&gt;
@@ -144,7 +145,7 @@ block content
           code.language-markup IE
           | shorthand can be used to generate conditional comments for Internet 
           | Explorer. Check out 
-          a(
+          a.guide-link(
             href='http://www.quirksmode.org/css/condcom.html', 
             target='_blank'
             ) this
@@ -206,7 +207,7 @@ block content
             code.language-markup.
               !, &amp;&amp;, ||, &lt;, &gt;, &lt;=, &gt;=, ==, != 
             | and does a truthy check against the result. Note, there are no compound
-            | keywords in Lavender, so there is no space in the the keyword. Thusly, this:
+            | keywords in Lavender, so there is no space in the the keyword
             code.language-markup elseif
             | .
             pre
@@ -246,7 +247,7 @@ block content
             | )
             | are keywords in Lavender. They can be assigned to variables or used in 
             | conditionals directly (but if you actually do that then
-            a(
+            a.guide-link(
               href='https://www.destroyallsoftware.com/talks/wat', 
               target='_blank'
               ) wat
@@ -299,7 +300,8 @@ block content
             | .
             pre
               code.language-jade.
-                  = 1 + 1 = 
+                div
+                  &#124; 1 + 1 = 
                   = 1 + 1
 
                 div
@@ -392,7 +394,8 @@ block content
         pre
           code.language-jade.
             p
-            a(href=&#39;/some/place&#39;)- click here for some cool stuff.
+              a(href=&#39;/some/place&#39;)- click here for some cool stuff.
+              | |.
         | Automagic whitespace management is hard and subject to change.
         h3#helpers Helpers
         p
