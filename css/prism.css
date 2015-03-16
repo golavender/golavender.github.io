@@ -76,7 +76,6 @@ pre[class*="language-"] {
 
 .token.selector,
 .token.attr-name,
-.token.string,
 .token.char,
 .token.builtin,
 .token.inserted {
@@ -93,7 +92,8 @@ pre[class*="language-"] {
 }
 
 .token.atrule,
-.token.attr-value {
+.token.attr-value,
+.token.string {
 	color: #e6db74;
 }
 

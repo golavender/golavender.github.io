@@ -61,7 +61,7 @@ block content
           | Once you have installed and included lavender, the only required
           | configuration is to tell lavender where the views directory is.
           pre
-            code.language-jade.
+            code.language-markup.
               Lavender::config(array(
 
               /*
