@@ -110,53 +110,12 @@ body
               -class_name='disabled'
             else
               -class_name=''
-            if page.title!='Download'
-              li(class=class_name)
-                a(
-                  href=page.url,
-                  title=page.title,
-                  target=page.target,
-                  )=page.title
-            else
-              li(class='dropdown')
-                a.dropdown-toggle(
-                  href=page.url,
-                  title=page.title,
-                  target=page.target,
-                  data-toggle='dropdown'
-                  )=page.title
-                  span.caret
-                ul.dropdown-menu(role='menu')
-                  -links = [
-                    {
-                      title: 'Download Home',
-                      url: '/download.html',
-                      target: '_self'
-                    },
-                    {
-                      title: 'via Composer',
-                      url: '/guide.html#composer',
-                      target: '_self'
-                    },
-                    {
-                      title: 'via GitHub',
-                      url: '/guide.html#github',
-                      target: '_self'
-                    },
-                    {
-                      title: 'Usage',
-                      url: '/guide.html#usage',
-                      target: '_self'
-                    },
-                  ]
-                  each link in links
-                    li(class=class_name)
-                      a(
-                        href=link.url,
-                        title=link.title,
-                        target=link.target,
-                        )
-                        =link.title
+            li(class=class_name)
+              a(
+                href=page.url,
+                title=page.title,
+                target=page.target,
+                )=page.title
   block content
 
 footer.footer
