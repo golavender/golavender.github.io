@@ -179,7 +179,7 @@ block content
             | . Expressions in general are not whitespace sensitive.
             pre 
               code.language-jade.
-               -some_variable= 'this is stored in a variable'
+               -some_variable = 'this is stored in a variable'
           p
             | Note the
             code.language-markup -
@@ -189,21 +189,22 @@ block content
             | symbol. In the examples below, this:
             pre
               code.language-jade.
-                 -some_variable= 'this is stored in a variable'
+                 -some_variable = 'this is stored in a variable'
 
                  span.foo= some_variable
 
-                 span.bar= some_variable
+                 span.bar
+                   = some_variable
             | Becomes this:
             pre
               code.language-markup.
                 &lt;span class=&#39;foo&#39;&gt;this is stored in a variable&lt;/div&gt;
                 &lt;span class=&#39;bar&#39;&gt;this is stored in a variable&lt;/div&gt;
             | Arrays as well:
-            code.language-markup - some_array= ['foo', 'bar', 'baz']
+            code.language-markup - some_array = ['foo', 'bar', 'baz']
           p  
             | Associative arrays:
-            code.language-markup - some_array= {key1: 'foo', key2: 'bar', key3: 'baz'} 
+            code.language-markup - some_array = {key1: 'foo', key2: 'bar', key3: 'baz'} 
           h3#conditionals Conditionals
           p
             | Markup can be conditionally rendered using the 'if' keyword. Lavender 
@@ -217,7 +218,7 @@ block content
             | .
             pre
               code.language-jade.
-                -some_variable= 'this is stored in a variable'
+                -some_variable = 'this is stored in a variable'
 
                 if some_variable
                   span.foo= some_variable
@@ -259,7 +260,7 @@ block content
             | ).
             pre
               code.language-jade.
-                -my_variable= TRUE
+                -my_variable = TRUE
 
                 if my_variable
                   div this will show up
