@@ -215,6 +215,11 @@ fieldset[disabled] .btn-home.active {
   margin-left: 50px;
 }
 
+
+.nav>li>a {
+  padding: 15px 4px;
+}
+
 .navbar-form input, .form-inline input {
   width:auto;
 }
@@ -243,7 +248,7 @@ header {
 }
 
 @media (max-width: 990px){
-  .sidebar.affix-top {
+  .sidebar {
     display: none;
   }
 }

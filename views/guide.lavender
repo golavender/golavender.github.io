@@ -101,6 +101,7 @@ block content
               target='_blank'
               ) here
             |.
+          p
             code.language-markup input(type='text',value='fooooobar')
             | becomes
             code.language-markup &lt;input type='text' value='fooooobar'&gt;
@@ -170,12 +171,15 @@ block content
           h3#variables Variables
           p
             | Lavender views can be passed variables from the parent php application, 
-            | or they can be defined right in the template.
+            | or they can be defined right in the template. This just assigns a variable
+            | without outputting anything to the page.
           p
-            | This just assigns a variable without outputting anything to the page.
+            | Note: While we do write it with no space, it is still valid with and extra space as
+            code.language-markup - some_variable
+            | . Expressions in general are not whitespace sensitive.
             pre 
               code.language-jade.
-               - some_variable = 'this is stored in a variable'
+               -some_variable= 'this is stored in a variable'
           p
             | Note the
             code.language-markup -
@@ -185,20 +189,21 @@ block content
             | symbol. In the examples below, this:
             pre
               code.language-jade.
-                 - some_variable = 'this is stored in a variable'
+                 -some_variable= 'this is stored in a variable'
 
-                 span.foo = some_variable
+                 span.foo= some_variable
 
-                 span.bar = some_variable
+                 span.bar= some_variable
             | Becomes this:
             pre
               code.language-markup.
                 &lt;span class=&#39;foo&#39;&gt;this is stored in a variable&lt;/div&gt;
                 &lt;span class=&#39;bar&#39;&gt;this is stored in a variable&lt;/div&gt;
-            | Arrays too
-            code.language-markup - some_array = ['foo', 'bar', 'baz']
-            | and associative arrays
-            code.language-markup - some_array = {key1: 'foo', key2: 'bar', key3: 'baz'} 
+            | Arrays as well:
+            code.language-markup - some_array= ['foo', 'bar', 'baz']
+          p  
+            | Associative arrays:
+            code.language-markup - some_array= {key1: 'foo', key2: 'bar', key3: 'baz'} 
           h3#conditionals Conditionals
           p
             | Markup can be conditionally rendered using the 'if' keyword. Lavender 
@@ -212,7 +217,7 @@ block content
             | .
             pre
               code.language-jade.
-                - some_variable = 'this is stored in a variable'
+                -some_variable= 'this is stored in a variable'
 
                 if some_variable
                   span.foo= some_variable
@@ -254,7 +259,7 @@ block content
             | ).
             pre
               code.language-jade.
-                - my_variable = TRUE
+                -my_variable= TRUE
 
                 if my_variable
                   div this will show up
@@ -287,7 +292,7 @@ block content
                 else
                   div will show up
 
-                - empty_array = []
+                -empty_array= []
 
                 each value in empty_array
                   div nothing to see here
@@ -438,12 +443,12 @@ block content
           | (or will be) plenty in place out of the box. Here is how they work!
           pre
             code.language-jade.
-              - myvariable = 'some really cool text'
+              - myvariable= 'some really cool text'
 
               div
                 span
                   &#124; i'm gonna filter some stuff. it's gonna be cool. 
-                  = myvariable &#124; upper 
+                  =myvariable &#124; upper 
           | Becomes this:
           pre
             code.language-markup.
