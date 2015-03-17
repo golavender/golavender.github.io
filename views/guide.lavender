@@ -449,7 +449,7 @@ block content
               div
                 span
                   &#124; i'm gonna filter some stuff. it's gonna be cool. 
-                  =myvariable &#124; upper 
+                  = myvariable &#124; upper 
           | Becomes this:
           pre
             code.language-markup.
