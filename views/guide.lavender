@@ -394,7 +394,7 @@ block content
         pre
           code.language-jade.
             p
-              a(href=&#39;/some/place&#39;)- click here for some cool stuff.
+              a(href=&#39;/some/place&#39;)- click here f&ocy;r some cool stuff.
               | |.
         | Automagic whitespace management is hard and subject to change.
         h3#helpers Helpers
