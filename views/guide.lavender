@@ -444,7 +444,7 @@ block content
           | (or will be) plenty in place out of the box. Here is how they work!
           pre
             code.language-jade.
-              - myvariable= 'some really cool text'
+              - myvariable = 'some really cool text'
 
               div
                 span
