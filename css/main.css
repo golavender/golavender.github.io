@@ -215,11 +215,6 @@ fieldset[disabled] .btn-home.active {
   margin-left: 50px;
 }
 
-
-.nav>li>a {
-  padding: 15px 4px;
-}
-
 .navbar-form input, .form-inline input {
   width:auto;
 }
@@ -231,20 +226,6 @@ fieldset[disabled] .btn-home.active {
 
 header {
   height:270px;
-}
-
-@media (min-width: 990px) {
-  .sidebar.affix-top {
-    position: static;
-    margin-top:25px;
-    width: 225px;
-  }
-  
-  .sidebar.affix {
-    position: fixed;
-    top:25px;
-    width: 225px;
-  }
 }
 
 @media (max-width: 990px){
@@ -261,6 +242,26 @@ header {
 
 .affix-top {
   position: static;
+}
+
+@media (min-width: 990px) {
+  .sidebar.affix-top {
+    position: static;
+    margin-top:25px;
+    width: 225px;
+  }
+
+  .sidebar.affix {
+    position: fixed;
+    top:25px;
+    width: 225px;
+  }
+
+  .sidebar.affix-bottom {
+    position: relative;
+    top:25px;
+    width: 225px;
+  }
 }
 
 .footer {

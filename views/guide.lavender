@@ -14,7 +14,7 @@ block content
         data-offset-bottom='200'
       )
         h2 Navigation
-        h3 Beam me down!
+        h4 Beam me down!
         ul
           li
             a(href='#html') html
