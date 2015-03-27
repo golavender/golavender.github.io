@@ -1,0 +1,136 @@
+!!!
+
+head
+  title
+    block title
+  meta(
+    name='keywords',
+    content='Lavender, Lavender programming language,lavenderlang, lavender-lang'
+  )
+  meta(
+    name='description',
+    content='A templating engine for PHP, designed to make your life easier.'
+  )
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  for appleTouchIconSize in [57,60,72,76,114,120,144,152,180]
+    link(
+      rel='apple-touch-icon',
+      sizes='#{appleTouchIconSize}x#{appleTouchIconSize}',
+      href='/img/favicons/apple-touch-icon-#{appleTouchIconSize}x#{appleTouchIconSize}.png'
+      )
+  for faviconSize in [16,32,96,192,194]
+    link(
+      rel='icon',
+      sizes='#{faviconSize}x#{faviconSize}',
+      type='image/png',
+      href='/img/favicons/favicon-#{faviconSize}x#{faviconSize}.png'
+      )
+  link(rel='manifest', href='/img/favicons/manifest.json')
+  meta(name='msapplication-TileColor', content='#cdb4cc')
+  meta(name='msapplication-TileImage', content='/img/favicons/mstile-144x144.png')
+  meta(name='theme-color', content='#796878')
+  link(
+    rel='stylesheet',
+    href='http://fonts.googleapis.com/css?family=Oswald:400,600|Lato:300,700|Special+Elite'
+    )
+  link(
+    rel='stylesheet', 
+    href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
+  link(
+    rel='stylesheet',
+    href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'
+    )
+  link(rel='stylesheet', href='css/prism.css')
+  link(rel='stylesheet', href='css/main.css')
+  script(src='js/prism.js')
+  script(src='https://code.jquery.com/jquery-1.11.2.min.js')
+  script(
+    src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'
+    )
+  script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js')
+body
+  if current_page == "Home"
+    .container.blip
+      .row 
+        .col-md-2.logo-front
+          img.img-responsive.center-block(
+            src='http://www.sugarphlox.com/public/images/portfolio/lavender-logo-2015.png'
+            height=150
+            width=150
+            )      
+        .col-md-10.maintitle
+          h1 Lavender Templating Engine for PHP
+          h4 Clean code: easy, simple, served.
+  .navbar.navbar-default.navbar-static-top(role='navigation')
+    .container
+      .navbar-header
+        button.navbar-toggle(
+          type='button',
+          data-toggle='collapse',
+          data-target='.navbar-collapse'
+          )
+          span.sr-only Toggle navigation
+          i.fa.fa-bars.fa-2x
+      .navbar-collapse.collapse
+        ul.nav.navbar-nav
+          -pages = [
+            {
+              title: 'Home',
+              url: '/index.html',
+              target: '_self'
+            },
+            {
+              title: 'Github',
+              url: 'https://github.com/golavender/lavender',
+              target: '_blank'
+            },
+            {
+              title: 'Creators',
+              url: 'http://daftlabs.com',
+              target: '_blank'
+            },
+            {
+              title: 'Guide',
+              url: '/guide.html',
+              target: '_self'
+            },
+            {
+              title: 'Download',
+              url: '/download.html',
+              target: '_self'
+            },
+            {
+              title: 'About',
+              url: '/about.html',
+              target: '_self'
+            },
+          ]
+          each page in pages
+            if (current_page==page.title)
+              -class_name='disabled'
+            else
+              -class_name=''
+            li(class=class_name)
+              a(
+                href=page.url,
+                title=page.title,
+                target=page.target,
+                )=page.title
+  block content
+
+footer.footer
+  .container
+      img.pull-left(
+        src='/img/lavender-logo-2015.png',
+        height='35',
+        width='35',
+      ) 
+      a(href='https://www.facebook.com/daftlabs', target='_blank')
+        i.pull-right.fa.fa-facebook-square.fa-2x
+      a(href='https://www.github.com/daftlabs', target='_blank')
+        i.pull-right.fa.fa-github-square.fa-2x
+      a(href='https://www.twitter.com/daftlabs', target='_blank')
+        i.pull-right.fa.fa-twitter-square.fa-2x
+      h6 
+        a(href='http://www.daftlabs.com', target='_blank') 2014-2015 daft labs, inc.
+        | enjoy.
