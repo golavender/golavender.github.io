@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<head><title>Guide - Lavender Templating Engine for PHP</title>
-<meta name="keywords" content="Lavender, Lavender programming language, lavenderlang, lavender-lang">
+<head><title> Guide - Lavender Templating Engine for PHP</title>
+<meta name="keywords" content="Lavender, Lavender programming language,lavenderlang, lavender-lang">
 <meta name="description" content="A templating engine for PHP, designed to make your life easier.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
@@ -12,69 +12,47 @@
 <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
 <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
-<link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="/img/favicons/favicon-194x194.png" sizes="194x194">
-<link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
-<link rel="icon" type="image/png" href="/img/favicons/android-chrome-192x192.png" sizes="192x192">
-<link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" sizes="16x16" type="image/png" href="/img/favicons/favicon-16x16.png">
+<link rel="icon" sizes="32x32" type="image/png" href="/img/favicons/favicon-32x32.png">
+<link rel="icon" sizes="96x96" type="image/png" href="/img/favicons/favicon-96x96.png">
+<link rel="icon" sizes="192x192" type="image/png" href="/img/favicons/favicon-192x192.png">
+<link rel="icon" sizes="194x194" type="image/png" href="/img/favicons/favicon-194x194.png">
 <link rel="manifest" href="/img/favicons/manifest.json">
 <meta name="msapplication-TileColor" content="#cdb4cc">
 <meta name="msapplication-TileImage" content="/img/favicons/mstile-144x144.png">
 <meta name="theme-color" content="#796878">
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700">
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,700">
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Special+Elite">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,600|Lato:300,700|Special+Elite">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/prism.css">
 <link rel="stylesheet" href="css/main.css">
+<script src="js/prism.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </head>
 <body><div role="navigation" class="navbar navbar-default navbar-static-top"><div class="container"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
+<i class="fa fa-bars fa-2x"></i>
 </button>
 </div>
-<div class="navbar-collapse collapse"><ul class="nav navbar-nav"><li><a href="/index.html" title="Home">Home</a>
+<div class="navbar-collapse collapse"><ul class="nav navbar-nav"><li class=""><a href="/index.html" title="Home" target="_self">Home</a>
 </li>
-<li><a href="https://github.com/golavender/lavender" title="GitHub">GitHub</a>
+<li class=""><a href="https://github.com/golavender/lavender" title="Github" target="_blank">Github</a>
 </li>
-<li><a href="https://github.com/daftlabs" title="GitHub">Creators</a>
+<li class=""><a href="http://daftlabs.com" title="Creators" target="_blank">Creators</a>
 </li>
-<li class="dropdown active"><a href="#" data-toggle="dropdown" class="dropdown-toggle"> Guide <span class="caret"></span>
-</a>
-<ul role="menu" class="dropdown-menu"><li class="active"><a href="/guide.html">Guide Home</a>
+<li class="disabled"><a href="/guide.html" title="Guide" target="_self">Guide</a>
 </li>
-<li class="dropdown-header">Installation</li>
-<li><a href="/guide.html#composer" title="GitHub">via Composer</a>
+<li class=""><a href="/download.html" title="Download" target="_self">Download</a>
 </li>
-<li><a href="/guide.html#github">via GitHub</a>
-</li>
-<li><a href="/guide.html#usage">Usage</a>
-</li>
-<li class="divider"></li>
-<li><a href="/guide.html#langref">Language Reference</a>
-</li>
-</ul>
-</li>
-<li><a href="/about.html">About</a>
+<li class=""><a href="/about.html" title="About" target="_self">About</a>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<div class="container"><div class="col-md-3"><div data-spy="affix" data-offset-top="60" data-offset-bottom="200" class="sidebar guide img-rounded"><h3>Navigation</h3>
-<h2>Installation</h2>
-<ul><li><a href="#composer">via Composer</a>
-</li>
-<li><a href="#github">via GitHub</a>
-</li>
-<li><a href="#usage">Usage</a>
-</li>
-</ul>
-<h2>Language Reference</h2>
+<div class="container"><div class="col-md-3"><div data-spy="affix" data-offset-top="60" data-offset-bottom="200" class="sidebar guide img-rounded"><h2>Navigation</h2>
+<h4>Beam me down!</h4>
 <ul><li><a href="#html">html</a>
 </li>
 <li><a href="#doctype">doctype</a>
@@ -107,154 +85,113 @@
 </div>
 </div>
 <div class="col-md-8"><div class="guide img-rounded"><h1 class="title">The Lavender Guide</h1>
-<p> Hey! We're here to teach you about Lavender. If you know Jade, you'll find this easier   to pick up. If not, take your time and learn! Yay!</p>
-<h3>Installation <h2 id="composer">via composer</h2>
-<p> First, get yourself some  <a href="https://getcomposer.org/doc/00-intro.md#installation-nix">composer.</a>
-  Next, you need to make yourself a <code>composer.json</code>
- , here's an example. <pre><code>{
-  "require": {
-    "lavender/lavender": "*"
-  }
-}
+<p> Hey! We're here to teach you about Lavender. If you know Jade, you'll   find this easier to pick up. If not, take your time and learn! Yay!</p>
+<h2 id="langref">Language Reference <h3 id="html">html</h3>
+<p> This... <pre><code class="language-jade">section#some_id.foo.bar(attribute1='foo',attribute2='bar')
 </code>
 </pre>
- then run <code>php composer.phar install</code>
- or <code>composer install</code>
- depending on how you've installed composer. Once composer has finished it will generate an   autoloader in  <code>vendor/autoload.php</code>
- which you can  <code>require()</code>
- from your application's bootstrap process.</p>
-<h2 id="github">via Github</h2>
-<p> Add the lavender submodule with  <code>git submodule add git@github.com:golavender/lavender.git (folder to clone to)</code>
- and include it with  <code>require "(where you put lavender)/src/Lavender/lavender.php</code>
-</p>
-</h3>
-<h3 id="usage">Usage</h3>
-<p> Once you have installed and included lavender, the only required configuration is to tell  lavender where the views directory is. <pre><code>Lavender::config(array(
-/*
- * required - path to views directory
- */
-'view_dir'       => String,
-/*
-* optional - defaults to "lavender"
-*/
-//'file_extension' => String,
-/*
-* optional - defaults to TRUE
-*
-* renders a debugging error page instead of throwing an exception.
-* in production you should disable this and use a 500 page.
-*/
-//'handle_errors'  => Boolean, 
-));
+ Becomes this: <pre><code class="language-markup">&lt;section id='some_id' class='foo bar' attribute1='foo' 
+attribute2='bar'&gt;&lt;/section&gt;
 </code>
 </pre>
- once it's been rendered, it's as easy as... <pre><code>$output = Lavender::view('some_template')->compile();
-// or if you need to pass data into the template (probably the case)
-$output = Lavender::view('some_template')->compile(array(
-  'data'      => 'some data that the template will use',
-  'more_data' => "moar data",
-));
-</code>
-</pre>
-</p>
-<h3 id="langref">Language Reference <h2 id="html">html</h2>
-<p><pre><code>section#some_id.foo.bar(attribute1='foo',attribute2='bar')
-</code>
-</pre>
- becomes <pre><code>&lt;section id="some_id" class="foo bar" attribute1="foo" attribute2="bar"&gt;&lt;/section&gt;
-</code>
-</pre>
- Child nodes are indented below their parent <pre><code>section.foo
+ Child nodes are indented below their parent, which means  this: <pre><code class="language-jade">section.foo
  div(data-something='foo') 
  div(data-something='bar')
 </code>
 </pre>
- becomes <pre><code>&lt;section class="foo"&gt;
-  &lt;div data-something="foo"&gt; &lt;/div&gt;
-  &lt;div data-something="bar"&gt; &lt;/div&gt;
+ Becomes this: <pre><code class="language-markup">&lt;section class='foo'&gt;
+  &lt;div data-something='foo'&gt; &lt;/div&gt;
+  &lt;div data-something='bar'&gt; &lt;/div&gt;
 &lt;/section&gt;
 </code>
 </pre>
- There is a shortcut if you just want a div, you can skip right to class or id definitions. <pre><code>.foobar text text
+ There is a shortcut if you just want a div, you can skip right to class   or id definitions. Therefore, this: <pre><code class="language-jade">.foobar text text
 #foobar text text
 </code>
 </pre>
- becomes <pre><code>&lt;div class="foobar"&gt;text text&lt;/div&gt;
-&lt;div id="foobar"&gt;text text&lt;/div&gt;   
+ Becomes this: <pre><code class="language-markup">&lt;div class='foobar'&gt;text text&lt;/div&gt;
+&lt;div id='foobar'&gt;text text&lt;/div&gt;   
 </code>
 </pre>
- Text can be added to nodes in two ways. <pre><code>section.foo
+ Text can be added to nodes in two ways: <pre><code class="language-jade">section.foo
   div(data-something='foo') this is some text 
   div(data-something='bar')
-    this is also some text          
+   &#124; this is also some text          
 </code>
 </pre>
- Lavender knows not to put a closing tag on certain nodes. (we got the list from <a href="http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements">here</a>
-<code>input(type="text",value="fooooobar")</code>
- becomes <code>&lt;input type="text" value="fooooobar"&gt;</code>
+ Lavender knows not to put a closing tag on certain nodes We got the   list from <a href="http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements" target="_blank" class="guide-link">here</a>
+.</p>
+<p><code class="language-markup">input(type='text',value='fooooobar')</code>
+ becomes <code class="language-markup">&lt;input type='text' value='fooooobar'&gt;</code>
 </p>
-<h2 id="doctype">doctype</h2>
-<p> Do you always forget the syntax for doctype? Lavender exists to solve your first world   problems. Just throw a  <code>!!!</code>
-  at the top of your layout and you get yourself a nice         html doctype. Doctypes supported are  <code>html</code>
- ,  <code>transitional</code>
- ,       <code>strict</code>
- ,  <code>frameset</code>
- ,  <code>1.1</code>
- ,  <code>basic</code>
-  and       <code>mobile</code>
+<h3 id="doctype">doctype</h3>
+<p> Do you always forget the syntax for doctype? Lavender exists to solve   your first world problems. Just throw a  <code class="language-markup">!!!</code>
+  at the top of your layout, and you get yourself a nice         html doctype. Doctypes supported are  <code class="language-markup">html</code>
+ ,  <code class="language-markup">transitional</code>
+ ,       <code class="language-markup">strict</code>
+ ,  <code class="language-markup">frameset</code>
+ ,  <code class="language-markup">1.1</code>
+ ,  <code class="language-markup">basic</code>
+  and       <code class="language-markup">mobile</code>
  . Here are some pretty examples.   <p></p>
-<code>!!!</code>
-  will default to html, however you can also specify  <code>!!! html</code>
- . The word  <code>doctype</code>
+<code class="language-markup">!!!</code>
+  will default to html. However, you can also specify  <code class="language-markup">!!! html</code>
+ . The word  <code class="language-markup">doctype</code>
   works as well!</p>
-</h3>
-<h2 id="comments">Comments</h2>
-<p> comments are a thing! <pre><code>// this is an html comment. it will be rendered to the page
-//- this is a lavender comment. it will not be rendered
+</h2>
+<h3 id="comments">Comments</h3>
+<p> Comments are a thing! <pre><code class="language-jade">// this is an html comment. it will be rendered to the page
+//- this is a Lavender comment. it will not be rendered
 </code>
 </pre>
 </p>
-<h2 id="concomments">Conditional Comments</h2>
-<p> The  <code>IT</code>
- shorthand can be used to generate conditional comments for Internet Explorer. check out  <a href="http://www.quirksmode.org/css/condcom.html">this</a>
- if you are not familiar with conditional comments. <pre><code>IE
-  script(src="some script to make IE work")
+<h3 id="concomments">Conditional Comments</h3>
+<p> The  <code class="language-markup">IE</code>
+ shorthand can be used to generate conditional comments for Internet   Explorer. Check out  <a href="http://www.quirksmode.org/css/condcom.html" target="_blank" class="guide-link">this</a>
+ if you are not familiar with conditional comments. <pre><code class="language-jade">IE
+  script(src='some script to make IE work')
 IE lt 7
-  script(src="some script to make super old IE work")
+  script(src='some script to make super old IE work')
 </code>
 </pre>
- becomes <pre><code>&lt;!--[if IE]&gt;
-  &lt;script src=&quot;some script to make IE work&quot;&gt;&lt;/script&gt;
+ Becomes this: <pre><code class="language-markup">&lt;!--[if IE]&gt;
+  &lt;script src=&#39;some script to make IE work&#39;&gt;
+  &lt;/script&gt;
 &lt;![endif]--&gt;
 &lt;!--[if lt IE 7]&gt;
-  &lt;script src=&quot;some script to make super old IE work&quot;&gt;&lt;/script&gt;
+  &lt;script src=&#39;some script to make super old IE work&#39;&gt;
+  &lt;/script&gt;
 &lt;![endif]--&gt;
 </code>
 </pre>
 <h3 id="variables">Variables</h3>
-<p> Lavender views can be passed variables from the parent php application or they can be   defined right in the template.</p>
-<p> This just assigns a variable without outputting anything to the page. <pre><code>- some_variable = "this is stored in a variable"
+<p> Lavender views can be passed variables from the parent php application,   or they can be defined right in the template. This just assigns a variable  without outputting anything to the page.</p>
+<p> Note: While we do write it with no space, it is still valid with and extra space as <code class="language-markup">- some_variable</code>
+ . Expressions in general are not whitespace sensitive. <pre><code class="language-jade">-some_variable = 'this is stored in a variable'
 </code>
 </pre>
 </p>
-<p> Note the <code>-</code>
- symbol, which evaluates an expression without outputting. the content of the variable can then  later be output using the   symbol. <pre><code>- some_variable = "this is stored in a variable"
+<p> Note the <code class="language-markup">-</code>
+ symbol, which evaluates an expression without outputting. The content   of the variable can then later be output using the <code class="language-markup">=</code>
+ symbol. In the examples below, this: <pre><code class="language-jade">-some_variable = 'this is stored in a variable'
 span.foo= some_variable
 span.bar
   = some_variable
 </code>
 </pre>
- becomes <pre><code>&lt;span class=&quot;foo&quot;&gt;this is stored in a variable&lt;/div&gt;
-&lt;span class=&quot;bar&quot;&gt;this is stored in a variable&lt;/div&gt;
+ Becomes this: <pre><code class="language-markup">&lt;span class=&#39;foo&#39;&gt;this is stored in a variable&lt;/div&gt;
+&lt;span class=&#39;bar&#39;&gt;this is stored in a variable&lt;/div&gt;
 </code>
 </pre>
- Arrays too <code>- some_array = ['foo', 'bar', 'baz']</code>
- and associative arrays <code>- some_array = {key1: 'foo', key2: 'bar', key3: 'baz'}</code>
+ Arrays as well: <code class="language-markup">- some_array = ['foo', 'bar', 'baz']</code>
+</p>
+<p> Associative arrays: <code class="language-markup">- some_array = {key1: 'foo', key2: 'bar', key3: 'baz'}</code>
 </p>
 <h3 id="conditionals">Conditionals</h3>
-<p> Markup can be conditionally rendered using the if keyword. Lavender supports all the   conditional operations you know and love: <code>!, &amp;&amp;, ||, &lt;, &gt;, &lt;=, &gt;=, ==, != 
+<p> Markup can be conditionally rendered using the 'if' keyword. Lavender   supports all the   conditional operations you know and love: <code class="language-markup">!, &amp;&amp;, ||, &lt;, &gt;, &lt;=, &gt;=, ==, != 
 </code>
- and does a truthy check against the result. <pre><code>- some_variable = "this is stored in a variable"
+ and does a truthy check against the result. Note, there are no compound  keywords in Lavender, so there is no space in the the keyword <code class="language-markup">elseif</code>
+ . <pre><code class="language-jade">-some_variable = 'this is stored in a variable'
 if some_variable
   span.foo= some_variable
 if some_variable_that_doesnt_exist
@@ -270,16 +207,16 @@ else
 </code>
 </pre>
 </p>
-<p> becomes <pre><code>&lt;span class=&quot;foo&quot;&gt;this is stored in a variable&lt;/div&gt;
+<p> Becomes this: <pre><code class="language-markup">&lt;span class=&#39;foo&#39;&gt;this is stored in a variable&lt;/div&gt;
 &lt;div&gt;wooooooooo&lt;/div&gt
 </code>
 </pre>
-<code>TRUE</code>
- and <code>FALSE</code>
- (and <code>true</code>
- and <code>false</code>
- )  are keywords in Lavender, they can be assinged to variables or used in conditionals directly  (but if you actually do that then <a href="https://www.destroyallsoftware.com/talks/wat">wat</a>
- ) <pre><code>- my_variable = TRUE
+<code class="language-markup">TRUE</code>
+ and <code class="language-markup">FALSE</code>
+ (and <code class="language-markup">true</code>
+ and <code class="language-markup">false</code>
+ )  are keywords in Lavender. They can be assigned to variables or used in   conditionals directly (but if you actually do that then <a href="https://www.destroyallsoftware.com/talks/wat" target="_blank" class="guide-link">wat</a>
+ ). <pre><code class="language-jade">-my_variable = TRUE
 if my_variable
   div this will show up
 if false
@@ -287,9 +224,9 @@ if false
 </code>
 </pre>
 </p>
-<h2 id="loops">Loops</h2>
-<p> Lavender supports iterating over arrays and associative arrays with the  <code>each</code>
- keyword <pre><code>ul
+<h3 id="loops">Loops</h3>
+<p> Lavender supports iterating over arrays and associative arrays with the  <code class="language-markup">each</code>
+ keyword. <pre><code class="language-jade">ul
   each value in some_random_array
     li= value 
 ul
@@ -297,13 +234,13 @@ ul
     li(data-key=key)= value 
 </code>
 </pre>
- You may have noticed how we snuck in using variables for your html attributes there.   You can do that too!</p>
-<h2 id="else">Else</h2>
-<p> The else keyword can be used after loops or conditionals. <pre><code>  if FALSE
+ You may have noticed how we snuck in using variables for your html   attributes there. You can do that too!</p>
+<h3 id="else">Else</h3>
+<p> The else keyword can be used after loops or conditionals. <pre><code class="language-jade">if FALSE
   div will not show up
 else
   div will show up
-- empty_array = []
+-empty_array= []
 each value in empty_array
   div nothing to see here
 else
@@ -311,18 +248,19 @@ else
 </code>
 </pre>
 </p>
-<h2 id="math">math</h2>
-<p> Math. You can do it. Supported operators are <code>%, +, -, *, /, (, )</code>
- . <pre><code>  = 1 + 1 = 
+<h3 id="math">Math</h3>
+<p> Math. You can do it. Supported operators are: <code class="language-markup">%, +, -, *, /, (, )</code>
+ . <pre><code class="language-jade">div
+  &#124; 1 + 1 = 
   = 1 + 1
 div
-   2 - 3 = 
+  &#124; 2 - 3 = 
   = 2 - 3
 div
-   2 * 3 = 
+  &#124; 2 * 3 = 
   = 2 * 3
 div
-   10 / 5 = 
+  &#124; 10 / 5 = 
   = 10 / 5
 ul
   each value, key in some_random_array
@@ -331,62 +269,62 @@ ul
 </code>
 </pre>
 </p>
-<h2 id="include">Include</h2>
-<p> Partials are a thing. <pre><code>span stuff and things
+<h3 id="include">Include</h3>
+<p> Partials are a thing. <pre><code class="language-jade">span stuff and things
 div.content
   include /path/relative/to/view/directory/somefile
 div.content
-  include /path/relative/to/view/directory/somefile with {stuff: "Asdfasdf"}
+  include /path/relative/to/view/directory/somefile with {stuff: 'Asdfasdf'}
 </code>
 </pre>
 </p>
-<h2 id="extends">Extends</h2>
-<p> Lavender supports block style layout extension. This means that in the parent template  you define blocks using the <code>block</code>
- keyword. Then in the child template you <b>only have blocks</b>
+<h3 id="extends">Extends</h3>
+<p> Lavender supports block style layout extension. This means that in the   parent template, you define blocks using the <code class="language-markup">block</code>
+ keyword. Then, in the child template, you <b>only have blocks</b>
  which override the blocks in the parent template.</p>
-<p>  So if this was layout.lavender.. <pre><code>h1 this is a pretty cool web page
+<p>  So if this was layout.lavender: <pre><code class="language-jade">h1 this is a pretty cool web page
 block header
-   you can put some default content in here
-   it will be displayed if no child template
-   overrides it
+  &#124; you can put some default content in here
+  &#124; it will be displayed if no child template
+  &#124; overrides it
 div.content
   block content
 </code>
 </pre>
- And this is the child template... <pre><code>extends layout
+ And this is the child template: <pre><code class="language-jade">extends layout
 block header
   div
     span
-       foo bar baz
+      &#124; foo bar baz
 block content
-   content
-   more content
-   moar content
+  &#124; content
+  &#124; more content
+  &#124; moar content
 </code>
 </pre>
- And you were to render the child template, you would get... <pre><code>&lt;h1&gt;this is a pretty cool web page&lt;/h1&gt;
+ And you were to render the child template, you would get: <pre><code class="language-markup">&lt;h1&gt;this is a pretty cool web page&lt;/h1&gt;
 &lt;div&gt;
   &lt;span&gt;foo bar baz&lt;/span&gt;
 &lt;/div&gt;
-&lt;div class=&quot;content&quot;&gt;
+&lt;div class=&#39;content&#39;&gt;
   content
   more content
   moar content
 &lt;/div&gt;
 </code>
 </pre>
- A special case has been added to allow defining variables at the top of your child   templates, these variables can be referenced from the layout to do cool things like   specifying a list of javascript files necessary for a template to work   or setting the page title.</p>
+ A special case has been added to allow defining variables at the top of   your child templates. These variables can be referenced from the layout   to accomplish tasks like specifying a list of javascript files necessary   for a template to work or setting the page title.</p>
 </p>
-<h2 id="whitespace">Whitespace</h2>
-<p> New lines are added automatically after every html element, if you do not want the newline  you can add a <code>-</code>
- to the node definition like so.</p>
-<pre><code>p
-a(href=&quot;/some/place&quot;)- click here for some cool stuff
-.
+<h3 id="whitespace">Whitespace</h3>
+<p> New lines are added automatically after every html element. If you do not   want the newline you can add a <code class="language-markup">-</code>
+ to the node definition like so:</p>
+<pre><code class="language-jade">p
+  a(href=&#39;/some/place&#39;)- click here f&ocy;r some cool stuff.
+   |.
 </code>
 </pre>
- Automagic whitespace management is hard and subject to change. <h2 id="helpers">Helpers</h2>
-<p> Helpers are used to streamline the process even more. A constant helper... <pre><code>class Lavender_Helper_Constant
+ Automagic whitespace management is hard and subject to change. <h3 id="helpers">Helpers</h3>
+<p> Helpers are used to streamline the process even more. A constant helper, <pre><code class="language-jade">class Lavender_Helper_Constant
 {
   public function execute($string)
   {
@@ -396,7 +334,7 @@ a(href=&quot;/some/place&quot;)- click here for some cool stuff
 Lavender::register_helper('constant', 'Lavender_Helper_Constant');
 </code>
 </pre>
- And a date helper... <pre><code>class Lavender_Helper_Date
+ And a date helper, <pre><code class="language-jade">class Lavender_Helper_Date
 {
   public function execute($format, $timestamp = NULL)
   {
@@ -413,161 +351,275 @@ Lavender::register_helper('date', 'Lavender_Helper_Date');
 </pre>
  Are both available for use.</p>
 <h3 id="filters">Filters</h3>
-<p> Programatic expressions in Lavender are a little limited, none of your favorite php   functions are available for modifying the template data. This is by design, we do not think   there should be a ton of logic in templates when that logic could be in controllers or models.   However, since you have to be able to do some templating logic, we added filters. It is super   easy to add your own filters to Lavender and there are (or will be) plenty in place out of   the box. Here is how they work... <pre><code>- myvariable = "some really cool text"
+<p> Programatic expressions in Lavender are a little limited; none of your   favorite php functions are available for modifying the template data.   This is by design. We do not think there should be a ton of logic in   templates when that logic could be in controllers or models instead. However,   since you have to be able to do some templating logic, we added filters.   It is super easy to add your own filters to Lavender and there are   (or will be) plenty in place out of the box. Here is how they work! <pre><code class="language-jade">- myvariable = 'some really cool text'
 div
   span
-     i'm gonna filter some stuff. it's gonna be cool. 
-    = myvariable | upper 
+    &#124; i'm gonna filter some stuff. it's gonna be cool. 
+    = myvariable &#124; upper 
 </code>
 </pre>
- becomes <pre><code>&lt;div&gt;
+ Becomes this: <pre><code class="language-markup">&lt;div&gt;
   &lt;span&gt;im gonna filter some stuff, it&apos;ll be cool. SOME REALLY COOL TEXT&lt;/span&gt;
 &lt;/div&gt;
 </code>
 </pre>
- Profound right? Not that we invented this, we copied the idea from  <a href="http://twig.sensiolabs.org/">twig</a>
+ Profound right? Not that we invented this, we copied the idea from  <a href="http://twig.sensiolabs.org/" target="_blank" class="guide-link">twig</a>
  . The filters Lavender comes with are:</p>
-<p><ul class="list-unstyled"><li><b>upper:</b>
-<code>="string"|upper</code>
- becomes <code>STRING</code>
-</li>
-<li><b>trim:</b>
-<code>=" string "|trim</code>
- becomes <code>string</code>
-</li>
-<li><b>title:</b>
-<code>="this is a title"|title</code>
- becomes <code>This Is A Title</code>
-</li>
-<li><b>split:</b>
-<code>"these are some words"|split(' ')</code>
- becomes the array <code>['these', 'are', 'some', 'words']</code>
-</li>
-<li><b>sort:</b>
-<code>"these are some words"|split(' ')|sort</code>
- becomes the array <code>['are', 'some', 'these', 'words']</code>
-</li>
-<li><b>capitalize:</b>
-<code>= "these are some words"|capitalize</code>
- becomes <code>These are some words</code>
-</li>
-<li><b>date:</b>
-<code>= "1396372567"|date</code>
- becomes <code>4/1/2014 = "1396372567"|date('Y')</code>
- becomes <code>2014</code>
-</li>
-<li><b>default:</b>
-<code>= []|default('foobar')</code>
- becomes <code>foobar</code>
-</li>
-<li><b>first:</b>
-<code>= ['asdf','qwer']|first</code>
- becomes <code>asdf</code>
-</li>
-<li><b>join:</b>
-<code>= ['asdf','qwer']|join</code>
- becomes <code>asdf qwer = ['asdf','qwer']|join('-')</code>
- becomes <code>asdf-qwer</code>
-</li>
-<li><b>last:</b>
-<code>= ['asdf','qwer']|last</code>
- becomes <code>qwer = ['asdf','qwer', 'zxcv']|last(2)|join('-')</code>
- becomes <code>qwer-zxcv</code>
-</li>
-<li><b>keys:</b>
-<code>{'asdf': 'foo','qwer': 'bar'}|keys</code>
- becomes the array <code>['asdf', 'qwer']</code>
-</li>
-<li><b>length:</b>
-<code>= ['asdf','qwer']|length</code>
- becomes <code>2</code>
-</li>
-<li><b>lower:</b>
-<code>= "FOO BAR"|lower</code>
- becomes <code>foo bar</code>
-</li>
-<li><b>nl2br:</b>
-<code>= "new&bsol;nline"|nl2br</code>
- becomes <code>new&lt;br&gt;line</code>
-</li>
-<li><b>round:</b>
-<code>= 12345.123|round(2)</code>
- becomes <code>12345.12</code>
-</li>
-<li><b>merge:</b>
-<code>['foo', 'bar']|merge(['baz'])</code>
- becomes the array <code>['foo', 'bar', 'baz']</code>
-</li>
-<li><b>replace:</b>
-<code>= "foo bar"|replace(' ', '-')</code>
- becomes <code>foo-bar</code>
-</li>
-<li><b>reverse:</b>
-<code>['asdf', 'qwer']|reverse</code>
- becomes the array <code>['qwer', 'asdf']</code>
-</li>
-<li><b>slice:</b>
-<code>['foo', 'bar', 'baz']|slice(1, 1)</code>
- becomes the array <code>['bar']</code>
-</li>
-<li><b>number_format:</b>
-<code>= 10000000000.12345|number_format()</code>
- becomes <code>0,000,000,000 = 10000000000.12345|number_format(2, ',', '.')</code>
- becomes <code>10.000.000.000,12</code>
-</li>
-<li><b>ceil:</b>
-<code>= 10000000000.12345|ceil</code>
- becomes <code>10000000001</code>
-</li>
-<li><b>floor:</b>
-<code>= 10000000000.12345|floor</code>
- becomes <code>10000000000</code>
-</li>
-<li><b>relative:</b>
- if you had a <code>timestamp</code>
- variable <code>timestamp|relative</code>
- would return things like 'just now' or 'in 3 days' or <code>6 minutes ago</code>
-</li>
-<li><b>contains:</b>
-<code>= ['asdf', 'qwer']|contains('asdf')</code>
- returns TRUE</li>
-<li><b>is:</b>
-</li>
-<ul><li><code>= ['asdf', 'qwer']|is('list')</code>
- returns TRUE</li>
-<li><code>= {asdf: 'qwer'}|is('object')</code>
- returns TRUE</li>
-<li><code>= 8|is('number')</code>
- returns TRUE</li>
-<li><code>= myVariable|is('My_Class_Name')</code>
- also works</li>
-</ul>
-<li><b>json:</b>
-<code>= ['asdf', 'qwer']|json</code>
- returns <code>"['asdf','qwer']"</code>
-</li>
-<li><b>round:</b>
-<code>3.6|round</code>
- becomes <code>4</code>
-</li>
-<li><b>floor:</b>
-<code>3.14|floor</code>
- becomes <code>3</code>
-</li>
-<li><b>chunk:</b>
-<code>'foo, bar, baz, qux'| chunk 2</code>
- becomes <code>'foo,bar' 'baz, qux'</code>
-</li>
-<li><b>range:</b>
-<code>5| range 10</code>
- becomes <code>5, 6, 7, 8, 9, 10</code>
-</li>
-</ul>
-</p>
+<div class="table-responsive"><table class="table table-hover"><thead><tr><th>Filter</th>
+<th>Start</th>
+<th>Becomes</th>
+</tr>
+</thead>
+<tbody><tr><td><b>upper</b>
+</td>
+<td><code class="language-markup">='string'|upper</code>
+</td>
+<td><code class="language-markup">STRING</code>
+</td>
+</tr>
+<tr><td><b>trim</b>
+</td>
+<td><code class="language-markup">=' string '|trim</code>
+</td>
+<td><code class="language-markup">string</code>
+</td>
+</tr>
+<tr><td><b>title</b>
+</td>
+<td><code class="language-markup">='this is a title'|title</code>
+</td>
+<td><code class="language-markup">This Is A Title</code>
+</td>
+</tr>
+<tr><td><b>split</b>
+</td>
+<td><code class="language-markup">'these are some words'|split(' ')</code>
+</td>
+<td><code class="language-markup">['these', 'are', 'some', 'words']</code>
+</td>
+</tr>
+<tr><td><b>sort</b>
+</td>
+<td><code class="language-markup">'these are some words'|split(' ')|sort</code>
+</td>
+<td><code class="language-markup">['are', 'some', 'these', 'words']</code>
+</td>
+</tr>
+<tr><td><b>capitalize</b>
+</td>
+<td><code class="language-markup">= 'these are some words'|capitalize</code>
+</td>
+<td><code class="language-markup">These are some words</code>
+</td>
+</tr>
+<tr><td><b>date</b>
+</td>
+<td><code class="language-markup">= '1396372567'|date</code>
+</td>
+<td><code class="language-markup">4/1/2014 = '1396372567'|date('Y')</code>
+ becomes <code class="language-markup">2014</code>
+</td>
+</tr>
+<tr><td><b>default</b>
+</td>
+<td><code class="language-markup">= []|default('foobar')</code>
+</td>
+<td><code class="language-markup">foobar</code>
+</td>
+</tr>
+<tr><td><b>first</b>
+</td>
+<td><code class="language-markup">= ['asdf','qwer']|first</code>
+</td>
+<td><code class="language-markup">asdf</code>
+</td>
+</tr>
+<tr><td><b>join</b>
+</td>
+<td><code class="language-markup">= ['asdf','qwer']|join</code>
+</td>
+<td><code class="language-markup">asdf qwer = ['asdf','qwer']|join('-')</code>
+ becomes <code class="language-markup">asdf-qwer</code>
+</td>
+</tr>
+<tr><td><b>last</b>
+</td>
+<td><code class="language-markup">= ['asdf','qwer']|last</code>
+</td>
+<td><code class="language-markup">qwer = ['asdf','qwer', 'zxcv']|last(2)|join('-')</code>
+ becomes <code class="language-markup">'qwer-zxcv'</code>
+</td>
+</tr>
+<tr><td><b>keys</b>
+</td>
+<td><code class="language-markup">{'asdf': 'foo','qwer': 'bar'}|keys</code>
+</td>
+<td> becomes the array <code class="language-markup">['asdf', 'qwer']</code>
+</td>
+</tr>
+<tr><td><b>length</b>
+</td>
+<td><code class="language-markup">= ['asdf','qwer']|length</code>
+</td>
+<td><code class="language-markup">2</code>
+</td>
+</tr>
+<tr><td><b>lower</b>
+</td>
+<td><code class="language-markup">= 'FOO BAR'|lower</code>
+</td>
+<td><code class="language-markup">foo bar</code>
+</td>
+</tr>
+<tr><td><b>nl2br</b>
+</td>
+<td><code class="language-markup">= 'new&bsol;nline|nl2br</code>
+</td>
+<td><code class="language-none">new&lt;br&gt;line</code>
+</td>
+</tr>
+<tr><td><b>round</b>
+</td>
+<td><code class="language-markup">= 12345.123|round(2)</code>
+</td>
+<td><code class="language-markup">12345.12</code>
+</td>
+</tr>
+<tr><td><b>merge</b>
+</td>
+<td><code class="language-markup">['foo', 'bar']|merge(['baz'])</code>
+</td>
+<td><code class="language-markup">['foo', 'bar', 'baz']</code>
+</td>
+</tr>
+<tr><td><b>replace</b>
+</td>
+<td><code class="language-markup">= 'foo bar'|replace(' ', '-')</code>
+</td>
+<td><code class="language-markup">foo-bar</code>
+</td>
+</tr>
+<tr><td><b>reverse</b>
+</td>
+<td><code class="language-markup">['asdf', 'qwer']|reverse</code>
+</td>
+<td><code class="language-markup">['qwer', 'asdf']</code>
+</td>
+</tr>
+<tr><td><b>slice</b>
+</td>
+<td><code class="language-markup">['foo', 'bar', 'baz']|slice(1, 1)</code>
+</td>
+<td><code class="language-markup">['bar']</code>
+</td>
+</tr>
+<tr><td><b>number_format</b>
+</td>
+<td><code class="language-markup">= 10000000000.12345|number_format()</code>
+</td>
+<td><code class="language-markup">0,000,000,000 = 10000000000.12345|number_format(2, ',', '.')</code>
+ becomes <code class="language-markup">10.000.000.000,12</code>
+</td>
+</tr>
+<tr><td><b>ceil</b>
+</td>
+<td><code class="language-markup">= 10000000000.12345|ceil</code>
+</td>
+<td><code class="language-markup">10000000001</code>
+</td>
+</tr>
+<tr><td><b>floor</b>
+</td>
+<td><code class="language-markup">= 10000000000.12345|floor</code>
+</td>
+<td><code class="language-markup">10000000000</code>
+</td>
+</tr>
+<tr><td><b>relative</b>
+</td>
+<td> if you had a <code class="language-markup">timestamp</code>
+ variable</td>
+<td><code class="language-markup">timestamp|relative</code>
+ would return things like 'just now' or 'in 3 days' or <code class="language-markup">6 minutes ago</code>
+</td>
+</tr>
+<tr><td><b>contains</b>
+</td>
+<td><code class="language-markup">= ['asdf', 'qwer']|contains('asdf')</code>
+</td>
+<td> returns TRUE</td>
+</tr>
+<tr><td><b>is</b>
+</td>
+<td><code class="language-markup">= ['asdf', 'qwer']|is('list')</code>
+</td>
+<td> returns TRUE</td>
+</tr>
+<tr><td></td>
+<td><code class="language-markup">= {asdf: 'qwer'}|is('object')</code>
+</td>
+<td> returns TRUE</td>
+</tr>
+<tr><td></td>
+<td><code class="language-markup">= 8|is('number')</code>
+</td>
+<td> returns TRUE</td>
+</tr>
+<tr><td></td>
+<td><code class="language-markup">= myVariable|is('My_Class_Name')</code>
+</td>
+<td> also works.</td>
+</tr>
+<tr><td><b>json</b>
+</td>
+<td><code class="language-markup">= ['asdf', 'qwer']|json</code>
+</td>
+<td><code class="language-markup">'['asdf','qwer']'</code>
+</td>
+</tr>
+<tr><td><b>round</b>
+</td>
+<td><code class="language-markup">3.6|round</code>
+</td>
+<td><code class="language-markup">4</code>
+</td>
+</tr>
+<tr><td><b>floor</b>
+</td>
+<td><code class="language-markup">3.14|floor</code>
+</td>
+<td><code class="language-markup">3</code>
+</td>
+</tr>
+<tr><td><b>chunk</b>
+</td>
+<td><code class="language-markup">'foo, bar, baz, qux'| chunk 2</code>
+</td>
+<td><code class="language-markup">'foo,bar' 'baz, qux'</code>
+</td>
+</tr>
+<tr><td><b>range</b>
+</td>
+<td><code class="language-markup">5| range 11</code>
+</td>
+<td><code class="language-markup">5, 6, 7, 8, 9, 10, 11</code>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
-<footer><div class="footer"><h6>Lavender is supported and created by Daft Labs. Enjoy!</h6>
+</div>
+</body>
+<footer class="footer"><div class="container"><img src="/img/lavender-logo-2015.png" height="35" width="35" class="pull-left">
+<a href="https://www.facebook.com/daftlabs" target="_blank"><i class="pull-right fa fa-facebook-square fa-2x"></i>
+</a>
+<a href="https://www.github.com/daftlabs" target="_blank"><i class="pull-right fa fa-github-square fa-2x"></i>
+</a>
+<a href="https://www.twitter.com/daftlabs" target="_blank"><i class="pull-right fa fa-twitter-square fa-2x"></i>
+</a>
+<h6><a href="http://www.daftlabs.com" target="_blank">2014-2015 daft labs, inc.</a>
+ enjoy.</h6>
 </div>
 </footer>
-</body>
