@@ -11,7 +11,7 @@ block content
       .col-md-8.col-md-offset-2.about.img-rounded
           h1.title About Us
           p
-            | So you want to learn a little bit about us. Sweet.
+            | So you want to learn a little bit about us. Sweet!
   .container
     .row
       .col-md-8.col-md-offset-2.about.img-rounded
@@ -26,10 +26,10 @@ block content
           h2 The Name
           p
             | When naming Lavender, we took inspiration from Jade itself. Jade is three things:
-            | a color, an item and a programming language. We also had help from JT, the co-founder
+            | a color, an item, and a programming language. We also had help from JT, the co-founder
             | of daft labs, whose favorite color is purple. It was his wife who made the connection
             | between the name Lavender and the budding programming language, and thus the
-            | name stuck.
+            | name stuck!
           a.btn.btn-home(href='https://github.com/golavender/lavender', target='_blank') Fork Us.
   .container
     .row

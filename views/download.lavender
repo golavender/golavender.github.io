@@ -40,11 +40,11 @@ block content
                     'lavender/lavender': '*'
                   }
                 }
-            | then run
+            | Then, run
             code.language-markup php composer.phar install 
             | or
             code.language-markup composer install
-            | depending on how you've installed composer. Once composer has finished 
+            | depending on how you've installed composer. Once composer has finished, 
             |it will generate an autoloader in 
             code.language-markup vendor/autoload.php
             | which you can 
@@ -82,7 +82,7 @@ block content
               */
               //'handle_errors'  => Boolean, 
               ));
-          | once it's been rendered, it's as easy as...
+          | Once it's been rendered, it's as easy as:
           pre
             code.language-jade.
               $output = Lavender::view('some_template')->compile();
