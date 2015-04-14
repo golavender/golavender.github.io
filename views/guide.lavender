@@ -49,11 +49,11 @@ block content
         h1.title The Lavender Guide
         p
           | Hey! We're here to teach you about Lavender. If you know Jade, you'll 
-          | find this easier to pick up. If not, take your time and learn! Yay!   
+          | find this easier to pick up. If not, take your time and learn!   
         h2#langref Language Reference
           h3#html html
           p
-            | This...
+            | This:
             pre
               code.language-jade.
                 section#some_id.foo.bar(attribute1='foo',attribute2='bar')
@@ -94,7 +94,7 @@ block content
                   div(data-something='foo') this is some text 
                   div(data-something='bar')
                    &#124; this is also some text          
-            | Lavender knows not to put a closing tag on certain nodes We got the 
+            | Lavender knows not to put a closing tag on certain nodes. We got the 
             | list from
             a.guide-link(
               href='http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements', 
@@ -150,7 +150,7 @@ block content
             href='http://www.quirksmode.org/css/condcom.html', 
             target='_blank'
             ) this
-          | if you are not familiar with conditional comments.
+          | if you are not familiar with conditional comments. This:
           pre
             code.language-jade.
               IE
@@ -215,7 +215,7 @@ block content
             | and does a truthy check against the result. Note, there are no compound
             | keywords in Lavender, so there is no space in the the keyword
             code.language-markup elseif
-            | .
+            | . So, this:
             pre
               code.language-jade.
                 -some_variable = 'this is stored in a variable'
@@ -252,7 +252,7 @@ block content
             code.language-markup false
             | )
             | are keywords in Lavender. They can be assigned to variables or used in 
-            | conditionals directly (but if you actually do that then
+            | conditionals directly (but if you actually do that then,
             a.guide-link(
               href='https://www.destroyallsoftware.com/talks/wat', 
               target='_blank'
@@ -301,7 +301,7 @@ block content
                   div empty array!
           h3#math Math
           p
-            | Math. You can do it. Supported operators are:
+            | Math. You can do it! Supported operators are:
             code.language-markup %, +, -, *, /, (, )
             | .
             pre
@@ -328,7 +328,7 @@ block content
                       li(data-key=key)= value 
           h3#include Include
           p
-            | Partials are a thing.
+            | Partials, they do exist!
             pre
               code.language-jade.
                 span stuff and things
@@ -347,7 +347,7 @@ block content
             b only have blocks
             | which override the blocks in the parent template.
           p
-            |  So if this was layout.lavender:
+            |  So, if this was layout.lavender:
             pre
               code.language-jade.
                 h1 this is a pretty cool web page
@@ -393,7 +393,7 @@ block content
             | for a template to work or setting the page title.
         h3#whitespace Whitespace
         p
-          | New lines are added automatically after every html element. If you do not 
+          | New lines are added automatically after every html element. If you don't 
           | want the newline you can add a
           code.language-markup -
           | to the node definition like so:
@@ -402,7 +402,7 @@ block content
             p
               a(href=&#39;/some/place&#39;)- click here f&ocy;r some cool stuff.
               | |.
-        | Automagic whitespace management is hard and subject to change.
+        | Automatic whitespace management is hard, and subject to change.
         h3#helpers Helpers
         p
           | Helpers are used to streamline the process even more. A constant helper,
@@ -437,10 +437,10 @@ block content
         p
           | Programatic expressions in Lavender are a little limited; none of your 
           | favorite php functions are available for modifying the template data. 
-          | This is by design. We do not think there should be a ton of logic in 
+          | This is by design. We don't think there should be a ton of logic in 
           | templates when that logic could be in controllers or models instead. However, 
           | since you have to be able to do some templating logic, we added filters. 
-          | It is super easy to add your own filters to Lavender and there are 
+          | It is very easy to add your own filters to Lavender and there are 
           | (or will be) plenty in place out of the box. Here is how they work!
           pre
             code.language-jade.
