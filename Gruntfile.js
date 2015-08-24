@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-exec');
+  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
 
@@ -15,6 +16,14 @@ module.exports = function(grunt) {
             , loop = "for file in `ls views/*.lavender`; do " + view + destination + command + " done"
 
           return loop;
+        }
+      }
+    },
+
+    sass: {
+      dist: {
+        files: {
+          'public/css/main.css': 'views/sass/main.scss'
         }
       }
     },
@@ -42,6 +51,6 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('default', ['exec']);
-  grunt.registerTask('serve', ['exec','connect:server','watch']);
+  grunt.registerTask('default', ['exec', 'sass']);
+  grunt.registerTask('serve', ['exec','sass','connect:server','watch']);
 };

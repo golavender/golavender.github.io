@@ -1,0 +1,315 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background-image: url('/public/img/background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Vollkorn', sans-serif;
+  margin-bottom: 75px;
+}
+
+.header {
+  margin-top: 60px;
+  background: rgba(230,230,250,0.4);
+}
+
+.guide {
+  background: rgb(230,230,250);
+  background: rgba(230,230,250,0.4);
+  padding: 2em;
+  margin-top: 25px;
+}
+
+.about {
+  background: rgb(230,230,250);
+  background: rgba(230,230,250,0.4);
+  padding: 2em;
+  margin-top: 25px;
+}
+
+.main {
+  background: rgb(66,56,66);
+  background: rgba(66,56,66,.9);
+  padding-top: 2em;
+  margin-top: 25px;
+  color: rgb(254,246,234);
+  color: rgba(254,246,234,.8);
+}
+.footer img {
+  margin-right:5px;
+  margin-bottom:5px;
+}
+
+
+
+.logo-front {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 990px){
+  .maintitle {
+    text-align: center;
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+}
+
+.spaaace {
+  margin-bottom: -25px;
+}
+
+.info {
+  margin-bottom: 50px;
+}
+
+.whowhatwhy {
+  padding-top: 2em;
+  color: #362F35;
+}
+
+.footer .fa {
+  margin-top: 3px;
+}
+
+.img-thumbnail {
+  margin: 10px;
+}
+
+h1 {
+  font-family: 'Quando', cursive;
+  font-size: 280%;
+  color: #796878;
+}
+
+h2 {
+  font-family: 'Vollkorn', sans-serif;
+  font-size: 240%;
+  color: #796878;
+}
+
+h3 {
+  font-family: 'Vollkorn', sans-serif;
+  color: #796878;
+  font-size: 200%;
+}
+
+h4 {
+  font-family: 'Vollkorn', sans-serif;
+  font-size: 150%;
+  margin-top: -5px;
+  margin-bottom: 20px;
+}
+
+h6 {
+  font-family: 'Vollkorn', sans-serif;
+  letter-spacing: 2px;
+}
+
+a{
+  color: #A674A3;
+}
+
+a:hover,
+a:focus {
+  color: #888;
+}
+
+.guide-link {
+  color: #302230;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.special{
+  font-size: 150%;
+}
+
+.center-block {
+  float: none;
+}
+
+.header {
+  font-size: 80%;
+  font-weight: bold;
+}
+
+pre {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+code {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+.btn-home { 
+  color: #dad1d9; 
+  background-color: rgb(66,56,66);
+  background-color: rgba(66,56,66,.8);  
+  margin-top: 3px;
+  margin-bottom: 2px;
+  margin-right: 5px;
+} 
+ 
+.btn-home:hover, 
+.btn-home:focus, 
+.btn-home:active, 
+.btn-home.active, 
+.open .dropdown-toggle.btn-sample { 
+  color: rgb(66,56,66); 
+  background-color: #8A496B;  
+} 
+ 
+.btn-home:active, 
+.btn-home.active, 
+.open .dropdown-toggle.btn-sample { 
+  background-image: none; 
+} 
+ 
+.btn-home.disabled, 
+.btn-home[disabled], 
+fieldset[disabled] .btn-home, 
+.btn-home.disabled:hover, 
+.btn-home[disabled]:hover, 
+fieldset[disabled] .btn-home:hover, 
+.btn-home.disabled:focus, 
+.btn-sample[disabled]:focus, 
+fieldset[disabled] .btn-home:focus, 
+.btn-home.disabled:active, 
+.btn-home[disabled]:active, 
+fieldset[disabled] .btn-home:active, 
+.btn-home.disabled.active, 
+.btn-home[disabled].active, 
+fieldset[disabled] .btn-home.active { 
+  background-color: #423841; 
+  border-color: #423841; 
+} 
+ 
+.btn-home .badge { 
+  color: #423841; 
+  background-color: #ffffff; 
+}
+
+.navbar-default {
+  background-color: #e7e2ee;
+  z-index: 1;
+  border-radius: 0 !important;
+  border-color: transparent;
+  font-size: 18px;
+  font-family: 'Vollkorn', sans-serif;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: #333;
+  margin-left: 50px;
+}
+
+.navbar-form input, .form-inline input {
+  width:auto;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
+  background-color: #333;
+  color:#ffffff;
+}
+
+header {
+  height:270px;
+}
+
+@media (max-width: 990px){
+  .sidebar {
+    display: none;
+  }
+}
+
+.affix {
+   position:fixed;
+   top: 0;
+   width: 100%;
+}
+
+.affix-top {
+  position: static;
+}
+
+@media (min-width: 990px) {
+  .sidebar.affix-top {
+    position: static;
+    margin-top:25px;
+    width: 225px;
+  }
+
+  .sidebar.affix {
+    position: fixed;
+    top:25px;
+    width: 225px;
+  }
+
+  .sidebar.affix-bottom {
+    position: relative;
+    top:25px;
+    width: 225px;
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(81,69,76);
+  color: #e7e7e7;
+  padding-top: 5px;
+}
+
+/*Fixes breaking point for Windows Phone*/
+@media (max-width: 769px) {
+  .navbar-header {
+    float: none;
+  }
+  .navbar-left,.navbar-right {
+    float: none !important;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+    display: none!important;
+  }
+  .navbar-nav {
+    float: none!important;
+    margin-top: 7.5px;
+  }
+  .navbar-nav>li {
+    float: none;
+  }
+  .navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .collapse.in{
+    display:block !important;
+  }
+}

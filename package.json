@@ -5,6 +5,7 @@
   "dependencies": {
     "grunt": "~0.4.5",
     "grunt-exec": "*",
+    "grunt-sass": "*",
     "grunt-contrib-connect": "*",
     "grunt-contrib-watch": "*"
   }
