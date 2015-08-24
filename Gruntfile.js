@@ -2,6 +2,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
   grunt.initConfig({
     exec: {
@@ -17,16 +18,30 @@ module.exports = function(grunt) {
         }
       }
     },
+
     watch: {
       scripts: {
-        files: ['views/*.lavender','views/layouts/*.lavender'],
+        files: [
+          'views/*.lavender',
+          'views/layouts/*.lavender',
+        ],
         tasks: ['exec:lavender'],
         options: {
           spawn: false,
+        }
+      }
+    },
+
+    connect: {
+      server: {
+        options: {
+          base: '../golavender.github.io',
+          port: 9883
         }
       }
     }
   });
 
   grunt.registerTask('default', ['exec']);
+  grunt.registerTask('serve', ['exec','connect:server','watch']);
 };
