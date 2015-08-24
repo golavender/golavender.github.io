@@ -31,7 +31,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </head>
-<body><div role="navigation" class="navbar navbar-default navbar-static-top"><div class="container"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span>
+<body><div class="container-fluid header"><div class="container"><div class="row"><div class="col-md-2 logo-front"><img src="/public/img/lavender-logo-2015.png" height="80" width="80" class="center-block">
+</div>
+<div class="col-md-9 maintitle"><h1>Lavender Templating Engine for PHP</h1>
+</div>
+</div>
+</div>
+</div>
+<div role="navigation" class="navbar navbar-default navbar-static-top"><div class="container"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span>
 <i class="fa fa-bars fa-2x"></i>
 </button>
 </div>
@@ -51,9 +58,8 @@
 </div>
 </div>
 </div>
-<div class="container"><div class="col-md-3"><div data-spy="affix" data-offset-top="60" data-offset-bottom="200" class="sidebar guide img-rounded"><h2>Navigation</h2>
-<h4>Beam me down!</h4>
-<ul><li><a href="#html">html</a>
+<div class="container-fluid guide"><div class="col-md-3 sidebar-section"><div data-spy="affix" data-offset-top="350" data-offset-bottom="200" class="sidebar"><h2>Navigation</h2>
+<ol><li><a href="#html">html</a>
 </li>
 <li><a href="#doctype">doctype</a>
 </li>
@@ -81,10 +87,10 @@
 </li>
 <li><a href="#filters">filters</a>
 </li>
-</ul>
+</ol>
 </div>
 </div>
-<div class="col-md-8"><div class="guide img-rounded"><h1 class="title">The Lavender Guide</h1>
+<div class="col-md-6 guide-info"><h1 class="title">The Lavender Guide</h1>
 <p> Hey! We're here to teach you about Lavender. If you know Jade, you'll   find this easier to pick up. If not, take your time and learn! Yay!</p>
 <h2 id="langref">Language Reference <h3 id="html">html</h3>
 <p> This... <pre><code class="language-jade">section#some_id.foo.bar(attribute1='foo',attribute2='bar')
@@ -607,7 +613,6 @@ div
 </tr>
 </tbody>
 </table>
-</div>
 </div>
 </div>
 </div>

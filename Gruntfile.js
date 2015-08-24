@@ -33,8 +33,10 @@ module.exports = function(grunt) {
         files: [
           'views/*.lavender',
           'views/layouts/*.lavender',
+          'views/sass/*.scss',
+          'views/sass/*/*.scss'
         ],
-        tasks: ['exec:lavender'],
+        tasks: ['exec:lavender', 'sass'],
         options: {
           spawn: false,
         }

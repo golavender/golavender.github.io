@@ -6,24 +6,6 @@ block title
   | Lavender Templating Engine for PHP
 
 block content
-  .container-fluid.main
-    .row.info
-      .col-md-2.col-md-offset-2
-        h3 Lavender: is it a color, a thing or something else?
-      .col-md-5.col-md-offset-1
-        p
-          | Lavender is loosely based on
-          a(href='http://jade-lang.com/', target='_blank') Jade
-          | , created by the
-          | founders of
-          a(href="http://daftlabs.com/", target="_blank") daft labs
-          | to bring peace and order to their office.
-          | Lavender is a templating engine with a simplified syntax that is easy
-          | to use and efficient. The less time you spend double checking proper
-          | useage the more you are free to create beautiful, powerful projects.
-        p
-          | This project is maintained on GitHub, allowing users to collaborate to
-          | help further the cause.
   .container.whowhatwhy
     .row.info
       .col-md-5
@@ -64,7 +46,7 @@ block content
                     | &#124; To the world 
                     | &#124; of
                     | &#124; TOMORROW! 
-                  &lt;p&gt;
+                  &lt;/p&gt;
                 &lt;/div&gt; 
               &lt;/body&gt;
             &lt;/html&gt;            
