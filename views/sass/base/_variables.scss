@@ -1,0 +1,26 @@
+@import url(http://fonts.googleapis.com/css?family=Quando|Vollkorn:400,400italic);
+
+$white:                  #FEF6EA;
+$gray-base:              #333;
+
+$gray-darker:            lighten($gray-base, 10%);
+$gray-dark:              lighten($gray-base, 20%);
+$gray:                   lighten($gray-base, 33.5%);
+$gray-light:             lighten($gray-base, 46.7%);
+$gray-lighter:           lighten($gray-base, 93.5%);
+
+$brand-primary:         #A674A3;
+$brand-secondary:       #423842;
+$brand-third:           #796878;
+$brand-fourth:          #E7E2EE;
+$color_cannon_pink_approx: #8a496b;
+
+
+//fonts
+$font_0: Vollkorn;
+$font_1: sans-serif;
+$font_2: Quando;
+$font_3: cursive;
+
+//urls
+$url_0: url(/public/img/background.jpg);

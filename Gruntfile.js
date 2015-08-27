@@ -1,7 +1,9 @@
 module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-exec');
+  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
   grunt.initConfig({
     exec: {
@@ -17,16 +19,40 @@ module.exports = function(grunt) {
         }
       }
     },
+
+    sass: {
+      dist: {
+        files: {
+          'public/css/main.css': 'views/sass/main.scss'
+        }
+      }
+    },
+
     watch: {
       scripts: {
-        files: ['views/*.lavender','views/layouts/*.lavender'],
-        tasks: ['exec:lavender'],
+        files: [
+          'views/*.lavender',
+          'views/layouts/*.lavender',
+          'views/sass/*.scss',
+          'views/sass/*/*.scss'
+        ],
+        tasks: ['exec:lavender', 'sass'],
         options: {
           spawn: false,
+        }
+      }
+    },
+
+    connect: {
+      server: {
+        options: {
+          base: '../golavender.github.io',
+          port: 9883
         }
       }
     }
   });
 
-  grunt.registerTask('default', ['exec']);
+  grunt.registerTask('default', ['exec', 'sass']);
+  grunt.registerTask('serve', ['exec','sass','connect:server','watch']);
 };

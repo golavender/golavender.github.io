@@ -1,6 +1,3 @@
 [submodule "vendor/lavender"]
 	path = vendor/lavender
 	url = https://github.com/golavender/lavender.git
-[submodule "vendor/vagrantfile"]
-	path = vendor/vagrantfile
-	url = https://github.com/daftlabs/vagrantfile.git

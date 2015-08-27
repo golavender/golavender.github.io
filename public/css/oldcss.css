@@ -4,15 +4,20 @@ html {
 }
 
 body {
-  background-image: url('/img/background.jpg');
+  background-image: url('/public/img/background.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Vollkorn', sans-serif;
   margin-bottom: 75px;
+}
+
+.header {
+  margin-top: 60px;
+  background: rgba(230,230,250,0.4);
 }
 
 .guide {
@@ -42,9 +47,7 @@ body {
   margin-bottom:5px;
 }
 
-.blip {
-  margin-top: 60px;
-}
+
 
 .logo-front {
   margin-bottom: 30px;
@@ -80,32 +83,32 @@ body {
 }
 
 h1 {
-  font-family: 'Special Elite', cursive;
+  font-family: 'Quando', cursive;
   font-size: 280%;
   color: #796878;
 }
 
 h2 {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Vollkorn', sans-serif;
   font-size: 240%;
   color: #796878;
 }
 
 h3 {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Vollkorn', sans-serif;
   color: #796878;
   font-size: 200%;
 }
 
 h4 {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Vollkorn', sans-serif;
   font-size: 150%;
   margin-top: -5px;
   margin-bottom: 20px;
 }
 
 h6 {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Vollkorn', sans-serif;
   letter-spacing: 2px;
 }
 
@@ -207,7 +210,7 @@ fieldset[disabled] .btn-home.active {
   border-radius: 0 !important;
   border-color: transparent;
   font-size: 18px;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Vollkorn', sans-serif;
 }
 
 .navbar-default .navbar-nav>li>a {
