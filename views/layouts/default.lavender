@@ -54,7 +54,7 @@ body
       .row 
         .col-md-2.logo-front
           img.img-responsive.center-block(
-            src='http://www.sugarphlox.com/public/images/portfolio/lavender-logo-2015.png'
+            src='/img/lavender-logo-2015.png'
             height=150
             width=150
             )      
