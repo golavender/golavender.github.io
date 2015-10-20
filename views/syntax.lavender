@@ -23,7 +23,8 @@ block content
           p
             | Since Lavender is based off of Jade, any text editor that can show Jade syntax will work.
             | We prefer 
-            a(href='http://www.sublimetext.com/', target='_blank') <b>Sublime</b>
+            a(href='http://www.sublimetext.com/', target='_blank') 
+              strong Sublime
             | but any editor that can read Jade will do.
   .container
     .row
@@ -32,11 +33,14 @@ block content
           p
             | The first step is to install package control in Sublime
             | follow the instructions for your preferred version of Sublime at
-            a(href='https://packagecontrol.io/installation', target='_blank') <b>Packagecontrol.io</b>
+            a(href='https://packagecontrol.io/installation', target='_blank')
+              strong Packagecontrol.io
           p
             | Next, press cmd + shift + p, type install, hit enter
             | type jade, hit enter.  Jade will now be an option in the syntax list.
-            | Open a <b>.lavender</b> file, go to 
+            | Open a 
+              strong .lavender 
+            | file, go to 
             pre
               code.language-markup.
                 view > syntax > Open all with current extention as... > Jade > Jade
@@ -50,9 +54,11 @@ block content
           h1 Vim
           p
             | Do you prefer 
-            a(href='http://www.vim.org/download.php', target='_blank' ) <b>Vim?</b>
+            a(href='http://www.vim.org/download.php', target='_blank' ) 
+              strong Vim?
             | Get the 
-            a(href='https://github.com/digitaltoad/vim-jade', target='_blank') <b>digitaltoad package</b> 
+            a(href='https://github.com/digitaltoad/vim-jade', target='_blank') 
+              strong digitaltoad package 
             | from github and follow the directions there.
           p
             | Now go write beautiful code, quicker and easier than you previously did.
