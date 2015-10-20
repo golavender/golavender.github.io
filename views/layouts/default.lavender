@@ -104,6 +104,11 @@ body
               url: '/about.html',
               target: '_self'
             },
+            {
+              title: 'Editing',
+              url: '/syntax.html',
+              target: '_self'
+            }
           ]
           each page in pages
             if (current_page==page.title)
