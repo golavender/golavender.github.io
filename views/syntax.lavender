@@ -4,10 +4,10 @@ extends layouts/default
 -current_page = "Syntax"
 
 block title
-	| Syntax View - Lavender Templating Engine for PHP
+  | Syntax View - Lavender Templating Engine for PHP
 
 block content
-	.container
+  .container
     .row
       .col-md-8.col-md-offset-2.about.img-rounded
           h1.title Make it look good
@@ -24,7 +24,6 @@ block content
             | Since Lavender is based off of Jade, any text editor that can show Jade syntax will work.
             | We prefer 
             a(href='http://www.sublimetext.com/', target='_blank') <b>Sublime</b>
-
             | but any editor that can read Jade will do.
   .container
     .row
